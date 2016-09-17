@@ -1,8 +1,8 @@
-package Sitegen::Controller::Example;
+package Sitegen::Controller::Generate;
 use Mojo::Base 'Mojolicious::Controller';
 
 # This action will render a template
-sub welcome {
+sub page {
   my $self = shift;
 
   # Render template "example/welcome.html.ep" with message
