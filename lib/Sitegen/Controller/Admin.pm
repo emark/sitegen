@@ -11,9 +11,9 @@ sub dashboard {
 sub upload {
 	my $self = shift;
 	my $upload = Mojo::Upload->new;
-	say $upload;
 
-	$self->render(data => $upload);
+
+	$self->render(xdata => $upload);
 }
 
 sub export {

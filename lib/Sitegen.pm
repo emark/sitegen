@@ -15,7 +15,7 @@ sub startup {
 	$r->post('/admin/upload')->to('admin#upload');
 	
 	# Normal route to controller
-	$r->get('/:*')->to('generate#page');
+	$r->get('/:url')->to('generate#page');
 }
 
 1;

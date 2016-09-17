@@ -5,7 +5,7 @@ use Mojo::Base 'Mojolicious::Controller';
 sub page {
 	my $self = shift;
 	my $config = $self->config;
-	my $url = $self->param;
+	my $url = $self->param('url');
 
 	my $dbi = DBIx::Custom->connect(
 		dsn => "dbi:mysql:database=$config->{'dbase'}",
@@ -21,6 +21,7 @@ sub page {
  	
  	)->fetch_hash;
 
+	$page = $page ? $page : {url => '404', meta => 'no-meta', content =>'Page not found'};
 
 	$self->render(page => $page);
 }
