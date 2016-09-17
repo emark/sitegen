@@ -1,0 +1,17 @@
+% layout 'default';
+% title 'Dashboard';
+<%= $msg %>
+
+<h2>Upload</h2>
+%= form_for '/admin/upload' => (enctype => 'multipart/form-data', method => 'post') => begin
+	%= file_field 'source'
+	%= submit_button
+
+% end
+
+<h2>Export</h2>
+%= form_for "/admin/export" => (target => '_blank') => begin
+	%= submit_button 'Export'
+
+% end
+

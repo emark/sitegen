@@ -1,0 +1,2 @@
+% foreach my $page(@{$pages}){
+%== $page->{url}."\t".$page->{meta}."\t".$page->{content}."\n"};
