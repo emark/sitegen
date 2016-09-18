@@ -10,7 +10,7 @@
 % end
 
 <h2>Export</h2>
-%= form_for "/admin/export" => (target => '_blank') => begin
+%= form_for "/admin/export" => (method => 'post', target => '_blank') => begin
 	%= submit_button 'Export'
 
 % end
