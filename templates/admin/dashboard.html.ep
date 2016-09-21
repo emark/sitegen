@@ -1,17 +1,38 @@
 % layout 'default';
 % title 'Dashboard';
-<%= $msg %>
+<h1>Administrative area</h1>
 
-<h2>Upload</h2>
+<h2>Pages</h2>
+
+<h3>Add page</h3>
+
+%= form_for '/admin/p/add/' => (method => 'post') => begin
+%= text_field 'url'
+%= submit_button 'Add'
+
+% end
+
+<h3>Delete page</h3>
+
+%= form_for '/admin/p/delete/' => (method => 'post') => begin
+%= select_field url => $urls
+%= check_box 'confirm' => 1
+confirm deletion
+%= submit_button 'Delete'
+
+% end
+
+
+
+<h2>Upload source</h2>
 %= form_for '/admin/upload' => (enctype => 'multipart/form-data', method => 'post') => begin
 	%= file_field 'source'
 	%= submit_button
 
 % end
 
-<h2>Export</h2>
+<h2>Export source</h2>
 %= form_for "/admin/export" => (method => 'post', target => '_blank') => begin
 	%= submit_button 'Export'
 
 % end
-

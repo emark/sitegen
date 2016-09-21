@@ -14,6 +14,10 @@ sub startup {
 	$r->post('/admin/export')->to('admin#export');
 	$r->post('/admin/upload')->to('admin#upload');
 	
+	# Pages routes
+	$r->post('/admin/p/add')->to('admin#add');
+	$r->post('/admin/p/delete')->to('admin#delete');
+	
 	# Normal route to controller
 	$r->get('/:url')->to('generate#page');
 }
