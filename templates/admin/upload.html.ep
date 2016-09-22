@@ -1,7 +1,0 @@
-% layout 'default';
-% title 'Upload sources';
-
-<h1>Обновление страниц</h1>
-<p>Обработано страниц: <%= $pages %></p>
-
-%= link_to 'Back' => '/admin'

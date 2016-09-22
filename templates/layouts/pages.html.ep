@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html>
+  <head><title><%= title %></title></head>
+  <meta description="<%= $page->{meta} %>">
+  <body><%= content %></body>
+</html>
