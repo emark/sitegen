@@ -114,12 +114,12 @@ sub export {
 	);
 
  	my $pages = $dbi->select(
- 		table => 'site',
+ 		table => $config->{site},
 
  	)->fetch_hash_all;
 
 
-	$self->render(pages => $pages, format => 'csv');
+	$self->render(pages => $pages, format => 'txt');
 }
 
 1;

@@ -15,7 +15,7 @@ sub page {
 	);
 
  	my $page = $dbi->select(
- 			table => 'site',
+ 			table => $config->{site},
  			columns => ['meta','content'],
  			where => {url => $url},
  	
@@ -23,7 +23,7 @@ sub page {
 
 	$page = $page ? $page : {url => '404', meta => 'no-meta', content =>'Page not found'};
 
-	$self->render(page => $page);
+	$self->render(page => $page, layout => $config->{site});
 }
 
 1;

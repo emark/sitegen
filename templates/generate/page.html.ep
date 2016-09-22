@@ -1,3 +1,2 @@
-% layout 'pages';
 % title 'Welcome';
 %== $page->{content}
