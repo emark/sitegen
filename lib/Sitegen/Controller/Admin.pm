@@ -85,7 +85,7 @@ sub upload {
 	$source = $source->slurp;
 	
 	my @pages = split(/\n/, $source);
-	my $p = 0;
+
 	foreach my $page (@pages){
 		my %page = ();
 		($page{url},$page{meta},$page{content}) = split(/\t/, $page);
@@ -96,10 +96,9 @@ sub upload {
 			table => $config->{site},
 
 		);
-		$p++;
 	};
 	
-	$self->render(type => 'text', text => "Update success. Processed $p pages");
+	$self->render(type => 'text', text => "Update success. Processed ".@pages." pages");
 }
 
 sub export {

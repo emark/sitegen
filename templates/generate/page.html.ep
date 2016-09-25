@@ -1,2 +1,2 @@
-% title 'Welcome';
+% title $page->{meta}{title};
 %== $page->{content}

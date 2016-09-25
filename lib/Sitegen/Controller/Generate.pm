@@ -21,6 +21,14 @@ sub page {
  	
  	)->fetch_hash;
 
+	my %meta = ();
+	foreach my $meta (split('#',$page->{meta})){
+		my ($key,$value) = split(':',$meta);
+		$meta{$key}= $value;
+
+	};
+	$page->{meta} = {%meta};
+
 	$page = $page ? $page : {url => '404', meta => 'no-meta', content =>"Page <b>$url</b> not found"};
 
 	$self->render(page => $page, layout => $config->{site});
