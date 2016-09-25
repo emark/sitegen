@@ -104,6 +104,7 @@ sub upload {
 
 sub export {
 	my $self = shift;
+	my $url = $self->param('url');
 	my $config = $self->config;
 
 	my $dbi = DBIx::Custom->connect(
@@ -113,11 +114,21 @@ sub export {
 		option => {mysql_enable_utf8 => 1}
 	);
 
- 	my $pages = $dbi->select(
+	my $pages;
+	if($url eq '---'){
+	 	$pages = $dbi->select(
+ 			table => $config->{site}
+		
+	 	);
+	}else{
+	 	$pages = $dbi->select(
  		table => $config->{site},
+		where => {url => $url}
 
- 	)->fetch_hash_all;
+	 	);
+	};
 
+	$pages = $pages->fetch_hash_all;
 
 	$self->render(pages => $pages, format => 'txt');
 }
