@@ -31,7 +31,7 @@ sub page {
 
 	$page = $page ? $page : {url => '404', meta => 'no-meta', content =>"Page <b>$url</b> not found"};
 
-	$self->render(page => $page, layout => $config->{site});
+	$self->render(template => $config->{site}.'/'.$meta{template}, page => $page, layout => $config->{site});
 }
 
 1;

@@ -18,7 +18,11 @@ sub startup {
 	$r->post('/admin/p/add')->to('admin#add');
 	$r->post('/admin/p/delete')->to('admin#delete');
 	
-	# Normal route to controller
+	# Routes to dynamic pages
+	$r->get('/booking')->to('booking#add');
+	$r->post('/booking')->to('booking#extended');
+
+	# Routes to static pages
 	$r->get('/:url')->to('generate#page');
 }
 

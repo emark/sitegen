@@ -1,0 +1,31 @@
+% title $page->{meta}{title};
+
+<!-- Main component for a primary marketing message or call to action -->
+<div class="row">
+	<div class="col-lg-4">
+	<div class="jumbotron">
+	  <p><a href="/nomera">Гостиничные номера</a></p>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p><a href="">Подробнее</a></p>
+  </div>
+
+  </div>
+  
+	<div class="col-lg-4">  
+  <div class="jumbotron">
+	  <p><a href="/konference">Конференц-залы</a></p>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+
+  </div>
+  </div>
+  
+	<div class="col-lg-4">  
+  <div class="jumbotron">
+	  <p><a href="/banket">Банкетный зал</a></p>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+
+  </div>
+  </div>
+</div>
+
+%== $page->{content}
