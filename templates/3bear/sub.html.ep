@@ -1,7 +1,0 @@
-% title $page->{meta}{title};
-
-<div class="page-header">
-	<h1><%= $page->{meta}{title} %></h1>
-</div>
-
-%== $page->{content}

@@ -28,4 +28,6 @@
   </div>
 </div>
 
-%== $page->{content}
+<p>
+%== $page->{content}{text}
+</p>
