@@ -22,12 +22,22 @@ sub page {
  	)->fetch_hash;
 
 	my %meta = ();
-	foreach my $meta (split('#',$page->{meta})){
+	foreach my $meta (split('%',$page->{meta})){
 		my ($key,$value) = split(':',$meta);
 		$meta{$key}= $value;
 
 	};
+
 	$page->{meta} = {%meta};
+
+	my %content = ();
+	foreach my $content (split('%',$page->{content})){
+		my ($key,$value) = split(':',$content);
+		$content{$key}= $value;
+
+	};
+
+	$page->{content} = {%content};
 
 	$page = $page ? $page : {url => '404', meta => 'no-meta', content =>"Page <b>$url</b> not found"};
 
