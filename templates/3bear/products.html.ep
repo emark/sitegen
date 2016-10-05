@@ -81,11 +81,14 @@
 
 </br>	
 
-	<p class="well text-center">Больше фотографий в социальных сетях</br>
-	<a href="https://www.instagram.com/trimedvedya" target=_blank>instagram.com/trimedvedya</a> | <a href="https://www.facebook.com/trimedvedya" target=_blank>facebook.com/trimedvedya</a></p>
-</div>
-
-<!-- /gallery -->
+	<div class="panel panel-default" id="instagram">
+		<div class="panel-body">
+			<p class="text-center"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span><br/>Самые свежие фотографии в нашем Instagram-аккаунте<br/><br/>
+			<a href="https://www.instagram.com/trimedvedya" target=_blank role="button" class="btn btn-default" title="Открыть в новом окне">@trimedvedya</a></p>
+		</div>
+	</div>
+	
+</div><!-- /gallery -->
 
 <div id="booking" class="jumbotron">
 <h2>Бронирование</h2>
