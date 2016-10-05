@@ -96,13 +96,13 @@
     <label for="BookingDate">Дата заселения</label>
     
   	<div class="row">
-  		<div class="col-sm-2 col-xs-4">
-  	  	<input class="form-control input-lg" id="BookingDate" name="bdate" placeholder="0" type="number">
-
+  		<div class="col-sm-3 col-xs-8">
+  	  	<input class="form-control input-lg" id="BookingDate" name="bdate" placeholder="01.01.2016" type="date">
+  	  	
   		</div>
   		<div class="col-sm-3 col-xs-8" id="BookingMonth">
-  		<!-- Generate select from script -->
-
+  			<!-- Generate select from script -->
+				<script language="text/javascript">SelectMonth</script>
   		</div>
   		
   		
