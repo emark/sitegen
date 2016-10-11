@@ -1,0 +1,67 @@
+% title 'Бронирование';
+
+<div class="page-header">
+	<h1>Бронирование</h1>
+</div>
+
+<p class="lead"><%= $page->{msg} %></p>
+
+% if ($page->{token}){
+
+<p>Вы можете указать дополнительную информацию и детали бронирования ниже.</p>
+
+<form action="/booking" method="post">	
+		<div class="form-group">
+    	<label for="Person">Как к вам обращаться</label>
+    
+    	<div class="row">
+	  	  <div class="col-sm-5">
+  			  <input class="form-control input-lg" id="Person" name="person" type="text">
+		
+			  </div>
+    	</div>
+  	</div>
+  	
+  	<div class="form-group">
+    	<label for="Comment">Комментарий к бронированию</label>
+    
+    	<div class="row">
+	  	  <div class="col-sm-5">
+  			  <textarea class="form-control input-lg" id="Comment" name="comment" type="text"></textarea>
+		
+			  </div>
+    	</div>
+  	</div>
+		
+		<div class="form-group">
+    	<label for="Email">Электронная почта</label>
+    
+    	<div class="row">
+	  	  <div class="col-sm-5">
+  				  <input class="form-control input-lg" id="Email" name="email" type="email">
+						<span id="helpBlock" class="help-block">Укажите почту для получения информации о статусе бронирования</span>
+						
+			  </div>
+    	</div>
+  	</div>
+  	  
+		<input type="hidden" value="<%= $page->{token} %>" name="token">
+	 	<button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+	 	
+</form>
+
+% }else{
+
+<p>Что делать дальше?</p>
+<ol>
+	<li>Ожидайте подтверждающего звонка</li>
+	<li>Проверьте электронную почту</li>
+	<li>Перейдите на <%= link_to 'Главную страницу' => '/' %></li>
+</ol>
+<p>
+
+</p>
+
+% }
+
+<br/>

@@ -20,7 +20,7 @@ sub startup {
 	
 	# Routes to dynamic pages
 	$r->get('/booking')->to('booking#add');
-	$r->post('/booking')->to('booking#extended');
+	$r->post('/booking')->to('booking#complete');
 
 	# Routes to static pages
 	$r->get('/:url')->to('generate#page');

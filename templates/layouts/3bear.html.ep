@@ -22,7 +22,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title><%= title %> &mdash; Три медведя</title>
+    <title><%= title %> &mdash; Гостиница &laquo;Три медведя&raquo;</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -111,7 +111,7 @@
 							<dd><a href="/prices">Цены</a></dd>
 							<dd><a href="/specoffers">Спецпредложения</a></dd>					
 							<dd><a href="/allphotos">Фотогалерея</a></dd>
-							<dd><a href="/events">Мероприятия</a></dd>
+							<dd><a href="http://www.3bear.ru/events/">Мероприятия</a></dd>
 							<dd><a href="/kontakt">Контакты</a></dd>
 				
 						</dl>
@@ -132,7 +132,7 @@
 			</div><!-- /footer -->
 
 <h5><small>Данный сайт носит информационный характер и не является офертой в понимании ч.2 ст. 437 ГК РФ<br>
-Запрещается любая перепечатка материалов сайта без письменного разрешения ООО "Три медведя". Красноярск,&nbsp;2016</small></h5>
+Запрещается любая перепечатка материалов сайта без письменного разрешения ООО &laquo;Три медведя&raquo;. Красноярск,&nbsp;2016</small></h5>
     </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
