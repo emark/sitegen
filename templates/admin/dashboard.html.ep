@@ -2,6 +2,11 @@
 % title 'Dashboard';
 <h1>Administrative area</h1>
 
+%= form_for '/admin/logout/' => begin
+%= submit_button 'Logout'
+
+%= end
+
 <h2>Pages</h2>
 
 <h3>Add page</h3>

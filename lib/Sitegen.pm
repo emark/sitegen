@@ -9,8 +9,8 @@ has 'dbh' => sub {
 	
 	my $dbi = DBIx::Custom->connect(
 			dsn => $config->{dsn},
-			user => $config->{user},
-			password => $config->{password},
+			user => $config->{dbuser},
+			password => $config->{dbpassword},
 			option => {mysql_enable_utf8 => 1}
 	);
 
@@ -22,16 +22,16 @@ sub startup {
 	my $self = shift;
 	$config = $self->plugin('Config');
 	$self->mode($config->{mode});
-	$self->secrets($config->{secrets});	
+	$self->secrets([$config->{secrets}]);	
 
-	# Router
 	my $r = $self->routes;
-
-	$r->get('/admin')->to('admin#dashboard');
-	$r->post('/admin/export')->to('admin#export');
-	$r->post('/admin/upload')->to('admin#upload');
 	
-	# Pages routes
+	#Administrative
+	$r->any('/admin/')->to('admin#auth');
+	$r->any('/admin/logout/')->to('admin#logout');
+	$r->get('/admin/dashboard/')->to('admin#dashboard');
+	$r->post('/admin/export/')->to('admin#export');
+	$r->post('/admin/upload/')->to('admin#upload');
 	$r->post('/admin/p/add')->to('admin#add');
 	$r->post('/admin/p/delete')->to('admin#delete');
 	
