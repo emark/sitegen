@@ -1,7 +1,30 @@
 package Sitegen::Controller::Generate;
 use Mojo::Base 'Mojolicious::Controller';
 
-# This action will render a template
+sub sitemap {
+	my $self = shift;
+	my $config = $self->config;
+	my $urls = $self->app->dbh->select(
+		column => ['url'],
+		table => $config->{site}
+	)->fetch_all;
+
+	my @lastmod = localtime;
+	$lastmod[3] = '0'.$lastmod[3] if($lastmod[3] < 10);
+	$lastmod[4] = $lastmod[4]+1;
+	$lastmod[4] = '0'.$lastmod[4] if($lastmod[4] < 10);
+	$lastmod[5] = $lastmod[5]+1900;
+	$lastmod[0] = "$lastmod[5]-$lastmod[4]-$lastmod[3]";
+
+	$self->render(
+		template => 'sitemap',
+		urls => $urls,
+		site => $config->{site},
+		lastmod => $lastmod[0]
+	);
+
+}
+
 sub page {
 	my $self = shift;
 	my $config = $self->config;
