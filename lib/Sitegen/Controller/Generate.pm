@@ -30,11 +30,11 @@ sub page {
 			$content{$key}= $value;
 
 		};
+
 		$page->{content} = {%content};
+		$page->{status} = '200';
 
 	};
-
-	$page->{status} = '200';
 
 	$page = $page ? $page : {url => '404', status => 404, meta => { template => '404', title => 'Страница не найдена' }, content => "Страница <b>$url</b> отсутствует на сервере." };
 
