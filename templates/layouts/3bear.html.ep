@@ -5,8 +5,6 @@
 % 	kontakt => '',
 % 	prices => '',
 % 	specoffers => '',
-% 	allphotos => '',
-% 	booking => ''
 % );
 
 % $url{$page->{url}} = 'active';
