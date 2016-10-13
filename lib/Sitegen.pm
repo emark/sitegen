@@ -2,10 +2,26 @@ package Sitegen;
 use Mojo::Base 'Mojolicious';
 use DBIx::Custom;
 
+my $config = '';
+
+has 'dbh' => sub {
+	my $self = shift;
+	
+	my $dbi = DBIx::Custom->connect(
+			dsn => $config->{dsn},
+			user => $config->{user},
+			password => $config->{password},
+			option => {mysql_enable_utf8 => 1}
+	);
+	$dbi->do('SET NAMES utf8');
+
+	return $dbi;
+};
+
 # This method will run once at server start
 sub startup {
 	my $self = shift;
-	my $config = $self->plugin('Config');
+	$config = $self->plugin('Config');
 	
 	# Router
 	my $r = $self->routes;
