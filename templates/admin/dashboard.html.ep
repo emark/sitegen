@@ -4,8 +4,11 @@
 
 %= form_for '/admin/logout/' => begin
 %= submit_button 'Logout'
+%= link_to 'Refresh' => ''
 
 %= end
+
+
 
 <h2>Pages</h2>
 
