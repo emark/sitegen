@@ -7,12 +7,6 @@ my %page = (url => 'booking');
 sub complete {
 	my $self = shift;
 	my $config = $self->config;
-	my $dbi = DBIx::Custom->connect(
-		dsn => "dbi:mysql:database=$config->{'dbase'}",
-		user => $config->{'user'},
-		password => $config->{'pass'},
-		option => {mysql_enable_utf8 => 1}
-	);
 	my $params = $self->req->params->to_hash;
 	my @dict = qw(a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9);
 	my $token = '';
@@ -31,7 +25,7 @@ sub complete {
 		}
 	
 		my $content = encode_json $params;	
-		$dbi->insert(
+		$self->app->dbh->insert(
 			{
 				content => $content,
 				token => $token
@@ -44,7 +38,7 @@ sub complete {
 		$msg = 'Ваш запрос на бронирование успешно создан.';
 
 	}else{
-		my $content = $dbi->select(
+		my $content = $self->app->dbh->select(
 						table => 'booking',
 						columns => ['content'],
 						where => {token => $params->{token}},
@@ -61,7 +55,7 @@ sub complete {
 		delete $bytes->{token};
 
 		$content = encode_json $bytes;
-		$dbi->update(
+		$self->app->dbh->update(
 			{content => $content},
 			table => 'booking',
 			where => {token => $params->{token}},
@@ -84,7 +78,7 @@ sub complete {
 sub add {
 	my $self = shift;
 	my $config = $self->config;
-	
+
 	$self->render(
 		template => $config->{site}.'/booking/booking', 
 		layout => $config->{site},
