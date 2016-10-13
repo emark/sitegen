@@ -40,7 +40,9 @@ sub startup {
 	$r->post('/booking')->to('booking#complete');
 
 	# Routes to static pages
+	$r->get('/sitemap')->to('generate#sitemap');
 	$r->get('/:url')->to('generate#page');
+
 }
 
 1;
