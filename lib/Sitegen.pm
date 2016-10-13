@@ -13,7 +13,6 @@ has 'dbh' => sub {
 			password => $config->{password},
 			option => {mysql_enable_utf8 => 1}
 	);
-	$dbi->do('SET NAMES utf8');
 
 	return $dbi;
 };

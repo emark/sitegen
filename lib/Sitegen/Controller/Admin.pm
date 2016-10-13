@@ -4,15 +4,7 @@ use Mojo::Base 'Mojolicious::Controller';
 sub dashboard {
 	my $self = shift;
 	my $config = $self->config;
-
-	my $dbi = DBIx::Custom->connect(
-		dsn => "dbi:mysql:database=$config->{'dbase'}",
-		user => $config->{'user'},
-		password => $config->{'pass'},
-		option => {mysql_enable_utf8 => 1}
-	);
-	
-	my $urls = $dbi->select(
+	my $urls = $self->app->dbh->select(
 		table => $config->{site},
 		column => 'url',
 	)->values;
@@ -23,18 +15,10 @@ sub dashboard {
 sub add(){
     my $self = shift;
     my $url = $self->param('url');
-
-    my $config = $self->config;
-
-    my $dbi = DBIx::Custom->connect(
-        dsn => "dbi:mysql:database=$config->{'dbase'}",
-        user => $config->{'user'},
-        password => $config->{'pass'},
-        option => {mysql_enable_utf8 => 1}
-    );
+	my $config = $self->config;
 
 	if($url){
-	    $dbi->insert(
+	    $self->app->dbh->insert(
 			{url => $url},
 	        table => $config->{site},
 
@@ -51,15 +35,8 @@ sub delete(){
 	my $confirm = $self->param('confirm');
 	my $config = $self->config;
 
-    my $dbi = DBIx::Custom->connect(
-        dsn => "dbi:mysql:database=$config->{'dbase'}",
-        user => $config->{'user'},
-        password => $config->{'pass'},
-        option => {mysql_enable_utf8 => 1}
-    );
-
 	if($confirm){
-		$dbi->delete(
+		$self->app->dbh->delete(
 			table => $config->{site},
 			where => {url => $url},
 
@@ -73,24 +50,15 @@ sub delete(){
 sub upload {
 	my $self = shift;
 	my $source = $self->param('source');
-	my $config = $self->config;
-
-	my $dbi = DBIx::Custom->connect(
-		dsn => "dbi:mysql:database=$config->{'dbase'}",
-		user => $config->{'user'},
-		password => $config->{'pass'},
-		option => {mysql_enable_utf8 => 1}
-	);
-
 	$source = $source->slurp;
-	
+	my $config = $self->config;
 	my @pages = split(/\n/, $source);
 
 	foreach my $page (@pages){
 		my %page = ();
 		($page{url},$page{meta},$page{content}) = split(/\t/, $page);
 
-		$dbi->update(
+		$self->app->dbh->update(
 			{%page},
 			where => {url => $page{url}},
 			table => $config->{site},
@@ -105,22 +73,15 @@ sub export {
 	my $self = shift;
 	my $url = $self->param('url');
 	my $config = $self->config;
+	my $pages = '';
 
-	my $dbi = DBIx::Custom->connect(
-		dsn => "dbi:mysql:database=$config->{'dbase'}",
-		user => $config->{'user'},
-		password => $config->{'pass'},
-		option => {mysql_enable_utf8 => 1}
-	);
-
-	my $pages;
 	if($url eq '---'){
-	 	$pages = $dbi->select(
+	 	$pages = $self->app->dbh->select(
  			table => $config->{site}
 		
 	 	);
 	}else{
-	 	$pages = $dbi->select(
+	 	$pages = $self->app->dbh->select(
  		table => $config->{site},
 		where => {url => $url}
 
