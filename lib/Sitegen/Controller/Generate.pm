@@ -34,11 +34,16 @@ sub page {
 
 	};
 
+	$page->{status} = '200';
 
+	$page = $page ? $page : {url => '404', status => 404, meta => { template => '404', title => 'Страница не найдена' }, content => "Страница <b>$url</b> отсутствует на сервере." };
 
-	$page = $page ? $page : {url => '404', meta => {template => '404', title => 'Страница не найдена'}, content =>"Страница <b>$url</b> отсутствует на сервере."};
-
-	$self->render(template => $config->{site}.'/'.$page->{meta}{template}, page => $page, layout => $config->{site});
+	$self->render( 
+		layout => $config->{site},
+		template => $config->{site}.'/'.$page->{meta}{template},
+		status => $page->{status},
+		page => $page,
+	);
 }
 
 1;
