@@ -21,7 +21,9 @@ has 'dbh' => sub {
 sub startup {
 	my $self = shift;
 	$config = $self->plugin('Config');
-	
+	$self->mode($config->{mode});
+	$self->secrets($config->{secrets});	
+
 	# Router
 	my $r = $self->routes;
 
