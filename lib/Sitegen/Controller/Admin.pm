@@ -57,7 +57,7 @@ sub add(){
     	);
 	};
 
-    $self->render(type => 'text', text => "Page $url success create");
+    $self->render(type => 'text', text => "Page $url success create. Don't forget to update sitemap");
 
 }
 
@@ -77,7 +77,7 @@ sub delete(){
 		);
 	};
 	
-	$self->render(type => 'text', text => "Page $url delete success");
+	$self->render(type => 'text', text => "Page $url delete success. Don't forget to update sitemap");
 
 }
 
