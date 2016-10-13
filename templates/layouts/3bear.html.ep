@@ -22,7 +22,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title><%= title %> &mdash; Три медведя</title>
+    <title><%= title %> &mdash; Гостиница &laquo;Три медведя&raquo;</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,11 +38,7 @@
     
 		<!-- Plugin Lightbox2 css styles -->
 		<link href="/assets/plugins/lightbox2/css/lightbox.css" rel="stylesheet">
-		
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
-
+	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -65,18 +61,18 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index"><img src="/media/images/site/site-logo.svg"></a>
+            <a class="navbar-brand" href="/"><img src="/media/images/site/site-logo.svg"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="<%= $url{nomera} %>"><a href="/nomera">Гостиничные номера</a></li>
-            	<li class="<%= $url{konference} %>"><a href="/konference">Конференц-залы</a></li>
-            	<li class="<%= $url{banket} %>"><a href="/banket">Банкетный зал</a></li>
+              <li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
+            	<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
+            	<li class="<%= $url{banket} %>"><a href="/banket.html">Банкеты и свадьбы</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="<%= $url{prices} %>"><a href="/prices">Цены <span class="sr-only">(current)</span></a></li>
-           		<li class="<%= $url{specoffers} %>"><a href="/specoffers">Спецпредложения</a></li>
-           		<li class="<%= $url{kontakt} %>"><a href="/kontakt">Контакты</a></li>
+              <li class="<%= $url{prices} %>"><a href="/prices.html">Цены <span class="sr-only">(current)</span></a></li>
+           		<li class="<%= $url{specoffers} %>"><a href="/specoffers.html">Спецпредложения</a></li>
+           		<li class="<%= $url{kontakt} %>"><a href="/kontakt.html">Контакты</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -89,22 +85,21 @@
 					<div class="col-sm-3">
 						<h4>Наш адрес</h4>
 						<address>
-  					ООО &laquo;Три медведя&raquo;<br>
   					660074, Красноярский край,<br/>
   					г. Красноярск, <br>
   					ул.&nbsp;Ленинградская,&nbsp;11<br>
   					+7 (391) 243-36-13<br>
-  					<a href="mailto:info@3bear.ru">info@3bear.ru</a>
+  					<a href="mailto:info@3bear.ru" title="Пишите нам">info@3bear.ru</a>
 						</address>
 
 				</div>
 				<div class="col-sm-3">
 						<dl>
 							<dt><h4>Услуги</h4></dt>
-							<dd><a href="/booking">Бронирование</a></dd>
-							<dd><a href="/nomera">Гостиничные номера</a></dd>
-							<dd><a href="/konference">Конференц-залы</a></dd>
-							<dd><a href="/banket">Банкетный зал</a></dd>
+							<dd><a href="/booking/">Бронирование</a></dd>
+							<dd><a href="/nomera.html">Гостиничные номера</a></dd>
+							<dd><a href="/konference.html">Конференц-залы</a></dd>
+							<dd><a href="/banket.html">Банкеты и свадьбы</a></dd>
 				
 						</dl>
 					</div>
@@ -112,11 +107,11 @@
 					<div class="col-sm-3">
 						<dl>
 							<dt><h4>Информация</h4></dt>
-							<dd><a href="/prices">Цены</a></dd>
-							<dd><a href="/specoffers">Спецпредложения</a></dd>					
-							<dd><a href="/allphotos">Фотогалерея</a></dd>
-							<dd><a href="/events">Мероприятия</a></dd>
-							<dd><a href="/kontakt">Контакты</a></dd>
+							<dd><a href="/prices.html">Цены</a></dd>
+							<dd><a href="/specoffers.html">Спецпредложения</a></dd>					
+							<dd><a href="/allphotos.html">Фотогалерея</a></dd>
+							<dd><a href="http://www.3bear.ru/events/">Мероприятия</a></dd>
+							<dd><a href="/kontakt.html">Контакты</a></dd>
 				
 						</dl>
 					</div>
@@ -124,10 +119,10 @@
 					<div class="col-sm-3">
 						<dl>
 							<dt><h4>Документы</h4></dt>
-							<dd><a href="#">Юридические реквизиты</a></dd>
-							<dd><a href="#">Правила проживания в гостинице</a></dd>
-							<dd><a href="#">Правила бронировния услуг</a></dd>
-							<dd><a href="#">Рекламные материалы</a></dd>
+							<dd><a href="/downloads/docs/3bear-rekvizit.pdf" target="_blank">Юридические реквизиты</a></dd>
+							<dd><a href="/downloads/docs/3bear-hotel-rules.pdf" target="_blank">Правила проживания в гостинице</a></dd>
+							<dd><a href="/downloads/docs/3bear-booking-rules.pdf" target="_blank">Правила бронирования услуг</a></dd>
+							<dd><a href="/downloads/docs/3bear-adverts.pdf" target="_blank">Рекламные материалы</a></dd>
 				
 						</dl>
 					</div>
@@ -135,8 +130,7 @@
 				</div><!-- /row -->
 			</div><!-- /footer -->
 
-<p class="text-left">Данный сайт носит информационный характер и не является офертой в понимании ч.2 ст. 437 ГК РФ<br>
-Запрещается перепечатка материалов сайта без письменного разрешения ООО "Три медведя". Красноярск, 2016</p>
+			<h5><small>Данный сайт носит информационный характер и не является офертой в понимании ч.2 ст. 437 ГК РФ<br>Запрещается любая перепечатка материалов сайта без письменного разрешения ООО &laquo;Три медведя&raquo;. Красноярск,&nbsp;2016</small></h5>
     </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
@@ -152,8 +146,7 @@
     <script src="/assets/plugins/lightbox2/js/lightbox.js"></script>
     <script type="text/javascript">
     	lightbox.option({
-    		'albumLabel':	"Фотография %1 из %2",	
-  	    /*'disableScrolling': true*/
+    		'albumLabel':	"Фотография %1 из %2"
   	  })
     </script>
     
