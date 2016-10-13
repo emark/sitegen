@@ -1,9 +1,38 @@
 package Sitegen::Controller::Admin;
 use Mojo::Base 'Mojolicious::Controller';
 
-sub dashboard {
+has 'login' => sub{
+	my $self = shift;	
+	return $self->session->{auth} ? 1 : $self->redirect_to('/admin/');
+};
+
+sub auth {
 	my $self = shift;
 	my $config = $self->config;
+	my $param = $self->req->params->to_hash();
+	if($param->{login} && $param->{pass}){ 
+		if($param->{login} eq $config->{login} && $param->{pass} eq $config->{pass}){
+			$self->session->{auth} = 1;
+			$self->redirect_to('/admin/dashboard/');
+		}
+	}
+
+}
+
+sub logout {
+	my $self = shift;
+	my $config = $self->config;
+	delete $self->session->{auth};
+
+	$self->redirect_to('/admin/');
+}
+
+sub dashboard {
+	my $self = shift;
+	$self->login;
+
+	my $config = $self->config;
+
 	my $urls = $self->app->dbh->select(
 		table => $config->{site},
 		column => 'url',
@@ -14,8 +43,11 @@ sub dashboard {
 
 sub add(){
     my $self = shift;
+	$self->login;
+
     my $url = $self->param('url');
 	my $config = $self->config;
+
 
 	if($url){
 	    $self->app->dbh->insert(
@@ -31,6 +63,8 @@ sub add(){
 
 sub delete(){
 	my $self = shift;
+	$self->login;
+
 	my $url = $self->param('url');	
 	my $confirm = $self->param('confirm');
 	my $config = $self->config;
@@ -49,6 +83,8 @@ sub delete(){
 
 sub upload {
 	my $self = shift;
+	$self->login;
+
 	my $source = $self->param('source');
 	$source = $source->slurp;
 	my $config = $self->config;
@@ -71,6 +107,8 @@ sub upload {
 
 sub export {
 	my $self = shift;
+	$self->login;
+
 	my $url = $self->param('url');
 	my $config = $self->config;
 	my $pages = '';

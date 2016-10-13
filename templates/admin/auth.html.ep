@@ -1,0 +1,11 @@
+% layout 'default';
+% title 'Dashboard';
+<h1>Administrative area</h1>
+
+%= form_for '/admin/' => (method => "post") => begin
+
+%= text_field 'login'
+%= password_field 'pass'
+%= submit_button 'Login'
+
+%= end
