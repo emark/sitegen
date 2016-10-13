@@ -12,29 +12,33 @@ sub page {
  			columns => ['meta','content'],
  			where => {url => $url},
  	
- 	)->fetch_hash;
+ 	)->fetch_hash || 0;
 
-	my %meta = ();
-	foreach my $meta (split('%',$page->{meta})){
-		my ($key,$value) = split(':',$meta);
-		$meta{$key}= $value;
+	if ($page) {
+		my %meta = ();
+		foreach my $meta (split('%',$page->{meta})){
+			my ($key,$value) = split(':',$meta);
+			$meta{$key}= $value;
+
+		};
+
+		$page->{meta} = {%meta};
+
+		my %content = ();
+		foreach my $content (split('%',$page->{content})){
+			my ($key,$value) = split(':',$content);
+			$content{$key}= $value;
+
+		};
+		$page->{content} = {%content};
 
 	};
 
-	$page->{meta} = {%meta};
 
-	my %content = ();
-	foreach my $content (split('%',$page->{content})){
-		my ($key,$value) = split(':',$content);
-		$content{$key}= $value;
 
-	};
+	$page = $page ? $page : {url => '404', meta => {template => '404', title => 'Страница не найдена'}, content =>"<p>Страница <b>$url</b> отсутствует на сервере.</p>"};
 
-	$page->{content} = {%content};
-
-	$page = $page ? $page : {url => '404', meta => 'no-meta', content =>"Page <b>$url</b> not found"};
-
-	$self->render(template => $config->{site}.'/'.$meta{template}, page => $page, layout => $config->{site});
+	$self->render(template => $config->{site}.'/'.$page->{meta}{template}, page => $page, layout => $config->{site});
 }
 
 1;
