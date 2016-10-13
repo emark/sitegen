@@ -36,7 +36,7 @@ sub page {
 
 
 
-	$page = $page ? $page : {url => '404', meta => {template => '404', title => 'Страница не найдена'}, content =>"<p>Страница <b>$url</b> отсутствует на сервере.</p>"};
+	$page = $page ? $page : {url => '404', meta => {template => '404', title => 'Страница не найдена'}, content =>"Страница <b>$url</b> отсутствует на сервере."};
 
 	$self->render(template => $config->{site}.'/'.$page->{meta}{template}, page => $page, layout => $config->{site});
 }
