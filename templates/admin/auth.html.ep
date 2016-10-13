@@ -1,11 +1,22 @@
 % layout 'default';
-% title 'Dashboard';
-<h1>Administrative area</h1>
+% title 'Управление сайтом';
+<h1>&nbsp;</h1>
+<p>
+<center><img src="/media/images/site/site-logo.png"></center>
+</p>
 
 %= form_for '/admin/' => (method => "post") => begin
 
+<center>
 %= text_field 'login'
+<br/><br/>
 %= password_field 'pass'
-%= submit_button 'Login'
+<br/>
+<br/>
+%= submit_button 'Вход'
 
 %= end
+
+<p><center>
+%= link_to 'Перейти на сайт' => '/'
+</center></p>
