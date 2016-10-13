@@ -7,14 +7,7 @@ sub page {
 	my $config = $self->config;
 	my $url = $self->param('url');
 
-	my $dbi = DBIx::Custom->connect(
-		dsn => "dbi:mysql:database=$config->{'dbase'}",
-		user => $config->{'user'},
-		password => $config->{'pass'},
-		option => {mysql_enable_utf8 => 1}
-	);
-
- 	my $page = $dbi->select(
+ 	my $page = $self->app->dbh->select(
  			table => $config->{site},
  			columns => ['meta','content'],
  			where => {url => $url},
