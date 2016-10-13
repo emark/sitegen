@@ -4,13 +4,14 @@
 	<h1>Бронирование</h1>
 </div>
 
+<div id="content">
 <p class="lead"><%= $page->{msg} %></p>
 
 % if ($page->{token}){
 
 <p>Вы можете указать дополнительную информацию и детали бронирования ниже.</p>
 
-<form action="/booking" method="post">	
+<form action="/booking/" method="post">	
 		<div class="form-group">
     	<label for="Person">Как к вам обращаться</label>
     
@@ -52,16 +53,8 @@
 
 % }else{
 
-<p>Что делать дальше?</p>
-<ol>
-	<li>Ожидайте подтверждающего звонка</li>
-	<li>Проверьте электронную почту</li>
-	<li>Перейдите на <%= link_to 'Главную страницу' => '/' %></li>
-</ol>
-<p>
-
-</p>
+<p>Ожидайте подтверждающего звонка.</p>
 
 % }
 
-<br/>
+</div>

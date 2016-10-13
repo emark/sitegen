@@ -21,6 +21,11 @@ sub complete {
 	if(!$params->{token}){
 		#Generate token
 		for(my $i=0; $i<30; $i++){
+			my $rnd = 0;
+			while ($rnd <= 62)
+			{
+				 $rnd = int(rand(1000));
+			};
 			$token = $token.$dict[int(rand(62))];
 	
 		}

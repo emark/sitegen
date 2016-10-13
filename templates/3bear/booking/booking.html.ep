@@ -4,7 +4,8 @@
 	<h1>Бронирование</h1>
 </div>
 
-<form action="/booking" method="post">	
+<div id="content">
+<form action="/booking/" method="post">	
 		<div class="form-group">
     	<label for="BookingPage">Выберите услугу</label>
     
@@ -44,7 +45,7 @@
     
 	  	<div class="row">
   			<div class="col-sm-2 col-xs-4">
-  			  <input class="form-control input-lg" id="Places" name="seats" placeholder="0" type="number">
+  			  <input class="form-control input-lg" id="Places" name="seats" placeholder="0" type="number" value="1">
 
   			</div>
 			</div>
@@ -65,4 +66,4 @@
 	 	<button type="submit" class="btn btn-primary btn-lg">Отправить</button>
 	 	
 </form>
-<br/>
+</div>
