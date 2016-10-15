@@ -6,12 +6,6 @@
 
 <div id="content">
 	
-	%== $page->{content}{text}
-
-%	if ($page->{url} eq 'kontakt'){
-
-	<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=tclRVTWvPMrhpi_k-_lFeEBcb0FqPvDM&amp;width=100%&amp;height=450&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
-
-% };
+%= $page->{content}{text}
 
 </div>

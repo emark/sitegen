@@ -21,8 +21,8 @@
 %		};
 
 		<div class="col-xs-12 col-sm-4">
-  	  <a href="/downloads/offers/<%= $offer %>" data-lightbox="<%= $page->{url} %>" data-title="Спецпредложения" class="thumbnail">
-  	    <img src="/downloads/offers/<%= $offer %>" alt="..." class="img-responsive">
+  	  <a href="/downloads/<%= $page->{url} %>/<%= $offer %>" data-lightbox="<%= $page->{url} %>" data-title="Спецпредложения" class="thumbnail">
+  	    <img src="/downloads/<%= $page->{url} %>/<%= $offer %>" alt="..." class="img-responsive">
   	  </a>
   	</div>
 
