@@ -31,7 +31,7 @@ sub complete {
 				token => $token
 			},
 			ctime => 'ctime',
-			table => 'booking'		
+			table => $config->{site}.'booking'		
 
 		);
 		$page{token} = $token;
@@ -57,7 +57,7 @@ sub complete {
 		$content = encode_json $bytes;
 		$self->app->dbh->update(
 			{content => $content},
-			table => 'booking',
+			table => $config->{site}.'booking',
 			where => {token => $params->{token}},
 
 		);
