@@ -26,17 +26,17 @@
 %= form_for '/admin/p/delete/' => (method => 'post') => begin
 	%= select_field url => $urls
 	
-	%= check_box 'confirm' => 1
-	confirm deletion
+	%= check_box 'confirm' => 1, label => 'confirm deletion'
 	
 	%= submit_button 'Delete'
 
 % end
 
+<hr>
 
+<h2>Import source</h2>
+%= form_for '/admin/import/' => (enctype => 'multipart/form-data', method => 'post') => begin
 
-<h2>Upload source</h2>
-%= form_for '/admin/upload' => (enctype => 'multipart/form-data', method => 'post') => begin
 	%= file_field 'source'
 	
 	%= submit_button
@@ -44,10 +44,29 @@
 % end
 
 <h2>Export source</h2>
+
 %	push $urls, '---';
-%= form_for "/admin/export" => (method => 'post', target => '_blank') => begin
+
+%= form_for '/admin/export/' => (method => 'post', target => '_blank') => begin
+
 	%= select_field url => $urls
 	
 	%= submit_button 'Export'
 
 % end
+
+<hr>
+
+<h2>Upload files</h2>
+% pop $urls;
+%= form_for '/admin/upload' => (enctype => 'multipart/form-data', method => 'post') => begin
+
+	%= file_field 'source'
+
+	%= select_field url => $urls
+
+	%= submit_button
+
+% end
+
+<p><center>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/' %></center></p>
