@@ -47,14 +47,17 @@ sub page {
 
 		$page->{meta} = {%meta};
 
-		my %content = ();
-		foreach my $content (split('%',$page->{content})){
-			my ($key,$value) = split(':',$content);
-			$content{$key}= $value;
+		if($page->{meta}{template} ne 'script'){
+			my %content = ();
+			foreach my $content (split('%',$page->{content})){
+				my ($key,$value) = split(':',$content);
+				$content{$key}= $value;
 
+			};
+
+			$page->{content} = {%content};
 		};
-
-		$page->{content} = {%content};
+	
 		$page->{status} = '200';
 
 	};
