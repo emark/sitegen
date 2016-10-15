@@ -6,7 +6,7 @@ sub sitemap {
 	my $config = $self->config;
 	my $urls = $self->app->dbh->select(
 		column => ['url'],
-		table => $config->{site}
+		table => $config->{prefix}.$config->{site}
 	)->fetch_all;
 
 	my @lastmod = localtime;
@@ -31,7 +31,7 @@ sub page {
 	my $url = $self->param('url');
 
  	my $page = $self->app->dbh->select(
- 			table => $config->{site},
+ 			table =>$config->{prefix}.$config->{site},
  			columns => ['meta','content'],
  			where => {url => $url},
  	

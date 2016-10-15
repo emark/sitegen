@@ -16,7 +16,6 @@ sub auth {
 			$self->redirect_to('/admin/dashboard/');
 		}
 	}
-
 }
 
 sub logout {
@@ -34,7 +33,7 @@ sub dashboard {
 	my $config = $self->config;
 
 	my $urls = $self->app->dbh->select(
-		table => $config->{site},
+		table =>  $config->{prefix}.$config->{site},
 		column => 'url',
 	)->values;
 
@@ -52,7 +51,7 @@ sub add(){
 	if($url){
 	    $self->app->dbh->insert(
 			{url => $url},
-	        table => $config->{site},
+	        table => $config->{prefix}.$config->{site},
 
     	);
 	};
@@ -71,7 +70,7 @@ sub delete(){
 
 	if($confirm){
 		$self->app->dbh->delete(
-			table => $config->{site},
+			table => $config->{prefix}.$config->{site},
 			where => {url => $url},
 
 		);
@@ -97,7 +96,7 @@ sub upload {
 		$self->app->dbh->update(
 			{%page},
 			where => {url => $page{url}},
-			table => $config->{site},
+			table => $config->{prefix}.$config->{site},
 
 		);
 	};
@@ -115,7 +114,7 @@ sub export {
 
 	if($url eq '---'){
 	 	$pages = $self->app->dbh->select(
- 			table => $config->{site}
+ 			table => $config->{prefix}.$config->{site}
 		
 	 	);
 	}else{
