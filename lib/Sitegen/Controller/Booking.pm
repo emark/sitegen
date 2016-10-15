@@ -31,7 +31,7 @@ sub complete {
 				token => $token
 			},
 			ctime => 'ctime',
-			table => $config->{site}.'booking'		
+			table => $config->{prefix}.'booking'		
 
 		);
 		$page{token} = $token;
@@ -39,7 +39,7 @@ sub complete {
 
 	}else{
 		my $content = $self->app->dbh->select(
-						table => 'booking',
+						table => $config->{prefix}.'booking',
 						columns => ['content'],
 						where => {token => $params->{token}},
 						)->fetch_hash;
@@ -57,7 +57,7 @@ sub complete {
 		$content = encode_json $bytes;
 		$self->app->dbh->update(
 			{content => $content},
-			table => $config->{site}.'booking',
+			table => $config->{prefix}.'booking',
 			where => {token => $params->{token}},
 
 		);
