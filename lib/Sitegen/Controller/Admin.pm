@@ -12,7 +12,7 @@ sub auth {
 	my $param = $self->req->params->to_hash();
 	if($param->{login} && $param->{pass}){ 
 		if($param->{login} eq $config->{login} && $param->{pass} eq $config->{pass}){
-			$self->session->{auth} = 1;
+			$self->session->{auth} = 'true';
 			$self->redirect_to('/admin/dashboard/');
 		}
 	}
@@ -130,7 +130,7 @@ sub export {
 	 	);
 	}else{
 	 	$pages = $self->app->dbh->select(
- 		table => $config->{site},
+ 		table => $config->{prefix}.$config->{site},
 		where => {url => $url}
 
 	 	);
