@@ -55,8 +55,10 @@ sub add(){
 
     	);
 	};
+	
+	mkdir $config->{downloads}.$url;
 
-    $self->render(type => 'text', text => "Page $url success create. Don't forget to update sitemap");
+    $self->render(type => 'text', text => "Page $url success create.");
 
 }
 
@@ -67,20 +69,29 @@ sub delete(){
 	my $url = $self->param('url');	
 	my $confirm = $self->param('confirm');
 	my $config = $self->config;
+	my $text = "Page $url delete success.";
+	my $rmdir = 0;
+	
+	my @files = $config->{downloads}.$url."/*.*";
+	unlink glob $config->{downloads}.$url."/".@files if @files;
+	$rmdir = rmdir $config->{downloads}.$url;
 
-	if($confirm){
+	if($confirm && $rmdir){
 		$self->app->dbh->delete(
 			table => $config->{prefix}.$config->{site},
 			where => {url => $url},
 
 		);
+	}else{
+		$text = "Can't remove page $url. Error: $!";
+
 	};
 	
-	$self->render(type => 'text', text => "Page $url delete success. Don't forget to update sitemap");
+	$self->render( type => 'text', text => $text );
 
 }
 
-sub upload {
+sub import {
 	my $self = shift;
 	$self->login;
 
@@ -128,6 +139,22 @@ sub export {
 	$pages = $pages->fetch_hash_all;
 
 	$self->render(pages => $pages, format => 'txt');
+}
+
+sub upload {
+    my $self = shift;
+    $self->login;
+
+    my $config = $self->config;
+	my $downloads = $config->{downloads};
+    my $source = $self->param('source');
+   	#my $data = $source->slurp;
+    my $url = $self->param('url');
+	$source->move_to($downloads.$url.'/'.$source->{filename});
+	#$source->move_to($downloads.$url.'/'.$source->{filename});
+	
+	
+    $self->render(type => 'text', text => "Upload for $url/$source->{filename}");
 }
 
 1;

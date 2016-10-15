@@ -32,8 +32,9 @@ sub startup {
 	$r->get('/admin/dashboard/')->to('admin#dashboard');
 	$r->post('/admin/export/')->to('admin#export');
 	$r->post('/admin/upload/')->to('admin#upload');
-	$r->post('/admin/p/add')->to('admin#add');
-	$r->post('/admin/p/delete')->to('admin#delete');
+	$r->post('/admin/import/')->to('admin#import');
+	$r->post('/admin/p/add/')->to('admin#add');
+	$r->post('/admin/p/delete/')->to('admin#delete');
 	
 	# Routes to dynamic pages
 	$r->get('/booking')->to('booking#add');
