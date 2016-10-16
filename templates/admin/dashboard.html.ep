@@ -25,8 +25,9 @@
 
 %= form_for '/admin/p/delete/' => (method => 'post') => begin
 	%= select_field url => $urls
-	
-	%= check_box 'confirm' => 1, label => 'confirm deletion'
+
+	%= check_box 'confirm' => 1
+	confirm deletion
 	
 	%= submit_button 'Delete'
 
@@ -69,4 +70,4 @@
 
 % end
 
-<p><center>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/' %></center></p>
+<p><center>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/', target => "_blank"%></center></p>
