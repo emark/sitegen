@@ -80,7 +80,8 @@
 
 	<div class="panel panel-default" id="instagram">
 		<div class="panel-body text-center">
-			<p><img src="/media/images/site/instagram.svg" alt="Instagram logo" title="Instagram logo" width=""></p><p class="lead">Больше фотографий смотрите в нашем instagram-аккаунте</p><p>
+			<p><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></p>
+			<p class="lead">Больше фотографий смотрите в нашем instagram-аккаунте</p><p>
 			<a href="https://www.instagram.com/trimedvedya" target=_blank role="button" class="btn btn-default btn-lg" title="Открыть в новом окне">Смотреть фотографии</a></p>
 		</div>
 	</div>
