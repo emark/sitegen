@@ -40,6 +40,17 @@ sub dashboard {
 	$self->render(urls => $urls);
 }
 
+sub view {
+	my $self = shift;
+	$self->login;
+
+	my $config = $self->config;
+	my $url = $self->param('url');
+
+	$self->redirect_to("/$url.html");
+
+}
+
 sub add(){
     my $self = shift;
 	$self->login;

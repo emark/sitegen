@@ -35,6 +35,7 @@ sub startup {
 	$r->post('/admin/import/')->to('admin#import');
 	$r->post('/admin/p/add/')->to('admin#add');
 	$r->post('/admin/p/delete/')->to('admin#delete');
+	$r->post('/admin/p/view/')->to('admin#view');
 	
 	# Routes to dynamic pages
 	$r->get('/booking')->to('booking#add');
