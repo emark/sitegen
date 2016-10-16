@@ -72,8 +72,8 @@ sub delete(){
 	my $text = "Page $url delete success.";
 	my $rmdir = 0;
 	
-	my @files = $config->{downloads}.$url."/*.*";
-	unlink glob $config->{downloads}.$url."/".@files if @files;
+	my @files = glob ($config->{downloads}.$url."/*.*");
+	unlink @files if @files;
 	$rmdir = rmdir $config->{downloads}.$url;
 
 	if($confirm && $rmdir){
@@ -86,7 +86,7 @@ sub delete(){
 		$text = "Can't remove page $url. Error: $!";
 
 	};
-	
+
 	$self->render( type => 'text', text => $text );
 
 }
@@ -148,11 +148,9 @@ sub upload {
     my $config = $self->config;
 	my $downloads = $config->{downloads};
     my $source = $self->param('source');
-   	#my $data = $source->slurp;
     my $url = $self->param('url');
+
 	$source->move_to($downloads.$url.'/'.$source->{filename});
-	#$source->move_to($downloads.$url.'/'.$source->{filename});
-	
 	
     $self->render(type => 'text', text => "Upload for $url/$source->{filename}");
 }
