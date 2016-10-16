@@ -36,6 +36,9 @@
     
 		<!-- Plugin Lightbox2 css styles -->
 		<link href="/assets/plugins/lightbox2/css/lightbox.css" rel="stylesheet">
+		
+		<!-- Font-awesome styles -->
+		<link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -121,8 +124,13 @@
 							<dd><a href="/downloads/docs/3bear-hotel-rules.pdf" target="_blank">Правила проживания в гостинице</a></dd>
 							<dd><a href="/downloads/docs/3bear-booking-rules.pdf" target="_blank">Правила бронирования услуг</a></dd>
 							<dd><a href="/downloads/docs/3bear-adverts.pdf" target="_blank">Рекламные материалы</a></dd>
-				
+							<dd></dd>
 						</dl>
+						<div class="text-right">
+						<a href="https://www.instagram.com/trimedvedya/" target="_blank" title="Наш инстаграм-аккаунт"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;
+						<a href="https://www.facebook.com/trimedvedya/" target="_blank" title="Официальная страница в facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;
+						<a href="https://www.youtube.com/channel/UC_9sYCnmWTbxH0zymNKKpQg" target="_blank" title="Официальный youtube-канал"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;
+						</div>
 					</div>
 		
 				</div><!-- /row -->
