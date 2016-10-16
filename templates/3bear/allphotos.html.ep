@@ -1,0 +1,54 @@
+% title $page->{title};
+
+<div class="page-header">
+	<h1><%= $page->{title} %></h1>
+</div>
+
+<div id="content">
+
+	<div id="gallery">
+
+% foreach my $product (%{$album}){
+
+	<h2><%= $album->{$product} %></h2>
+
+	<div class="row">
+
+% my	$i = 0;
+% my $cell = 0;
+
+% my @photo = split(/\@/, $photo->{$product});	
+
+%	foreach my $photo (@photo){
+
+%		$i++;
+%		$cell++;
+%		if ($cell == 5){
+
+	</div>
+	<div class="row">
+
+%			$cell = 0;
+%		};
+
+			<div class="col-sm-3">
+				<a href="/downloads/<%= $product.'/g_'.$i %>.jpg" data-lightbox="<%= $page->{url} %>" data-title="<%= $album->{$product} %> - <%= $photo %>"><img src="/downloads/<%= $product.'/g_'.$i %>.jpg" class="img-responsive thumbnail" alt="<%= $album->{$product} %> - <%= $photo %>" title="<%= $album->{$product} %> - <%= $photo %>"></a>
+			</div>
+
+% };
+
+	</div>
+
+% };
+
+	<div class="panel panel-default" id="instagram">
+		<div class="panel-body text-center">
+			<p><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></p>
+			<p class="lead">Больше фотографий смотрите в нашем instagram-аккаунте</p><p>
+			<a href="https://www.instagram.com/trimedvedya" target=_blank role="button" class="btn btn-default btn-lg" title="Открыть в новом окне">Смотреть фотографии</a></p>
+		</div>
+	</div>
+	
+</div><!-- /gallery -->
+
+</div>

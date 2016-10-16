@@ -40,6 +40,7 @@ sub startup {
 	# Routes to dynamic pages
 	$r->get('/booking')->to('booking#add');
 	$r->post('/booking')->to('booking#complete');
+	$r->get('/allphotos')->to('photo#album');
 
 	# Routes to static pages
 	$r->get('/sitemap')->to('generate#sitemap');
