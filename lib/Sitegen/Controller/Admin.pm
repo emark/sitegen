@@ -152,7 +152,7 @@ sub upload {
 
 	$source->move_to($downloads.$url.'/'.$source->{filename});
 	
-    $self->render(type => 'text', text => "Upload for $downloads/$url/$source->{filename}");
+    $self->render(type => 'text', text => "Upload for $downloads$url/$source->{filename}");
 }
 
 1;
