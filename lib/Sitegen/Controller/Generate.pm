@@ -62,7 +62,7 @@ sub page {
 
 	};
 
-	$page = $page ? $page : {url => '404', status => 404, meta => { template => '404', title => 'Страница не найдена' }, content => "Страница отсутствует на сервере." };
+	$page = $page ? $page : {url => '404', status => 404, meta => { template => '404', title => 'Страница не найдена' }, content => "Страница <b>$url</b> отсутствует на сервере." };
 
 	$self->render( 
 		layout => $config->{site},
