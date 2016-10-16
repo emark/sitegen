@@ -2,7 +2,7 @@
 % title 'Управление сайтом';
 <h1>&nbsp;</h1>
 <p>
-<center><img src="/media/images/site/site-logo.png"></center>
+<center><a href="/"><img src="/media/images/site/site-logo.png"></a></center>
 </p>
 
 %= form_for '/admin/' => (method => "post") => begin

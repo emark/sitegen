@@ -21,6 +21,15 @@
 
 % end
 
+<h3>View page</h3>
+
+%= form_for '/admin/p/view/' => (method => 'post', target => '_blank') => begin
+	%= select_field url => $urls
+	
+	%= submit_button 'View'
+
+% end
+
 <h3>Delete page</h3>
 
 %= form_for '/admin/p/delete/' => (method => 'post') => begin
