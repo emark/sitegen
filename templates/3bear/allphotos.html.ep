@@ -31,8 +31,8 @@
 %			$cell = 0;
 %		};
 
-			<div class="col-sm-3 thumbnail">
-				<a href="/downloads/<%= $product.'/g_'.$i %>.jpg" data-lightbox="<%= $page->{url} %>" data-title="<%= $album->{$product} %> - <%= $photo %>"><img src="/downloads/<%= $product.'/g_'.$i %>.jpg" class="img-responsive" alt="<%= $album->{$product} %> - <%= $photo %>" title="<%= $album->{$product} %> - <%= $photo %>"></a>
+			<div class="col-sm-3">
+				<a href="/downloads/<%= $product.'/g_'.$i %>.jpg" class="thumbnail" data-lightbox="<%= $page->{url} %>" data-title="<%= $album->{$product} %> - <%= $photo %>"><img src="/downloads/<%= $product.'/g_'.$i %>.jpg" class="img-responsive" alt="<%= $album->{$product} %> - <%= $photo %>" title="<%= $album->{$product} %> - <%= $photo %>"></a>
 			</div>
 
 % };
