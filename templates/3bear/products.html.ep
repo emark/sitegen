@@ -70,8 +70,8 @@
 %			$cell = 0;
 %		};
 
-			<div class="col-sm-3 thumbnail">
-				<a href="/downloads/<%= $page->{url}.'/g_'.$i %>.jpg" data-lightbox="<%= $page->{url} %>" data-title="<%= $page->{meta}{title} %> - <%= $photo %>"><img src="/downloads/<%= $page->{url}.'/g_'.$i %>.jpg" class="img-responsive" alt="<%= $page->{meta}{title} %> - <%= $photo %>" title="<%= $page->{meta}{title} %> - <%= $photo %>"></a>
+			<div class="col-sm-3">
+				<a href="/downloads/<%= $page->{url}.'/g_'.$i %>.jpg" class="thumbnail" data-lightbox="<%= $page->{url} %>" data-title="<%= $page->{meta}{title} %> - <%= $photo %>"><img src="/downloads/<%= $page->{url}.'/g_'.$i %>.jpg" class="img-responsive" alt="<%= $page->{meta}{title} %> - <%= $photo %>" title="<%= $page->{meta}{title} %> - <%= $photo %>"></a>
 			</div>
 
 % };
