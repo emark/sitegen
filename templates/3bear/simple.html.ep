@@ -6,6 +6,6 @@
 
 <div id="content">
 	
-<p>%= $page->{content}{text}</p>
+<p><%= $page->{content}{text} %></p>
 
 </div>
