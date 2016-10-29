@@ -32,7 +32,7 @@
 %		};
 
 			<div class="col-sm-3">
-				<a href="/downloads/<%= $product %>/<%= $page->{meta}{site} %>-<%= $page->{url} %>-g_<%= $i %>.jpg" class="thumbnail" data-lightbox="<%= $page->{url} %>" data-title="<%= $album->{$product} %> - <%= $photo %>"><img src="/downloads/<%= $product %>/<%= $page->{meta}{site} %>-<%= $page->{url} %>-g_<%= $i %>.jpg" class="img-responsive" alt="<%= $album->{$product} %> - <%= $photo %>" title="<%= $album->{$product} %> - <%= $photo %>"></a>
+				<a href="/downloads/<%= $product %>/<%= $site %>-<%= $page->{url} %>-g_<%= $i %>.jpg" class="thumbnail" data-lightbox="<%= $page->{url} %>" data-title="<%= $album->{$product} %> - <%= $photo %>"><img src="/downloads/<%= $product %>/<%= $site %>-<%= $page->{url} %>-g_<%= $i %>.jpg" class="img-responsive" alt="<%= $album->{$product} %> - <%= $photo %>" title="<%= $album->{$product} %> - <%= $photo %>"></a>
 			</div>
 
 % };

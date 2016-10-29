@@ -69,6 +69,7 @@ sub page {
 		template => $config->{site}.'/'.$page->{meta}{template},
 		status => $page->{status},
 		page => $page,
+		site => $config->{site}
 	);
 }
 
