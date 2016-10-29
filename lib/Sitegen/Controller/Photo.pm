@@ -42,7 +42,8 @@ sub album {
 		template => $config->{site}.'/allphotos',
 		album => \%album,
 		photo => \%photo,
-		page => $page
+		page => $page,
+		site => $config->{site}
 
 	);
 }
