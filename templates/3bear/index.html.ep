@@ -1,33 +1,111 @@
 % title $page->{meta}{title};
 
-<!-- Main component for a primary marketing message or call to action -->
+<div id="content">
+
+<div class="page-header">
+	<h1><img src="/media/images/site/3bear-logo.svg" class="img-responsive center-block" title="Гостиница Три медведя" alt="Гостиница Три медведя"></h1>
+	<p class="text-center lead">г. Красноярск, ул. Ленинградская, 11<br/>+7&nbsp;391&nbsp;243-36-13</p>
+</div>
+
 <div class="row">
-	<div class="col-lg-4">
-	<div class="jumbotron">
-	  <p><a href="/nomera">Гостиничные номера</a></p>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p><a href="">Подробнее</a></p>
-  </div>
-
+	<div class="col-sm-4">
+		<h2 class="lead text-center"><a href="/nomera.html">Гостиничные номера</a></h2>
+		<p class="text-justify"><img src="/downloads/nomera/1.jpg" class="img-responsive center-block" alt="Гостиничные номера" title="Гостиничные номера"><br/>
+    Гостиница расположена в&nbsp;одном из&nbsp;чистых мест города. Свежий воздух и&nbsp;тишина помогут расслабиться и&nbsp;восстановить силы. Мы&nbsp;рады предложить размещение гостей в&nbsp;номерах различных категорий. Все номера оборудованы отдельной душевой и&nbsp;санузлом. В&nbsp;номерах 1 и&nbsp;2 категорий установлены телевизоры и&nbsp;холодильники. Двухкомнатные номера 1 категории с&nbsp;видом на&nbsp;лес и&nbsp;двумя балконами. Бесплатный <nobr>wi-fi</nobr> доступ на&nbsp;всей территории гостиницы.</p>
+        
   </div>
   
-	<div class="col-lg-4">  
-  <div class="jumbotron">
-	  <p><a href="/konference">Конференц-залы</a></p>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-
-  </div>
+	<div class="col-sm-4">
+	  <h2 class="lead text-center"><a href="/konference.html">Конференц-залы</a></h2>
+		<p class="text-justify"><img src="/downloads/konference/1.jpg" class="img-responsive center-block" alt="Конференц-залы" title="Конференц-залы"><br/>Обучение, презентации, семинары&nbsp;&mdash; головная боль каждого организатора. Мы&nbsp;обладаем достаточными знаниями и&nbsp;компетенциями в&nbsp;этой сфере. Вместимость наших <nobr>конференц-залов</nobr> от&nbsp;30 до&nbsp;130 посадочных мест. Залы оснащены необходимым проекционным и&nbsp;звуковым оборудованием. Обязательно поможем с&nbsp;выбором <nobr>кофе-пауз</nobr> для участников мероприятия. Наверное нет ничего проще, чем провести мероприятие у&nbsp;нас.</p>
+        
   </div>
   
-	<div class="col-lg-4">  
-  <div class="jumbotron">
-	  <p><a href="/banket">Банкетный зал</a></p>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-
-  </div>
+	<div class="col-sm-4">
+	<h2 class="lead text-center"><a href="/banket.html">Банкеты и свадьбы</a></h2>
+		<p class="text-justify"><img src="/downloads/banket/1.jpg" class="img-responsive center-block" alt="Банкеты и свадьбы" title="Банкеты и свадьбы"><br/>Приглашаем Вас на&nbsp;настоящую сказку в&nbsp;лесу! Уютный банкетный зал располагает к&nbsp;душевному застолью. Мы&nbsp;накрываем <nobr>по-домашнему</nobr> вкусный праздничный стол. Блюда в&nbsp;меню простые, но&nbsp;<nobr>по-домашнему</nobr> вкусные. Наши повара готовят настоящий наваристый домашний борщ. Особо высоко гости оценивают вкус и&nbsp;аромат выпечки с&nbsp;горячим кофе или душистым чаем. На&nbsp;завтрак вы&nbsp;можете попробовать свежеиспечённые блинчики с&nbsp;мёдом или например порцию пельменей ручной лепки.</p>
+        
   </div>
 </div>
 
-<p>
-%== $page->{content}{text}
-</p>
+<!--div id="video" class="embed-responsive embed-responsive-16by9">
+	<video width="320" height="240" controls class="embed-responsive-item">
+		<source src="/media/movies/" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+</div-->
+
+<h2 class="text-center">Почему Вам необходимо остановиться&nbsp;у&nbsp;нас?</h2>
+<div class="row">
+	<div class="col-sm-6">
+		<p class="text-center"><i class="fa fa-leaf fa-2x privilege" aria-hidden="true"></i></p><p>Гостиница расположена в экологически чистой части города с прилегающей берёзовой рощей</p>
+	</div>
+	<div class="col-sm-6">
+		<p class="text-center"><i class="fa fa-coffee fa-2x privilege" aria-hidden="true"></i></p><p>Мы учитываем пожелания наших гостей и при необходимости готовим ранние завтраки</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<p class="text-center">
+		<i class="fa fa-car fa-2x privilege" aria-hidden="true"></i></p><p>На территории гостиницы расположена большая парковка на 40 машиномест</p>
+	</div>
+	<div class="col-sm-6">
+		<p class="text-center">
+		<i class="fa fa-cutlery fa-2x privilege" aria-hidden="true"></i></p><p>В нашей гостинице работает собственное производство питания, мы обслуживаем различные виды мероприятий от фуршетов до свадеб</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<p class="text-center">
+		<i class="fa fa-internet-explorer fa-2x privilege" aria-hidden="true"></i></p><p>Бесплатный высокоскоростной доступ в интернет позволит без проблем смотреть видео или организовать веб-конференцию</p>
+	</div>
+	<div class="col-sm-6">
+		<p class="text-center">
+		<i class="fa fa-credit-card fa-2x privilege" aria-hidden="true"></i></p><p>Для удобства расчётов, наши гости могут воспользоваться наличным или безналичным способом</p>
+	</div>
+</div>
+
+<div id="gallery">
+	<h2 class="text-center">Отзывы наших клиентов</h2>
+
+	<div class="row">
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_1.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_1.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_2.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_2.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_3.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_3.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_4.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_4.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+	</div>
+	<div class="row">
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_5.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_5.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_6.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_6.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_7.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_7.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+
+			<div class="col-sm-3">
+				<a href="/downloads/index/g_8.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/index/g_8.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
+			</div>
+	
+	</div>
+</div>
+
+</div><!-- #content -->
