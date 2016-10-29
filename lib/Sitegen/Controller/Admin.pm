@@ -160,10 +160,10 @@ sub upload {
 	my $downloads = $config->{downloads};
     my $source = $self->param('source');
     my $url = $self->param('url');
-
-	$source->move_to($downloads.$url.'/'.$source->{filename});
+	my $filename = $config->{site}.'-'.$url.'-'.$source->{filename};
+	$source->move_to($downloads.$url.'/'.$filename);
 	
-    $self->render(type => 'text', text => "Upload for $downloads$url/$source->{filename}");
+    $self->render(type => 'text', text => "Upload for $downloads$url/$filename");
 }
 
 1;
