@@ -31,7 +31,7 @@
 
 	  <div class="col-md-4">
 	    <div class="thumbnail">
-	      <a href="/downloads/<%= $page->{url} %>/<%= $i %>.jpg" data-lightbox="<%= $page->{url}.$i %>" data-title="<%= $page->{meta}{title} %> - <%= $ptitle %>"><img src="/downloads/<%= $page->{url} %>/<%= $i %>.jpg" class="img-responsive" title="<%= $page->{meta}{title} %> - <%= $ptitle %>" alt="<%= $page->{meta}{title} %> - <%= $ptitle %>"></a>
+	      <a href="/downloads/<%= $page->{url} %>/<%= $page->{meta}{site} %>-<%= $page->{url} %>-<%= $i %>.jpg" data-lightbox="<%= $page->{url}.$i %>" data-title="<%= $page->{meta}{title} %> - <%= $ptitle %>"><img src="/downloads/<%= $page->{url} %>/<%= $page->{meta}{site} %>-<%= $page->{url} %>-<%= $i %>.jpg" class="img-responsive" title="<%= $page->{meta}{title} %> - <%= $ptitle %>" alt="<%= $page->{meta}{title} %> - <%= $ptitle %>"></a>
 	      <div class="caption">
 	        <h3><%== $ptitle %></h3>
 	        <%== $pcontent %>
@@ -71,7 +71,7 @@
 %		};
 
 			<div class="col-sm-3">
-				<a href="/downloads/<%= $page->{url}.'/g_'.$i %>.jpg" class="thumbnail" data-lightbox="<%= $page->{url} %>" data-title="<%= $page->{meta}{title} %> - <%= $photo %>"><img src="/downloads/<%= $page->{url}.'/g_'.$i %>.jpg" class="img-responsive" alt="<%= $page->{meta}{title} %> - <%= $photo %>" title="<%= $page->{meta}{title} %> - <%= $photo %>"></a>
+				<a href="/downloads/<%= $page->{url} %>/<%= $page->{meta}{site} %>-<%= $page->{url} %>-g_<%= $i %>.jpg" class="thumbnail" data-lightbox="<%= $page->{url} %>" data-title="<%= $page->{meta}{title} %> - <%= $photo %>"><img src="/downloads/<%= $page->{url} %>/<%= $page->{meta}{site} %>-<%= $page->{url} %>-g_<%= $i %>.jpg" class="img-responsive" alt="<%= $page->{meta}{title} %> - <%= $photo %>" title="<%= $page->{meta}{title} %> - <%= $photo %>"></a>
 			</div>
 
 % };
