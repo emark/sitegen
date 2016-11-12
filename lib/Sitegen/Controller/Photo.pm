@@ -21,7 +21,7 @@ sub album {
 
 		};
 
-		if($meta{template} eq 'products'){
+		if($meta{template} && $meta{template} eq 'products'){
 			my %content = ();
 			foreach my $content (split('%',$page->{content})){
 				my ($key,$value) = split(':',$content);
