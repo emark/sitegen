@@ -2,3 +2,5 @@
 *.conf
 public/*
 *.swp
+log
+logrotate/*
