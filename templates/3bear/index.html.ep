@@ -30,7 +30,7 @@
 
 <!--div id="video" class="embed-responsive embed-responsive-16by9">
 	<video width="320" height="240" controls class="embed-responsive-item">
-		<source src="/media/movies/" type="video/mp4">
+		<source src="/media/movies/intro.mp4?v=1" type="video/mp4">
 		Your browser does not support the video tag.
 	</video>
 </div-->
@@ -65,7 +65,7 @@
 	</div>
 </div>
 
-<div id="gallery">
+<div id="reviews">
 	<h2 class="text-center">Отзывы наших клиентов</h2>
 
 	<div class="row">
@@ -105,6 +105,9 @@
 				<a href="/downloads/<%= $page->{url} %>/<%= $site %>-<%= $page->{url} %>-g_8.jpg" class="thumbnail" data-lightbox="reviews" data-title="Отзывы наших клиентов"><img src="/downloads/<%= $page->{url} %>/<%= $site %>-<%= $page->{url} %>-g_8.jpg" class="img-responsive" alt="Отзывы наших клиентов" title="Отзывы наших клиентов"></a>
 			</div>
 	
+	</div>
+	<div class="text-center">
+		<a href="/r/opros/" class="btn btn-lg btn-primary"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;<i class="fa fa-star-half-o" aria-hidden="true"></i>&nbsp;<i class="fa fa-star-o" aria-hidden="true"></i>&nbsp;Оставить отзыв</a>
 	</div>
 </div>
 
