@@ -12,7 +12,7 @@
 
 %		my ($fname, $flink) = split(/=/,$file);	
 			<h2><%= $fname %></h2>
-			<a href="/downloads/<%= $page->{url} %>/<%= $site %>-<%= $page->{url} %>-<%= $flink %>" class="btn btn-default" target="_blank">Скачать	файл</a>
+			<a href="/<%= $site %>/downloads/<%= $page->{url} %>/<%= $site %>-<%= $page->{url} %>-<%= $flink %>" class="btn btn-default" target="_blank">Скачать	файл</a>
 
 % };
 
