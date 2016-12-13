@@ -2,7 +2,7 @@
 % title 'Управление сайтом';
 <h1>&nbsp;</h1>
 <p>
-<center><a href="/"><img src="/media/images/site/brand.png"></a></center>
+<center><a href="/"><img src="/<%= $config->{site} %>/media/images/site/brand.png"></a></center>
 </p>
 
 %= form_for '/admin/' => (method => "post") => begin
