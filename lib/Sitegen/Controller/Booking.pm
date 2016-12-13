@@ -71,6 +71,7 @@ sub complete {
 		template => $config->{site}.'/booking/complete', 
 		layout => $config->{site},
 		page => \%page,
+		site => $config->{site}
 
 	);
 };
@@ -82,7 +83,9 @@ sub add {
 	$self->render(
 		template => $config->{site}.'/booking/booking', 
 		layout => $config->{site},
-		page => \%page
+		page => \%page,
+		site => $config->{site}
+
 	);
 
 };
