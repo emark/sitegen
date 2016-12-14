@@ -78,23 +78,28 @@ sub delete(){
 	$self->login;
 
 	my $url = $self->param('url');	
-	my $confirm = $self->param('confirm');
+	my $confirm = $self->param('confirm') || 0;
 	my $config = $self->config;
 	my $text = "Page $url delete success.";
 	my $rmdir = 0;
-	
 	my @files = glob ($config->{downloads}.$url."/*.*");
-	unlink @files if @files;
-	$rmdir = rmdir $config->{downloads}.$url;
 
-	if($confirm && $rmdir){
-		$self->app->dbh->delete(
-			table => $config->{prefix}.$config->{site},
-			where => {url => $url},
+	if($confirm){
+		unlink @files if @files;
+		$rmdir = rmdir $config->{downloads}.$url;
 
-		);
+		if($rmdir){
+			$self->app->dbh->delete(
+				table => $config->{prefix}.$config->{site},
+				where => {url => $url},
+			);
+		}else{
+			$text = "Can't remove page $url. Error: $!";
+	
+		};
+
 	}else{
-		$text = "Can't remove page $url. Error: $!";
+		$text = 'Please, confirm deteing';
 
 	};
 
