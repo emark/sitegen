@@ -21,22 +21,22 @@
     <title><%= title %> &mdash; Гостиница &laquo;Три медведя&raquo;</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/<%= $site %>/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/<%= $site %>/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/<%= $site %>/assets/css/navbar.css" rel="stylesheet">
+    <link href="/assets/css/navbar.css" rel="stylesheet">
 
     <!-- Custom template style -->
-    <link href="/<%= $site %>/assets/css/app.css" rel="stylesheet">
+    <link href="/assets/css/app.css" rel="stylesheet">
     
 		<!-- Plugin Lightbox2 css styles -->
-		<link href="/<%= $site %>/assets/plugins/lightbox2/css/lightbox.css" rel="stylesheet">
+		<link href="/assets/plugins/lightbox2/css/lightbox.css" rel="stylesheet">
 		
 		<!-- Font-awesome styles -->
-		<link rel="stylesheet" href="/<%= $site %>/assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -60,7 +60,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="/<%= $site %>/media/images/site/brand.svg"></a>
+            <a class="navbar-brand" href="/"><img src="/media/images/site/brand.svg"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -118,10 +118,10 @@
 					<div class="col-sm-3">
 						<dl>
 							<dt><h4>Документы</h4></dt>
-							<dd><a href="/<%= $site %>/downloads/docs/3bear-docs-rekvizit.pdf" target="_blank">Юридические реквизиты</a></dd>
-							<dd><a href="/<%= $site %>/downloads/docs/3bear-docs-hotel-rules.pdf" target="_blank">Правила проживания в гостинице</a></dd>
-							<dd><a href="/<%= $site %>/downloads/docs/3bear-docs-booking-rules.pdf" target="_blank">Правила бронирования услуг</a></dd>
-							<dd><a href="/<%= $site %>/downloads/docs/3bear-docs-brandpack.zip" target="_blank">Рекламные материалы</a></dd>
+							<dd><a href="/downloads/docs/3bear-docs-rekvizit.pdf" target="_blank">Юридические реквизиты</a></dd>
+							<dd><a href="/downloads/docs/3bear-docs-hotel-rules.pdf" target="_blank">Правила проживания в гостинице</a></dd>
+							<dd><a href="/downloads/docs/3bear-docs-booking-rules.pdf" target="_blank">Правила бронирования услуг</a></dd>
+							<dd><a href="/downloads/docs/3bear-docs-brandpack.zip" target="_blank">Рекламные материалы</a></dd>
 							<dd></dd>
 						</dl>
 						<div class="text-right">
@@ -142,12 +142,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/<%= $site %>/dist/js/bootstrap.min.js"></script>
+    <script src="/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/<%= $site %>/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
         
     <!-- Plugin Lightbox2 -->
-    <script src="/<%= $site %>/assets/plugins/lightbox2/js/lightbox.js"></script>
+    <script src="/assets/plugins/lightbox2/js/lightbox.js"></script>
     <script type="text/javascript">
     	lightbox.option({
     		'albumLabel':	"Фотография %1 из %2"
@@ -155,7 +155,7 @@
     </script>
     
     <!-- Plugin SVGEasy -->
-    <script src="/<%= $site %>/assets/plugins/svgeezy/svgeezy.min.js"></script>
+    <script src="/assets/plugins/svgeezy/svgeezy.min.js"></script>
     <script>
             svgeezy.init('false', 'png');
     </script>
