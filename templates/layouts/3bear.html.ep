@@ -64,7 +64,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
+              <li class="<%= $url{nomera} %>"><a href="/nomera.html">Номерной фонд</a></li>
             	<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
             	<li class="<%= $url{banket} %>"><a href="/besedki.html">Аренда беседок</a></li>
             </ul>
@@ -95,8 +95,7 @@
 				<div class="col-sm-3">
 						<dl>
 							<dt><h4>Услуги</h4></dt>
-							<!--dd><a href="/booking/">Бронирование</a></dd-->
-							<dd><a href="/nomera.html">Гостиничные номера</a></dd>
+							<dd><a href="/nomera.html">Номерной фонд</a></dd>
 							<dd><a href="/konference.html">Конференц-залы</a></dd>
 							<dd><a href="/besedki.html">Аренда беседок</a></dd>
 				
@@ -119,8 +118,7 @@
 						<dl>
 							<dt><h4>Документы</h4></dt>
 							<dd><a href="/downloads/docs/3bear-docs-rekvizit.pdf" target="_blank">Юридические реквизиты</a></dd>
-							<dd><a href="/downloads/docs/3bear-docs-hotel-rules.pdf" target="_blank">Правила проживания в гостинице</a></dd>
-							<dd><a href="/downloads/docs/3bear-docs-booking-rules.pdf" target="_blank">Правила бронирования услуг</a></dd>
+							<dd><a href="/downloads/docs/3bear-docs-hotel-rules.pdf" target="_blank">Правила проживания</a></dd>
 							<dd><a href="/downloads/docs/3bear-docs-brandpack.zip" target="_blank">Рекламные материалы</a></dd>
 							<dd></dd>
 						</dl>
