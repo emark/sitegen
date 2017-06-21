@@ -38,8 +38,8 @@ sub startup {
 	$r->post('/admin/p/view/')->to('admin#view');
 	
 	# Routes to dynamic pages
-	$r->get('/booking')->to('booking#add');
-	$r->post('/booking')->to('booking#complete');
+	#$r->get('/booking')->to('booking#add');
+	#$r->post('/booking')->to('booking#complete');
 	$r->get('/allphotos')->to('photo#album');
 
 	# Routes to static pages

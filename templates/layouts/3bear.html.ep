@@ -66,7 +66,7 @@
             <ul class="nav navbar-nav">
               <li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
             	<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
-            	<li class="<%= $url{banket} %>"><a href="/banket.html">Банкеты и свадьбы</a></li>
+            	<li class="<%= $url{banket} %>"><a href="/besedki.html">Аренда беседок</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="<%= $url{prices} %>"><a href="/prices.html">Цены <span class="sr-only">(current)</span></a></li>
@@ -95,10 +95,10 @@
 				<div class="col-sm-3">
 						<dl>
 							<dt><h4>Услуги</h4></dt>
-							<dd><a href="/booking/">Бронирование</a></dd>
+							<!--dd><a href="/booking/">Бронирование</a></dd-->
 							<dd><a href="/nomera.html">Гостиничные номера</a></dd>
 							<dd><a href="/konference.html">Конференц-залы</a></dd>
-							<dd><a href="/banket.html">Банкеты и свадьбы</a></dd>
+							<dd><a href="/besedki.html">Аренда беседок</a></dd>
 				
 						</dl>
 					</div>

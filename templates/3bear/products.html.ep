@@ -35,9 +35,6 @@
 	      <div class="caption">
 	        <h3><%== $ptitle %></h3>
 	        <%== $pcontent %>
-	        <p>
-	        <a href="#booking" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Забронировать</a>
-	        <a href="#gallery" class="btn btn-default" role="button">Фотографии</a></p>
 	      </div>
 	    </div>
 	  </div>
@@ -88,7 +85,7 @@
 	
 </div><!-- /gallery -->
 
-<div id="booking" class="jumbotron">
+<!--div id="booking" class="jumbotron">
 	<h2>Бронирование</h2>
 
 	<form action="/booking/" method="post">	 
@@ -141,4 +138,4 @@
 	 	<button type="submit" class="btn btn-primary btn-lg">Отправить</button>
 	 	
 	</form>
-</div>
+</div-->
