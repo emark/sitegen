@@ -8,24 +8,19 @@
 </div>
 
 <div class="row">
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 		<h2 class="lead text-center"><a href="/nomera.html">Номерной фонд</a></h2>
 		<p class="text-justify"><img src="/downloads/nomera/<%= $site %>-nomera-1.jpg" class="img-responsive center-block" alt="Гостиничные номера" title="Гостиничные номера"><br/>
     Мы расположены в&nbsp;одном из&nbsp;чистых мест города. Свежий воздух и&nbsp;тишина помогут расслабиться и&nbsp;восстановить силы. Мы&nbsp;рады предложить размещение гостей в&nbsp;номерах различных категорий. Все номера оборудованы отдельной душевой и&nbsp;санузлом. В&nbsp;номерах 1 и&nbsp;2 категорий установлены телевизоры и&nbsp;холодильники. Двухкомнатные номера 1 категории с&nbsp;видом на&nbsp;лес и&nbsp;двумя балконами. Бесплатный <nobr>wi-fi</nobr> доступ на&nbsp;всей территории.</p>
         
   </div>
   
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 	  <h2 class="lead text-center"><a href="/konference.html">Конференц-залы</a></h2>
 		<p class="text-justify"><img src="/downloads/konference/<%= $site %>-konference-1.jpg" class="img-responsive center-block" alt="Конференц-залы" title="Конференц-залы"><br/>Обучение, презентации, семинары&nbsp;&mdash; головная боль каждого организатора. Мы&nbsp;обладаем достаточными знаниями и&nbsp;компетенциями в&nbsp;этой сфере. Вместимость наших <nobr>конференц-залов</nobr> от&nbsp;30 до&nbsp;130 посадочных мест. Залы оснащены необходимым проекционным и&nbsp;звуковым оборудованием. Обязательно поможем с&nbsp;выбором <nobr>кофе-пауз</nobr> для участников мероприятия. Наверное нет ничего проще, чем провести мероприятие у&nbsp;нас.</p>
         
   </div>
   
-	<div class="col-sm-4">
-	<h2 class="lead text-center"><a href="/besedki.html">Аренда беседок</a></h2>
-		<p class="text-justify"><img src="/downloads/besedki/<%= $site %>-besedki-1.jpg" class="img-responsive center-block" alt="Банкеты и свадьбы" title="Банкеты и свадьбы"><br/>Приглашаем Вас на&nbsp;настоящую сказку в&nbsp;лесу! Уютный банкетный зал располагает к&nbsp;душевному застолью. Мы&nbsp;накрываем <nobr>по-домашнему</nobr> вкусный праздничный стол. Блюда в&nbsp;меню простые, но&nbsp;<nobr>по-домашнему</nobr> вкусные. Наши повара готовят настоящий наваристый домашний борщ. Особо высоко гости оценивают вкус и&nbsp;аромат выпечки с&nbsp;горячим кофе или душистым чаем. На&nbsp;завтрак вы&nbsp;можете попробовать свежеиспечённые блинчики с&nbsp;мёдом или например порцию пельменей ручной лепки.</p>
-        
-  </div>
 </div>
 
 <div id="video" class="embed-responsive embed-responsive-16by9 hidden-xs">
