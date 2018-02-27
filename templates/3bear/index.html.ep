@@ -4,7 +4,7 @@
 
 <div class="page-header">
 	<h1 class="logotype"><img src="/media/images/site/<%= $site %>-logo.svg" class="img-responsive center-block" title="Гостиница Три медведя" alt="Гостиница Три медведя"></h1>
-	<p class="text-center lead">г. Красноярск, ул. Ленинградская, 11<br/>+7&nbsp;391&nbsp;243-36-13</p>
+	<p class="text-center lead">г. Красноярск, ул. Ленинградская, 11<br/>+7&nbsp;391&nbsp;243-36-13<br/>+7&nbsp;391&nbsp;290-09-91</p>
 </div>
 
 <div class="row">
