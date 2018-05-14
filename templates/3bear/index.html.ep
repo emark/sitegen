@@ -34,7 +34,8 @@
 		<p class="text-center"><i class="fa fa-leaf fa-2x privilege" aria-hidden="true"></i></p><p>Мы расположены в экологически чистой части города с прилегающей берёзовой рощей</p>
 	</div>
 	<div class="col-sm-6">
-		<p class="text-center"><i class="fa fa-coffee fa-2x privilege" aria-hidden="true"></i></p><p>Мы учитываем пожелания наших гостей и при необходимости готовим ранние завтраки</p>
+		<p class="text-center">
+		<i class="fa fa-wifi fa-2x privilege" aria-hidden="true"></i></p><p>Бесплатный высокоскоростной доступ в интернет позволит без проблем смотреть видео или организовать веб-конференцию</p>
 	</div>
 </div>
 <div class="row">
@@ -44,20 +45,9 @@
 	</div>
 	<div class="col-sm-6">
 		<p class="text-center">
-		<i class="fa fa-cutlery fa-2x privilege" aria-hidden="true"></i></p><p>У нас вы можете арендовать беседку для приятного отдыха до 30 человек</p>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-6">
-		<p class="text-center">
-		<i class="fa fa-wifi fa-2x privilege" aria-hidden="true"></i></p><p>Бесплатный высокоскоростной доступ в интернет позволит без проблем смотреть видео или организовать веб-конференцию</p>
-	</div>
-	<div class="col-sm-6">
-		<p class="text-center">
 		<i class="fa fa-credit-card fa-2x privilege" aria-hidden="true"></i></p><p>Для удобства расчётов, наши гости могут воспользоваться наличным или безналичным способом</p>
 	</div>
 </div>
-
 <div id="reviews">
 	<h2 class="text-center">Отзывы наших клиентов</h2>
 
