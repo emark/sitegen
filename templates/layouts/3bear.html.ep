@@ -69,7 +69,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="<%= $url{prices} %>"><a href="/prices.html">Цены <span class="sr-only">(current)</span></a></li>
-           		<li class="<%= $url{specoffers} %>"><a href="/specoffers.html">Спецпредложения</a></li>
+           		<li class="<%= $url{specoffers} %>"><a href="/booking.html">Бронирование</a></li>
            		<li class="<%= $url{kontakt} %>"><a href="/kontakt.html">Контакты</a></li>
             </ul>
           </div><!--/.nav-collapse -->
