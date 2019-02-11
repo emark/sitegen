@@ -4,7 +4,7 @@
 % 	konference => '', 
 % 	kontakt => '',
 % 	prices => '',
-% 	specoffers => '',
+% 	booking => '',
 % );
 % $url{$page->{url}} = 'active';
 <!DOCTYPE html>
