@@ -1,6 +1,9 @@
 % layout 'default';
-% title 'Dashboard';
-<h1>Administrative area</h1>
+% title 'Site administration';
+
+
+<div class="page-header">
+ <h1>Site administration</h1>
 
 %= form_for '/admin/logout/' => begin
 %= submit_button 'Logout'
@@ -8,11 +11,13 @@
 
 %= end
 
+</div>
 
-
-<h2>Pages</h2>
-
-<h3>Add page</h3>
+<h2><i class="fa fa-file-text" aria-hidden="true"></i> Pages</h2>
+      <p>Managing sites's pages.</p>
+<div class="row">
+ <div class="col-md-4">
+  <h3>Add page</h3>
 
 %= form_for '/admin/p/add/' => (method => 'post') => begin
 	%= text_field 'url'	
@@ -21,7 +26,9 @@
 
 % end
 
-<h3>View page</h3>
+ </div>
+ <div class="col-md-4">
+	<h3>View page</h3>
 
 %= form_for '/admin/p/view/' => (method => 'post', target => '_blank') => begin
 	%= select_field url => $urls
@@ -29,8 +36,9 @@
 	%= submit_button 'View'
 
 % end
-
-<h3>Delete page</h3>
+ </div>
+ <div class="col-md-4">
+	<h3>Delete page</h3>
 
 %= form_for '/admin/p/delete/' => (method => 'post') => begin
 	%= select_field url => $urls
@@ -41,39 +49,51 @@
 	%= submit_button 'Delete'
 
 % end
-
+ </div>
+</div>
 <hr>
+<h2><i class="fa fa-cloud-upload" aria-hidden="true"></i> Uploading</h2>
+      <p>Importing and exporting sources for pages</p>
+<div class="row">
+ <div class="col-md-4">
+  <h3>Import source</h3>
 
-<h2>Import source</h2>
 %= form_for '/admin/import/' => (enctype => 'multipart/form-data', method => 'post') => begin
 
 	%= file_field 'source'
-	
+<br/>	
 	%= submit_button
 
 % end
 
-<h2>Export source</h2>
+ </div>
+ <div class="col-md-4">
+  <h3>Export source</h3>
 
 %= form_for '/admin/export/' => (method => 'post', target => '_blank') => begin
 
 	%= select_field url => $urls
-	
+<br/><br/>	
 	%= submit_button 'Export'
 
 % end
 
-<hr>
+ </div>
+ <div class="col-md-4">
+  <h3>Upload files</h3>
 
-<h2>Upload files</h2>
 %= form_for '/admin/upload' => (enctype => 'multipart/form-data', method => 'post') => begin
 
 	%= file_field 'source'
-
+<br/>
 	%= select_field url => $urls
 
 	%= submit_button
 
 % end
+
+ </div>
+</div>
+<hr>
 
 <p><center>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/', target => "_blank"%></center></p>
