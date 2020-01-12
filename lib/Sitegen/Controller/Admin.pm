@@ -151,7 +151,8 @@ sub export {
 	if($editor){
 		$self->render(
 			page => $page, 
-			template => 'admin/editor', 
+			saved => 0,
+			template => 'admin/editor' 
 		);
 	}else{
 		$self->render(
