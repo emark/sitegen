@@ -94,7 +94,7 @@ sub delete(){
 				where => {url => $url},
 			);
 		}else{
-			$text = "Can't remove page $url. Error: $!";
+			$text = "Can't remove page $url. Error: $!"."$config->{downloads}";
 	
 		};
 
@@ -137,24 +137,29 @@ sub export {
 
 	my $url = $self->param('url');
 	my $config = $self->config;
-	my $pages = '';
+	my $editor = $self->param('editor');
+	my $page = '';
 
-	if($url eq '---'){
-	 	$pages = $self->app->dbh->select(
- 			table => $config->{prefix}.$config->{site}
-		
-	 	);
-	}else{
-	 	$pages = $self->app->dbh->select(
+ 	$page = $self->app->dbh->select(
  		table => $config->{prefix}.$config->{site},
 		where => {url => $url}
 
 	 	);
+
+	$page = $page->fetch_hash;
+	
+	if($editor){
+		$self->render(
+			page => $page, 
+			template => 'admin/editor', 
+		);
+	}else{
+		$self->render(
+			page => $page, 
+			format => 'txt'
+		);
+
 	};
-
-	$pages = $pages->fetch_hash_all;
-
-	$self->render(pages => $pages, format => 'txt');
 }
 
 sub upload {
@@ -166,9 +171,41 @@ sub upload {
     my $source = $self->param('source');
     my $url = $self->param('url');
 	my $filename = $config->{site}.'-'.$url.'-'.$source->{filename};
-	$source->move_to($downloads.$url.'/'.$filename);
+	my $text = "Upload for $downloads$url/$filename"; 
 	
-    $self->render(type => 'text', text => "Upload for $downloads$url/$filename");
+	if ($source){
+		$source->move_to($downloads.$url.'/'.$filename);
+		$text = "Empty filename";
+	};
+
+    $self->render(type => 'text', text => $text);
+}
+
+sub edit {
+	my $self = shift;
+	$self->login;
+
+	my $url = $self->param('url');
+	my $meta = $self->param('meta');
+	my $content = $self->param('content');
+	my $config = $self->config;
+	my $page = {
+		url => $url,
+		meta => $meta,
+		content => $content
+	};
+	my $result = $self->app->dbh->update(
+		$page,
+		table => $config->{prefix}.$config->{site},
+		where => {url => $url}
+	);
+
+
+	$self->render(
+		page => $page,
+		saved => 1,
+		template => 'admin/editor'
+	);
 }
 
 1;

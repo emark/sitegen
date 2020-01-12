@@ -16,9 +16,6 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="grid.css" rel="stylesheet">
-
     <!-- Font-awesome styles -->
     <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
 	
@@ -30,7 +27,11 @@
   <head><title><%= title %></title></head>
   <body>
 
-    <div class="container"><%= content %></div> <!-- /container -->
+    <div class="container">
+	<%= content %>
+    </div> <!-- /container -->
+
+<p><center><br/>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/', target => "_blank"%></center></p>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -40,7 +41,6 @@
     <script src="/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
-        
-
+ 
 </body>
 </html>

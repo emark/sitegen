@@ -85,7 +85,7 @@
 	
 </div><!-- /gallery -->
 
-<!--div id="booking" class="jumbotron">
+<div id="booking" class="jumbotron">
 	<h2>Бронирование</h2>
 
 	<form action="/booking/" method="post">	 
@@ -138,4 +138,4 @@
 	 	<button type="submit" class="btn btn-primary btn-lg">Отправить</button>
 	 	
 	</form>
-</div-->
+</div>

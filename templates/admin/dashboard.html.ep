@@ -1,7 +1,6 @@
 % layout 'default';
 % title 'Site administration';
 
-
 <div class="page-header">
  <h1>Site administration</h1>
 
@@ -20,7 +19,7 @@
   <h3>Add page</h3>
 
 %= form_for '/admin/p/add/' => (method => 'post') => begin
-	%= text_field 'url'	
+	%= text_field url => placeholder => 'Place for url path'
 	
 	%= submit_button 'Add'
 
@@ -73,7 +72,10 @@
 %= form_for '/admin/export/' => (method => 'post', target => '_blank') => begin
 
 	%= select_field url => $urls
-<br/><br/>	
+	%= check_box 'editor' => 1
+	editor
+<br/><br/>
+	
 	%= submit_button 'Export'
 
 % end
@@ -94,6 +96,4 @@
 
  </div>
 </div>
-<hr>
 
-<p><center>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/', target => "_blank"%></center></p>
