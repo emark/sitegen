@@ -219,7 +219,7 @@ sub update {
 		column => ['url'],
 	)->flat;
 	
-	open (CRON, "> cront.txt") || die "Can't open file cron.txt";
+	open (CRON, "> $config->{update}") || die "Can't open file: $config->{update}";
 	foreach my $url (@urls){
 		print CRON $url."\n";
 	};

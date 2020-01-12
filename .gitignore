@@ -4,4 +4,4 @@ public/*
 *.swp
 log
 logrotate/*
-*.txt
+tmp
