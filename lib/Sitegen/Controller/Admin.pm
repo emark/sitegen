@@ -209,4 +209,26 @@ sub edit {
 	);
 }
 
+sub update {
+	my $self = shift;
+	$self->login;
+
+	my $config = $self->config;
+	my @urls = $self->app->dbh->select(
+		table =>  $config->{prefix}.$config->{site},
+		column => ['url'],
+	)->flat;
+	
+	open (CRON, "> cront.txt") || die "Can't open file cron.txt";
+	foreach my $url (@urls){
+		print CRON $url."\n";
+	};
+	close (CRON);
+
+	$self->render(
+		text => "Cron schedule set", 
+		format => "txt"
+	);
+}
+
 1;

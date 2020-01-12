@@ -84,7 +84,7 @@
  <div class="col-md-4">
   <h3>Upload files</h3>
 
-%= form_for '/admin/upload' => (enctype => 'multipart/form-data', method => 'post') => begin
+%= form_for '/admin/upload/' => (enctype => 'multipart/form-data', method => 'post') => begin
 
 	%= file_field 'source'
 <br/>
@@ -96,4 +96,18 @@
 
  </div>
 </div>
+<hr>
+<h2><i class="fa fa-cogs" aria-hidden="true"></i> Utils</h2>
+      <p>Utilities and update scheduling</p>
+<div class="row">
+ <div class="col-md-4">
+  <h3>Update schedule</h3>
+
+%= form_for '/admin/update/' => (method => 'post') => begin
+
+	%= submit_button 'Set update'
+
+% end
+
+ </div>
 
