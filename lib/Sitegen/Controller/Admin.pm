@@ -71,7 +71,7 @@ sub add(){
 
     $self->render(
 		format => 'txt', 
-		text => "Page $url success create."
+		text => "Page $url was successfull create."
 	);
 
 }
@@ -102,7 +102,7 @@ sub delete(){
 		};
 
 	}else{
-		$text = 'Please, confirm deteing';
+		$text = 'Please, confirm page deleting';
 
 	};
 
@@ -239,7 +239,7 @@ sub update {
 	close (CRON);
 
 	$self->render(
-		text => "Cron schedule set", 
+		text => "Set cron schedule.", 
 		format => "txt"
 	);
 }

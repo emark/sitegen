@@ -6,7 +6,7 @@
 
 %= form_for '/admin/logout/' => begin
 %= submit_button 'Logout'
-%= link_to 'Refresh' => ''
+%= link_to 'Refresh' => '/admin/dashboard/'
 
 %= end
 
