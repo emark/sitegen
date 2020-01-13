@@ -69,7 +69,10 @@ sub add(){
 	
 	mkdir $config->{downloads}.$url;
 
-    $self->render(type => 'text', text => "Page $url success create.");
+    $self->render(
+		format => 'txt', 
+		text => "Page $url success create."
+	);
 
 }
 
@@ -103,7 +106,10 @@ sub delete(){
 
 	};
 
-	$self->render( type => 'text', text => $text );
+	$self->render( 
+		format => 'txt', 
+		text => $text 
+	);
 
 }
 
@@ -128,7 +134,9 @@ sub import {
 		);
 	};
 	
-	$self->render(type => 'text', text => "Update success. Processed ".@pages." pages");
+	$self->render(
+		text => "Import success. Processed ".@pages." pages", 
+		format => "txt");
 }
 
 sub export {
@@ -174,12 +182,17 @@ sub upload {
 	my $filename = $config->{site}.'-'.$url.'-'.$source->{filename};
 	my $text = "Upload for $downloads$url/$filename"; 
 	
-	if ($source){
+	if ($source->{filename}){
 		$source->move_to($downloads.$url.'/'.$filename);
+
+	}else{
 		$text = "Empty filename";
 	};
 
-    $self->render(type => 'text', text => $text);
+    $self->render(
+		format => 'txt', 
+		text => $text
+	);
 }
 
 sub edit {
