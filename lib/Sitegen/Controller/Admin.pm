@@ -145,7 +145,7 @@ sub export {
 
 	my $url = $self->param('url');
 	my $config = $self->config;
-	my $editor = $self->param('editor');
+	my $source = $self->param('source');
 	my $page = '';
 
  	$page = $self->app->dbh->select(
@@ -156,18 +156,18 @@ sub export {
 
 	$page = $page->fetch_hash;
 	
-	if($editor){
-		$self->render(
-			page => $page, 
-			saved => 0,
-			template => 'admin/editor' 
-		);
-	}else{
+	if($source){
 		$self->render(
 			page => $page, 
 			format => 'txt'
 		);
 
+	}else{
+		$self->render(
+			page => $page, 
+			saved => 0,
+			template => 'admin/editor' 
+		);
 	};
 }
 
