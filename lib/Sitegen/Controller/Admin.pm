@@ -93,9 +93,10 @@ sub delete(){
 	my $url = $self->param('url');	
 	my $confirm = $self->param('confirm') || 0;
 	my $config = $self->config;
-	my $text = "Page $url delete success.";
 	my $rmdir = 0;
 	my @files = glob ($config->{downloads}.$url."/*.*");
+	my $static_file = $config->{static}.$url.$config->{static_extension};
+	my $text = "Page $static_file delete success.";
 
 	if($confirm){
 		unlink @files if @files;
@@ -106,8 +107,10 @@ sub delete(){
 				table => $config->{prefix}.$config->{site},
 				where => {url => $url},
 			);
+			#Delete static html file
+			unlink $static_file;
 		}else{
-			$text = "Can't remove page $url. Error: $!"."$config->{downloads}";
+			$text = "Can't remove page $url. Error: $! $config->{downloads}";
 	
 		};
 
