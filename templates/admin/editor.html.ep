@@ -12,7 +12,7 @@
 
 %= form_for '/admin/p/edit/' => (method => 'post') => begin
 
-	<p><b>URL:</b> /<%= $page->{url} %>
+	<p><b>URL:</b> /<%= link_to $page->{url} => "/$page->{url}" => ('target' => 'preview', 'title' => 'Open page in new window')%>
 	%= hidden_field url => $page->{url}
 	</p>
 	<p><b>Meta:</b></p>
