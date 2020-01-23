@@ -37,7 +37,11 @@ sub dashboard {
 		column => 'url',
 	)->values;
 
-	$self->render(urls => $urls);
+	my $update = (-e -f -r $config->{update}) ? "Running" : "Complete";
+	$self->render(
+		urls => $urls,
+		update => $update
+	);
 }
 
 sub view {
