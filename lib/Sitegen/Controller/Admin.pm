@@ -57,21 +57,31 @@ sub add(){
 
     my $url = $self->param('url');
 	my $config = $self->config;
-
+	my $check_url = 0;
+	my $text = "Page $url was successfull create.";	
 
 	if($url){
-	    $self->app->dbh->insert(
-			{url => $url},
+		my $check_url = $self->app->dbh->select(
+			column => ['url'],
 	        table => $config->{prefix}.$config->{site},
+			where => {'url' => $url},
+		)->value;
+		if(!$check_url){
+		    $self->app->dbh->insert(
+				{url => $url},
+	    	    table => $config->{prefix}.$config->{site},
 
-    	);
+	    	);
+		}else{
+			$text = "Page /$check_url already exist.";
+		};
 	};
 	
 	mkdir $config->{downloads}.$url;
 
     $self->render(
 		format => 'txt', 
-		text => "Page $url was successfull create."
+		text => $text,
 	);
 
 }
