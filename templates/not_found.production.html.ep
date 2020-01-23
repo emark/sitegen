@@ -1,6 +1,8 @@
+% layout 'default';
 % title 'Страница не найдена';
 
 <div class="page-header">
+	<p align="center" id="brand"><a href="/"><img src="/media/images/site/brand.png"></a></p>
 	<h1><%= title %></h1>
 </div>
 

@@ -31,8 +31,6 @@
 	<%= content %>
     </div> <!-- /container -->
 
-<p><center><br/>Site management system, <%= link_to 'http://github.com/emark/sitegen/' => 'http://github.com/emark/sitegen/', target => "_blank"%></center></p>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
