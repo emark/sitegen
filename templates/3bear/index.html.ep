@@ -9,7 +9,7 @@
 
 <div class="row">
 	<div class="col-sm-6">
-		<h2 class="lead text-center"><a href="/nomera.html">Номерной фонд</a></h2>
+		<h2 class="lead text-center"><a href="/nomera.html">Гостиничные номера</a></h2>
 		<p class="text-justify"><img src="/downloads/nomera/<%= $site %>-nomera-1.jpg" class="img-responsive center-block" alt="Гостиничные номера" title="Гостиничные номера"><br/>
     Мы расположены в&nbsp;одном из&nbsp;чистых мест города. Свежий воздух и&nbsp;тишина помогут расслабиться и&nbsp;восстановить силы. Мы&nbsp;рады предложить размещение гостей в&nbsp;номерах различных категорий. Все номера оборудованы отдельной душевой и&nbsp;санузлом. В&nbsp;номерах 1 и&nbsp;2 категорий установлены телевизоры и&nbsp;холодильники. Двухкомнатные номера 1 категории с&nbsp;видом на&nbsp;лес и&nbsp;двумя балконами. Бесплатный <nobr>wi-fi</nobr> доступ на&nbsp;всей территории.</p>
         
