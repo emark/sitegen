@@ -146,12 +146,29 @@ sub import {
 		my %page = ();
 		($page{url},$page{meta},$page{content}) = split(/\t/, $page);
 
-		$self->app->dbh->update(
-			{%page},
-			where => {url => $page{url}},
-			table => $config->{prefix}.$config->{site},
+		if($page{url}){
+			my $check_url = $self->app->dbh->select(
+				column => ['url'],
+	    	    table => $config->{prefix}.$config->{site},
+				where => {'url' => $page{url}},
+			)->value;
+			if(!$check_url){
+			    $self->app->dbh->insert(
+					{%page},
+	    	    	table => $config->{prefix}.$config->{site},
 
-		);
+		    	);
+				mkdir $config->{downloads}.$page{url};
+
+			}else{
+				$self->app->dbh->update(
+					{%page},
+					where => {url => $page{url}},
+					table => $config->{prefix}.$config->{site},
+
+				);
+			};
+		};
 	};
 	
 	$self->render(
@@ -166,29 +183,33 @@ sub edit {
 	my $url = $self->param('url');
 	my $config = $self->config;
 	my $export = $self->param('export');
-	my $page = '';
 
- 	$page = $self->app->dbh->select(
+ 	my $page = $self->app->dbh->select(
  		table => $config->{prefix}.$config->{site},
 		where => {url => $url}
 
-	 	);
-
-	$page = $page->fetch_hash;
+	 	)->fetch_hash;
 	
-	if($export){
-		$self->render(
-			page => $page, 
-			format => 'txt',
-			template => 'admin/export'
-		);
+	if($page){
+		if($export){
+			$self->render(
+				page => $page, 
+				format => 'txt',
+				template => 'admin/export'
+			);
 
+		}else{
+			$self->render(
+				page => $page, 
+				saved => 0,
+				template => 'admin/editor' 
+			);
+		};
 	}else{
 		$self->render(
-			page => $page, 
-			saved => 0,
-			template => 'admin/editor' 
-		);
+			text => "Not found url: $url",
+			format => "txt",
+		);	
 	};
 }
 
