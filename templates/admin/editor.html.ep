@@ -10,7 +10,7 @@
  <div class="col-md-12">
   <h3>Source</h3>
 
-%= form_for '/admin/p/edit/' => (method => 'post') => begin
+%= form_for '/admin/p/save/' => (method => 'post') => begin
 
 	<p><b>URL:</b> /<%= link_to $page->{url} => "/$page->{url}" => ('target' => 'preview', 'title' => 'Open page in new window')%>
 	%= hidden_field url => $page->{url}

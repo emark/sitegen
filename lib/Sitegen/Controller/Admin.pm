@@ -79,10 +79,13 @@ sub add(){
 		}else{
 			$text = "Page /$check_url already exist.";
 		};
+		mkdir $config->{downloads}.$url;
+
+	}else{
+		$text = "Error! Empty url.";	
+
 	};
 	
-	mkdir $config->{downloads}.$url;
-
     $self->render(
 		format => 'txt', 
 		text => $text,
@@ -156,13 +159,13 @@ sub import {
 		format => "txt");
 }
 
-sub export {
+sub edit {
 	my $self = shift;
 	$self->login;
 
 	my $url = $self->param('url');
 	my $config = $self->config;
-	my $source = $self->param('source');
+	my $export = $self->param('export');
 	my $page = '';
 
  	$page = $self->app->dbh->select(
@@ -173,10 +176,11 @@ sub export {
 
 	$page = $page->fetch_hash;
 	
-	if($source){
+	if($export){
 		$self->render(
 			page => $page, 
-			format => 'txt'
+			format => 'txt',
+			template => 'admin/export'
 		);
 
 	}else{
@@ -212,7 +216,7 @@ sub upload {
 	);
 }
 
-sub edit {
+sub save {
 	my $self = shift;
 	$self->login;
 
