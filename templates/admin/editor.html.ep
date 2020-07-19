@@ -15,6 +15,8 @@
 	<p><b>URL:</b> /<%= link_to $page->{url} => "/$page->{url}" => ('target' => 'preview', 'title' => 'Open page in new window')%>
 	%= hidden_field url => $page->{url}
 	</p>
+	<p><b>Template:</b> <a href="#1" onClick="AddTemplate('script')">script</a>, <a href="#1" onClick="AddTemplate('simple')">simple</a>, 
+	<a href="#1" onClick="AddTemplate('filestorage')">filestorage</a>, <a href="#1" onClick="AddTemplate('products')">products</a>, <a href="#1" onClick="AddTemplate('specoffers')">specoffers</a></p>
 	<p><b>Meta:</b></p>
 	%= text_area meta => $page->{meta}, cols => '100%', rows => '2'
 
@@ -32,3 +34,19 @@
 % };
  </div>
 </div>
+<script type="text/javascript">
+	function AddTemplate(template){
+		let form = document.forms[0]
+		let meta = form.elements.meta
+		let content = form.elements.content
+		meta.value = "template:"+template+"%title:TITLE%description:DESCRIPTION%keywords:KEYWORDS"
+		var templates = {}
+		templates['script'] = "<script><\/script>"
+		templates['simple'] = "text:"
+		templates['filestorage'] = "files:FileCaption=filename@"
+		templates['products'] = "prodrome:PRODUCTS CAPTION%products:PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>@PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>%photo:PHOTO CAPTION@PHOTO CAPTION"
+		templates['specoffers'] = "offers:OFFER CAPTION@OFFER CAPTION"
+		content.value = templates[template]
+	}
+
+</script>
