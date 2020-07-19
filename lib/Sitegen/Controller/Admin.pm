@@ -62,9 +62,10 @@ sub add(){
     my $url = $self->param('url');
 	my $config = $self->config;
 	my $check_url = 0;
-	my $text = "Page $url was successfull create.";	
+	my $text = "";
 
 	if($url){
+		$url=~s/[^a-z]+//g;
 		my $check_url = $self->app->dbh->select(
 			column => ['url'],
 	        table => $config->{prefix}.$config->{site},
@@ -76,11 +77,17 @@ sub add(){
 	    	    table => $config->{prefix}.$config->{site},
 
 	    	);
+			$text = "Page $url was successfull create.";
+	
+			if (mkdir $config->{downloads}.$url){
+				$text = $text."\nUploading directory was created.";
+			}else{
+				$text = "\nError to created uploading directory.";
+			};
 		}else{
-			$text = "Page /$check_url already exist.";
+			$text = "Page $check_url already exist.";
 		};
-		mkdir $config->{downloads}.$url;
-
+	
 	}else{
 		$text = "Error! Empty url.";	
 
