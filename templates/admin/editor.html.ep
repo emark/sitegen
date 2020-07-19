@@ -41,9 +41,9 @@
 		let content = form.elements.content
 		meta.value = "template:"+template+"%title:TITLE%description:DESCRIPTION%keywords:KEYWORDS"
 		var templates = {}
-		templates['script'] = "<script><\/script>"
-		templates['simple'] = "text:"
-		templates['filestorage'] = "files:FileCaption=filename@"
+		templates['script'] = "<SCRIPT>"
+		templates['simple'] = "text:TEXT"
+		templates['filestorage'] = "files:FILE CAPTION=FILENAME@"
 		templates['products'] = "prodrome:PRODUCTS CAPTION%products:PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>@PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>%photo:PHOTO CAPTION@PHOTO CAPTION"
 		templates['specoffers'] = "offers:OFFER CAPTION@OFFER CAPTION"
 		content.value = templates[template]
