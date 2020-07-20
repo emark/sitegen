@@ -61,7 +61,7 @@
 
 	%= file_field 'source'
 <br/>	
-	%= submit_button
+	%= submit_button 'Import'
 
 % end
 
@@ -90,7 +90,7 @@
 <br/>
 	%= select_field url => $urls
 
-	%= submit_button
+	%= submit_button 'Upload'
 
 % end
 
