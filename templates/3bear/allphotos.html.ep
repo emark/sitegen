@@ -1,4 +1,4 @@
-% title $page->{title};
+% title $page->{meta}{title};
 
 <div class="page-header">
 	<h1><%= $page->{title} %></h1>

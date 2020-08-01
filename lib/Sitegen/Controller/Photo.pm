@@ -31,11 +31,13 @@ sub album {
 
 			$album{$page->{url}} = $meta{title};
 			$photo{$page->{url}} = $content{photo};
-		};
+
+		}; 
 	
 	};
 
-	my $page = {url => 'alphotos', title => 'Фотогалерея'};
+	my $page->{url} = 'allphotos';
+	$page->{meta} = {title => 'Фотогалерея', description => 'Фотографии гостиницы'};
 
 	$self->render( 
 		layout => $config->{site},
