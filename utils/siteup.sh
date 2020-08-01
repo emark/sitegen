@@ -1,8 +1,8 @@
 #!/usr/bin/sh
 
 SITE=~/projects/site/htdocs
-CRONFILE=~projects/site/cgi-bin/sitegen/utils/tmp/cron.txt
-GIT=~projects/site/cgi-bin/sitegen/utils/tmp/git.txt
+CRONFILE=~/projects/site/cgi-bin/sitegen/utils/tmp/cron.txt
+GIT=~/projects/site/cgi-bin/sitegen/utils/tmp/git.txt
 
 if [ -f "$CRONFILE" ]; then
 
