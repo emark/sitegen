@@ -34,6 +34,7 @@ sub startup {
 	$r->post('/admin/upload/')->to('admin#upload');
 	$r->post('/admin/import/')->to('admin#import');
 	$r->post('/admin/update/')->to('admin#update');
+	$r->post('/admin/git/')->to('admin#git');
 	$r->post('/admin/p/add/')->to('admin#add');
 	$r->post('/admin/p/delete/')->to('admin#delete');
 	$r->post('/admin/p/view/')->to('admin#view');

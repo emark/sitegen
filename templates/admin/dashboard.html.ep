@@ -101,7 +101,7 @@
       <p>Utilities and update scheduling</p>
 <div class="row">
  <div class="col-md-4">
-  <h3>Update schedule</h3>
+  <h3>Site update</h3>
 <p>Status: <%= $update %></p>
 %= form_for '/admin/update/' => (method => 'post') => begin
 
@@ -110,4 +110,14 @@
 % end
 
  </div>
+ <div class="col-md-4">
+  <h3>Repository update</h3>
+<p>Status: <%= $git %></p>
+%= form_for '/admin/git/' => (method => 'post') => begin
 
+	%= submit_button 'Set update'
+
+% end
+
+ </div>
+</div>
