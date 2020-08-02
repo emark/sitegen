@@ -38,12 +38,10 @@ sub dashboard {
 	)->values;
 
 	my $update = (-e -f -r $config->{update}) ? "Running" : "Complete";
-	my $git = (-e -f -r $config->{git}) ? "Running" : "Complete";
-	
+
 	$self->render(
 		urls => $urls,
 		update => $update,
-		git => $git,
 	);
 }
 
@@ -292,21 +290,6 @@ sub update {
 
 	$self->render(
 		text => "Set cron schedule.", 
-		format => "txt"
-	);
-}
-
-sub git {
-	my $self = shift;
-	$self->login;
-
-	my $config = $self->config;
-	open (GIT, "> $config->{git}") || die "Can't open file: $config->{git}";
-	print GIT 1;
-	close (GIT);
-
-	$self->render(
-		text => "Set update git repository",
 		format => "txt"
 	);
 }

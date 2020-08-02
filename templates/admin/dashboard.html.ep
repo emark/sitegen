@@ -110,14 +110,4 @@
 % end
 
  </div>
- <div class="col-md-4">
-  <h3>Repository update</h3>
-<p>Status: <%= $git %></p>
-%= form_for '/admin/git/' => (method => 'post') => begin
-
-	%= submit_button 'Set update'
-
-% end
-
- </div>
 </div>

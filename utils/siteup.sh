@@ -4,16 +4,9 @@ cd ~/projects/site/cgi-bin/sitegen/utils/
 
 SITE=~/projects/site/htdocs
 CRONFILE=tmp/cron.txt
-GIT=tmp/git.txt
-
-if [ -f "$GIT" ]; then
-git pull
-rm $GIT
-
-echo "Pull request"
-fi
 
 if [ -f "$CRONFILE" ]; then
+git pull
 
 rm $SITE/*.html
 
