@@ -65,8 +65,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-            	<li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
-            	<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
+		<li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
+		<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
 		<li class="<%= $url{observation} %>"><a href="/observation.html">Обсервация</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -122,11 +122,6 @@
 							<dd><a href="/docs.html">Все документы</a></dd>
 							<dd></dd>
 						</dl>
-						<!--div class="text-right">
-						<a href="https://www.instagram.com/trimedvedya/" target="_blank" title="Наш инстаграм-аккаунт"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;
-						<a href="https://www.facebook.com/trimedvedya/" target="_blank" title="Официальная страница в facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;
-						<a href="https://www.youtube.com/channel/UC_9sYCnmWTbxH0zymNKKpQg" target="_blank" title="Официальный youtube-канал"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;
-						</div-->
 					</div>
 		
 				</div><!-- /row -->
