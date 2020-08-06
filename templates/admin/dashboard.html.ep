@@ -105,7 +105,7 @@
 <p>Status: <%= $update %></p>
 %= form_for '/admin/update/' => (method => 'post') => begin
 
-	%= submit_button 'Set update'
+	%= submit_button 'Update'
 
 % end
 
