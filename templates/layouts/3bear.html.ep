@@ -5,7 +5,6 @@
 % 	kontakt => '',
 % 	prices => '',
 % 	booking => '',
-% 	observation => '',
 % );
 % $url{$page->{url}} = 'active';
 <!DOCTYPE html>
@@ -67,7 +66,6 @@
             <ul class="nav navbar-nav">
 		<li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
 		<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
-		<li class="<%= $url{observation} %>"><a href="/observation.html">Обсервация</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="<%= $url{prices} %>"><a href="/prices.html">Цены <span class="sr-only">(current)</span></a></li>
@@ -97,8 +95,7 @@
 						<dl>
 							<dt><h4>Услуги</h4></dt>
 							<dd><a href="/nomera.html">Гостиничные номера</a></dd>
-							<dd><a href="/konference.html">Конференц-залы</a></dd>
-							<dd><a href="/observation.html">Обсервация</a></dd>				
+							<dd><a href="/konference.html">Конференц-залы</a></dd>				
 						</dl>
 					</div>
 					
