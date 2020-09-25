@@ -10,8 +10,8 @@ git pull
 
 rm $SITE/*.html
 
-mv $CRONFILE pages/cron.txt
-cd pages
+#mv $CRONFILE pages/cron.txt
+cd tmp
 
 wget --no-check-certificate --input-file cron.txt
 
@@ -20,5 +20,3 @@ rm cron.txt
 
 echo "Updated"
 fi
-
-
