@@ -23,10 +23,14 @@
 	<p><b>Content:</b></p>
 	%= text_area content => $page->{content}, cols => '100%', rows => '10'
 
+	% if(@{$files}){
+
 	<p><b>Delete attached file:</b></p>
 	%= select_field file => $files
 	%= check_box 'remove' => 1
-	confirm deleting		
+	confirm deleting
+
+	% };
 
 	<br/><br/>
 	%= csrf_field	
