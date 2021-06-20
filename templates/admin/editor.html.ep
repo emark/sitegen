@@ -23,17 +23,27 @@
 	<p><b>Content:</b></p>
 	%= text_area content => $page->{content}, cols => '100%', rows => '10'
 
-<br/>
+	<p><b>Delete attached file:</b></p>
+	%= select_field file => $files
+	%= check_box 'remove' => 1
+	confirm deleting		
+
+	<br/><br/>
 	%= csrf_field	
 	%= submit_button 'Save'
 
 % end
 
 % if ($saved){
-	Page saved at <%= localtime %> 
+	<p>Page saved at <%= localtime %></p>
 % };
+% if ($removed){
+	<p>File <%= $removed %> removed</p>
+% };
+
  </div>
 </div>
+
 <script type="text/javascript">
 	function AddTemplate(template){
 		let form = document.forms[0]

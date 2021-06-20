@@ -197,6 +197,14 @@ sub edit {
 		where => {url => $url}
 
 	 	)->fetch_hash;
+
+	my $prefix = $config->{downloads}.$url.'/';
+	my @files = glob ($prefix."*.*");
+	foreach my $file (@files){
+		$file =~s /$prefix//;
+	};
+
+	my $files = \@files;
 	
 	if($page){
 		if($export){
@@ -208,7 +216,8 @@ sub edit {
 
 		}else{
 			$self->render(
-				page => $page, 
+				page => $page,
+				files => $files,
 				saved => 0,
 				template => 'admin/editor' 
 			);
@@ -252,6 +261,8 @@ sub save {
 	my $url = $self->param('url');
 	my $meta = $self->param('meta');
 	my $content = $self->param('content');
+	my $file = $self->param('file');
+	my $remove = $self->param('remove');
 	my $config = $self->config;
 	my $page = {
 		url => $url,
@@ -264,10 +275,27 @@ sub save {
 		where => {url => $url}
 	);
 
+	if($remove){
+		unlink $config->{'downloads'}.$url."/$file" or warn "Couldn't delete file $file";
+		$remove = $file;
+	}else{
+		$remove = 0;
+		
+	};
 
+	my $prefix = $config->{downloads}.$url.'/';
+	my @files = glob ($prefix."*.*");
+	foreach my $file (@files){
+		$file =~s /$prefix//;
+	};
+
+	my $files = \@files;
+	
 	$self->render(
 		page => $page,
 		saved => 1,
+		removed => $remove,
+		files => $files,
 		template => 'admin/editor'
 	);
 }
