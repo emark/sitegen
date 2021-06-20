@@ -219,6 +219,7 @@ sub edit {
 				page => $page,
 				files => $files,
 				saved => 0,
+				removed => 0,
 				template => 'admin/editor' 
 			);
 		};
