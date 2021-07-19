@@ -36,14 +36,14 @@ sub startup {
 	$r->post('/admin/update/')->to('admin#update');
 	$r->post('/admin/p/add/')->to('admin#add');
 	$r->post('/admin/p/delete/')->to('admin#delete');
-	$r->post('/admin/p/view/' => [format => ['html']])->to('admin#view');
+	$r->post('/admin/p/view/')->to('admin#view');
 	$r->post('/admin/p/save/')->to('admin#save');
 	
 	# Routes to dynamic pages
 	$r->get('/allphotos' => [format => ['html']])->to('photo#album');
 
 	# Routes to static pages
-	$r->get('/sitemap.xml')->to('generate#sitemap');
+	$r->get('/sitemap' => [format => ['xml']])->to('generate#sitemap');
 	$r->get('/:url' => [format => ['html']])->to('generate#page');
 
 }
