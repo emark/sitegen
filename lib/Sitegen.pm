@@ -44,7 +44,7 @@ sub startup {
 
 	# Routes to static pages
 	$r->get('/sitemap.xml')->to('generate#sitemap');
-	$r->get('/:url')->to('generate#page');
+	$r->get('/:url' => [format => ['html']])->to('generate#page');
 
 }
 
