@@ -52,7 +52,7 @@ sub view {
 	my $config = $self->config;
 	my $url = $self->param('url');
 
-	$self->redirect_to("/$url.html");
+	$self->redirect_to("/$url");
 
 }
 
