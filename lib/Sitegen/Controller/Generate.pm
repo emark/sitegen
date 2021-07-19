@@ -68,6 +68,7 @@ sub page {
 	$self->render( 
 		layout => $config->{site},
 		template => $config->{site}.'/'.$page->{meta}{template},
+		format => 'html',
 		status => $page->{status},
 		page => $page,
 		site => $config->{site}
