@@ -30,9 +30,9 @@
 	%= check_box 'remove' => 1
 	confirm deleting
 
-	% };
-	
 	<a href="#1" onClick="AddFileName()" class="btn btn-primary btn-sm" role="button">Add file</a>
+
+	% };
 
 	<br/><br/>
 	%= csrf_field	
