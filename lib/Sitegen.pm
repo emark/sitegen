@@ -40,7 +40,7 @@ sub startup {
 	$r->post('/admin/p/save/')->to('admin#save');
 	
 	# Routes to dynamic pages
-	$r->get('/allphotos')->to('photo#album');
+	$r->get('/allphotos' => [format => ['html']])->to('photo#album');
 
 	# Routes to static pages
 	$r->get('/sitemap.xml')->to('generate#sitemap');
