@@ -43,7 +43,7 @@ sub startup {
 	$r->get('/allphotos')->to('photo#album');
 
 	# Routes to static pages
-	$r->get('/sitemap')->to('generate#sitemap');
+	$r->get('/sitemap.xml')->to('generate#sitemap');
 	$r->get('/:url')->to('generate#page');
 
 }

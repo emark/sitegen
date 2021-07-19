@@ -18,6 +18,7 @@ sub sitemap {
 
 	$self->render(
 		template => 'sitemap',
+		format => 'xml',
 		urls => $urls,
 		site => $config->{site},
 		lastmod => $lastmod[0]
