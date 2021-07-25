@@ -12,8 +12,8 @@
 
 %= form_for '/admin/p/save/' => (method => 'post') => begin
 
-	<p><b>URL:</b> <%= link_to $page->{'url'} => "/$page->{'url'}.html" => ('target' => 'preview', 'title' => 'Open page in new window') %>
-	%= hidden_field url => $page->{url}
+	<p><b>URL:</b> <%= text_field 'set_url' => $page->{'url'} %> <a href="<%= "/$page->{'url'}.html" %>" target="preview" title="Open page in new window" class="btn btn-sm btn-default"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;&nbsp;Open page</a>
+	%= hidden_field url => $page->{'url'}
 	</p>
 	<p><b>Template:</b> <a href="#1" onClick="AddTemplate('script')">script</a>, <a href="#1" onClick="AddTemplate('simple')">simple</a>, 
 	<a href="#1" onClick="AddTemplate('filestorage')">filestorage</a>, <a href="#1" onClick="AddTemplate('products')">products</a>, <a href="#1" onClick="AddTemplate('specoffers')">specoffers</a></p>
@@ -30,7 +30,7 @@
 	%= check_box 'remove' => 1
 	confirm deleting
 
-	<a href="#1" onClick="AddFileName()" class="btn btn-primary btn-sm" role="button">Add file</a>
+	<a href="#1" onClick="AddFileName()" class="btn btn-primary btn-sm" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add file</a>
 
 	% };
 

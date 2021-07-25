@@ -260,13 +260,15 @@ sub save {
 	$self->login;
 
 	my $url = $self->param('url');
+	my $set_url = $self->param('set_url');
+	$set_url = $set_url ? $set_url : $url;
 	my $meta = $self->param('meta');
 	my $content = $self->param('content');
 	my $file = $self->param('file');
 	my $remove = $self->param('remove');
 	my $config = $self->config;
 	my $page = {
-		url => $url,
+		url => $set_url,
 		meta => $meta,
 		content => $content
 	};
