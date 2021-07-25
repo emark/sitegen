@@ -50,9 +50,11 @@
 % end
  </div>
 </div>
+
 <hr>
 <h2><i class="fa fa-cloud-upload" aria-hidden="true"></i> Uploading</h2>
-      <p>Importing and exporting sources for pages</p>
+ <p>Importing and exporting sources for pages</p>
+
 <div class="row">
  <div class="col-md-4">
   <h3>Import source</h3>
@@ -96,9 +98,11 @@
 
  </div>
 </div>
+
 <hr>
 <h2><i class="fa fa-cogs" aria-hidden="true"></i> Utils</h2>
       <p>Utilities and update scheduling</p>
+
 <div class="row">
  <div class="col-md-4">
   <h3>Site update</h3>
@@ -109,5 +113,13 @@
 
 % end
 
+ </div>
+</div>
+
+<div>
+ <div class="row">
+  <div class="col-md-12">
+   <p align="right">Sitegen v. <%= $version %></p>
+  </div>
  </div>
 </div>

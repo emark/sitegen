@@ -46,6 +46,8 @@ sub startup {
 	$r->get('/sitemap' => [format => ['xml']])->to('generate#sitemap');
 	$r->get('/:url' => [format => ['html']])->to('generate#page');
 
+	#Routes to events pages
+	$r->get('/events/:url')->to('events#page');
 }
 
 1;

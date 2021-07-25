@@ -6,6 +6,8 @@ has 'login' => sub{
 	return $self->session->{auth} ? 1 : $self->redirect_to('/admin/');
 };
 
+my $VERSION = '1.01';
+
 sub auth {
 	my $self = shift;
 	my $config = $self->config;
@@ -42,6 +44,7 @@ sub dashboard {
 	$self->render(
 		urls => $urls,
 		update => $update,
+		version => $VERSION,
 	);
 }
 
@@ -73,17 +76,16 @@ sub add(){
 			where => {'url' => $url},
 		)->value;
 		if(!$check_url){
-		    $self->app->dbh->insert(
-				{url => $url},
-	    	    table => $config->{prefix}.$config->{site},
-
-	    	);
-			$text = "Page $url was successfull create.";
-	
 			if (mkdir $config->{downloads}.$url){
-				$text = $text."\nUploading directory was created.";
+			    $self->app->dbh->insert(
+					{url => $url},
+	    		    table => $config->{prefix}.$config->{site},
+
+		    	);
+
+				$text = "Page $url was successfully create.\nUploading directory was created.";
 			}else{
-				$text = "\nError to created uploading directory.";
+				$text = "\nPage was not created. Error to created uploading directory.";
 			};
 		}else{
 			$text = "Page $check_url already exist.";
@@ -261,12 +263,18 @@ sub save {
 
 	my $url = $self->param('url');
 	my $set_url = $self->param('set_url');
-	$set_url = $set_url ? $set_url : $url;
+	$set_url = $set_url ? $set_url : $url; #Set set_url as url if empty
 	my $meta = $self->param('meta');
 	my $content = $self->param('content');
 	my $file = $self->param('file');
 	my $remove = $self->param('remove');
 	my $config = $self->config;
+	
+	if($set_url ne $url){#Rename uploading directory
+		rename ($config->{'downloads'}.$url, $config->{'downloads'}.$set_url);		
+
+	};
+
 	my $page = {
 		url => $set_url,
 		meta => $meta,
