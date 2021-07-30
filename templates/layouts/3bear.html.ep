@@ -113,9 +113,9 @@
 					<div class="col-sm-3">
 						<dl>
 							<dt><h4>Документы</h4></dt>
-							<dd><a href="/downloads/docs/3bear-docs-rekvizit.pdf" target="_blank">Юридические реквизиты</a></dd>
-							<dd><a href="/downloads/docs/3bear-docs-hotel-rules.pdf" target="_blank">Правила проживания</a></dd>
-							<dd><a href="/downloads/docs/3bear-docs-brandpack.zip" target="_blank">Рекламные материалы</a></dd>
+							<dd><a href="/downloads/docs/rekvizit.pdf" target="_blank">Юридические реквизиты</a></dd>
+							<dd><a href="/downloads/docs/hotel-rules.pdf" target="_blank">Правила проживания</a></dd>
+							<dd><a href="/downloads/docs/brandpack.zip" target="_blank">Рекламные материалы</a></dd>
 							<dd><a href="/docs.html">Все документы</a></dd>
 							<dd></dd>
 						</dl>
