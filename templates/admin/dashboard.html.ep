@@ -5,8 +5,9 @@
  <h1>Site administration</h1>
 
 %= form_for '/admin/logout/' => begin
-%= submit_button 'Logout'
-%= link_to 'Refresh' => '/admin/dashboard/'
+%= submit_button 'Logout' => (class => "btn btn-sm btn-default")
+
+<a href="/admin/dashboard/" class ="btn btn-sm btn-default"><i class="glyphicon glyphicon-refresh"></i>&nbsp;Refresh</a>
 
 %= end
 
