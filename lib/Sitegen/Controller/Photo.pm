@@ -48,6 +48,6 @@ sub album {
 		site => $config->{site}
 
 	);
-}
+};
 
 1;

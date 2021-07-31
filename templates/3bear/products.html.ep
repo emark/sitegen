@@ -79,64 +79,9 @@
 	<div class="panel panel-default" id="instagram">
 		<div class="panel-body text-center">
 			<p><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></p>
-			<p class="lead">Больше фотографий смотрите в нашей фотогалерее</p>
-			<p><a href="/allphotos.html" role="button" class="btn btn-default btn-lg" title="Открыть в новом окне">Смотреть фотографии</a></p>
+			<p class="lead">Больше наших фотографий смотрите в инстаграмме</p>
+			<p><a href="https://instagram.com/trimedvedya" role="button" class="btn btn-default btn-lg" title="Открыть в новом окне" target="instagram">Смотреть фотографии</a></p>
 		</div>
 	</div>
 	
 </div><!-- /gallery -->
-
-<!--div id="booking" class="jumbotron">
-	<h2>Бронирование</h2>
-
-	<form action="/booking/" method="post">	 
-
-  	<div class="form-group">
-  	  <label for="BookingDate">Дата заселения</label>
-    
-  		<div class="row">
-  			<div class="col-sm-3 col-xs-8">
-  		  	<input class="form-control input-lg" id="BookingDate" name="bdate" placeholder="01.01.2016" type="date">
-  	  	
-  			</div>
-  		</div>
-		</div>
-
-  	<div class="form-group">
-    	<label for="Nights">Ночей проживания</label>
-    
-	  	<div class="row">
-				<div class="col-sm-2 col-xs-4">	  		
-	  			<select class="form-control input-lg" id="Nights" name="nights"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="&gt;7">&gt;7</option></select>
-
-				</div>  		  
-			</div>
-		</div>
-
-  	<div class="form-group">
-    	<label for="Places">Количество мест</label>
-    
-	  	<div class="row">
-  			<div class="col-sm-2 col-xs-4">
-  			  <input class="form-control input-lg" id="Places" name="seats" placeholder="0" type="number" value="1">
-
-  			</div>
-			</div>
-		</div>
-
-		<div class="form-group">
-    	<label for="Tel">Контактный телефон</label>
-    
-    	<div class="row">
-	  	  <div class="col-sm-4">
-  			  <input class="form-control input-lg" id="Tel" name="tel" required placeholder="" type="tel">
-		
-			  </div>
-    	</div>
-  	</div>
-  
-		<input type="hidden" value="<%= $page->{meta}{title} %>" name="bpage">
-	 	<button type="submit" class="btn btn-primary btn-lg">Отправить</button>
-	 	
-	</form>
-</div--!>
