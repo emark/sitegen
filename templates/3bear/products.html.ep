@@ -80,7 +80,7 @@
 		<div class="panel-body text-center">
 			<p><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></p>
 			<p class="lead">Больше наших фотографий смотрите в инстаграмме</p>
-			<p><a href="https://instagram.com/trimedvedya" role="button" class="btn btn-default btn-lg" title="Открыть в новом окне" target="instagram">Смотреть фотографии</a></p>
+			<p><a href="https://instagram.com/trimedvedya/" role="button" class="btn btn-default btn-lg" title="Открыть в новом окне" target="instagram">Смотреть фотографии</a></p>
 		</div>
 	</div>
 	
