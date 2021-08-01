@@ -241,7 +241,7 @@ sub upload {
 	my $downloads = $config->{downloads};
     my $source = $self->param('source');
     my $url = $self->param('url');
-	my $filename = $config->{site}.'-'.$url.'-'.$source->{filename};
+	my $filename = $source->{filename};
 	my $text = "Upload for $downloads$url/$filename"; 
 	
 	if ($source->{filename}){
