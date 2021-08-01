@@ -6,7 +6,7 @@ has 'login' => sub{
 	return $self->session->{auth} ? 1 : $self->redirect_to('/admin/');
 };
 
-my $VERSION = '1.01';
+my $VERSION = '1.02';
 
 sub auth {
 	my $self = shift;
@@ -66,7 +66,10 @@ sub add(){
     my $url = $self->param('url');
 	my $config = $self->config;
 	my $check_url = 0;
-	my $text = "";
+	my $alert = {
+		type => '', 
+		text => '',
+	};
 
 	if($url){
 		$url=~s/[^a-z]+//g;
@@ -83,23 +86,35 @@ sub add(){
 
 		    	);
 
-				$text = "Page $url was successfully create.\nUploading directory was created.";
+				$alert = {
+					type => 'success',
+					text => "Page $url was successfully create.\nDirectory for uploading was created"
+				};
 			}else{
-				$text = "\nPage was not created. Error to created uploading directory.";
+				$alert = {
+					type => 'warning',
+					text => "\nPage was not created. Error to create uploading directory",
+				};
 			};
 		}else{
-			$text = "Page $check_url already exist.";
+			$alert = {
+				type => 'warning',
+				text => "Page $check_url already exists"
+			};
 		};
 	
 	}else{
-		$text = "Error! Empty url.";	
+		$alert = {
+			type => 'warning',
+			text => "Error! Empty url"
+		};
 
 	};
 	
-    $self->render(
-		format => 'txt', 
-		text => $text,
+    $self->flash(
+		alert => $alert,
 	);
+	$self->redirect_to('/admin/dashboard/');
 
 }
 
@@ -113,7 +128,10 @@ sub delete(){
 	my $rmdir = 0;
 	my @files = glob ($config->{downloads}.$url."/*.*");
 	my $static_file = $config->{static}.$url.$config->{static_extension};
-	my $text = "Page $static_file delete success.";
+	my $alert = {
+		type => 'success',
+		text => "Page $static_file was deleted"
+	};
 
 	if($confirm){
 		unlink @files if @files;
@@ -127,20 +145,25 @@ sub delete(){
 			#Delete static html file
 			unlink $static_file;
 		}else{
-			$text = "Can't remove page $url. Error: $! $config->{downloads}";
-	
+			$alert = {
+				type => 'danger',
+				text => "Can't remove page $url. Error: $! $config->{downloads}"
+			};
+
 		};
 
 	}else{
-		$text = 'Please, confirm page deleting';
+		$alert = {
+			type => 'warning',
+			text => 'Please, confirm page deleting'
+		};
 
 	};
 
-	$self->render( 
-		format => 'txt', 
-		text => $text 
+	$self->flash( 
+		alert => $alert
 	);
-
+	$self->redirect_to('/admin/dashboard/');
 }
 
 sub import {
@@ -162,6 +185,7 @@ sub import {
 	    	    table => $config->{prefix}.$config->{site},
 				where => {'url' => $page{url}},
 			)->value;
+
 			if(!$check_url){
 			    $self->app->dbh->insert(
 					{%page},
@@ -181,9 +205,14 @@ sub import {
 		};
 	};
 	
-	$self->render(
-		text => "Import success. Processed ".@pages." pages", 
-		format => "txt");
+	$self->flash(
+		alert => {
+			type => 'success',
+			text => "Import success. Processed ".@pages." pages"
+		}, 
+	);
+
+	$self->redirect_to('/admin/dashboard/');
 }
 
 sub edit {
@@ -210,10 +239,11 @@ sub edit {
 	
 	if($page){
 		if($export){
+			$self->res->headers->content_disposition('attachment; filename="export.csv"');
 			$self->render(
 				page => $page, 
-				format => 'txt',
-				template => 'admin/export'
+				format => 'csv',
+				template => 'admin/export',
 			);
 
 		}else{
@@ -242,19 +272,26 @@ sub upload {
     my $source = $self->param('source');
     my $url = $self->param('url');
 	my $filename = $source->{filename};
-	my $text = "Upload for $downloads$url/$filename"; 
+	my $alert = {
+		type => 'success',
+		text => "File  $downloads$url/$filename was uploading"
+	}; 
 	
 	if ($source->{filename}){
 		$source->move_to($downloads.$url.'/'.$filename);
 
 	}else{
-		$text = "Empty filename";
+		$alert = {
+			type => 'warning',
+			text => "Empty filename",
+		};
 	};
 
-    $self->render(
-		format => 'txt', 
-		text => $text
+    $self->flash(
+		alert => $alert
 	);
+	$self->redirect_to('/admin/dashboard/');
+
 }
 
 sub save {
@@ -327,10 +364,14 @@ sub update {
 	};
 	close (CRON);
 
-	$self->render(
-		text => "Set cron schedule.", 
-		format => "txt"
+	$self->flash(
+		alert => {
+			type => 'success',
+			text => "Set cron schedule."
+		}, 
 	);
+
+	$self->redirect_to('/admin/dashboard/');
 }
 
 1;
