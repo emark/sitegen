@@ -12,7 +12,7 @@
 
 %= form_for '/admin/p/save/' => (method => 'post') => begin
 
-	<p><b>URL:</b> <%= text_field 'set_url' => $page->{'url'} %> <a href="<%= url_for "/$page->{'url'}.html" %>" target="preview" title="Open page in new window" class="btn btn-sm btn-default"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;&nbsp;Open page</a>
+	<p><b>URL:</b> <%= text_field 'set_url' => $page->{'url'} %> <a href="<%= url_for "/$page->{'url'}.html" %>" target="preview" title="Open page in new window" class="btn btn-sm btn-default">Open page&nbsp;&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>
 	%= hidden_field url => $page->{'url'}
 	</p>
 	<p><b>Template:</b> <a href="#1" onClick="AddTemplate('script')">script</a>, <a href="#1" onClick="AddTemplate('simple')">simple</a>, 
