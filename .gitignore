@@ -5,3 +5,4 @@ public/*
 log
 logrotate/*
 utils/tmp/*
+utils/dump/*
