@@ -3,6 +3,7 @@
 cd ~/projects/site/cgi-bin/sitegen/utils/
 
 SITE=~/projects/site/htdocs
+CRONFILE=tmp/cron.txt
 DB_CONNECT=$(cat db.conf)
 
 if [ -f "$CRONFILE" ]; then
