@@ -1,0 +1,48 @@
+% title "Аренда коммерческих помещений";
+
+<div class="page-header">
+	<h1>Фотогалерея коммерческой недвижимости</h1>
+</div>
+
+<div id="content">
+
+	<div id="gallery">
+
+	<h2>Помещение №<%= $url %></h2>
+
+	<div class="row">
+
+% my	$i = 0;
+% my $cell = 0;
+
+% if(@{$media}){
+%	foreach my $photo (@{$media}){
+
+%		$i++;
+%		$cell++;
+%		if ($cell == 5){
+
+	</div>
+	<div class="row">
+
+%			$cell = 0;
+%		};
+
+			<div class="col-sm-3">
+				<a href="/downloads/arenda/<%= $photo %>" class="thumbnail" data-lightbox="<%= $photo %>" data-title="Фотоизображение - <%= $photo %>"><img src="/downloads/arenda/<%= $photo %>" class="img-responsive" alt="Фотоизображение - <%= $photo %>" title="Фотоизображение - <%= $photo %>"></a>
+			</div>
+
+%   };
+
+% }else{
+
+    <p class="text-center"><b>Фотоизображения отсутствуют</b></p>
+
+% };
+
+	</div>
+
+</div><!-- /gallery -->
+
+<p>По вопросам аренды коммерческой недвижимости обращайтесь по телефону: +7&nbsp;391&nbsp;243-36-13, 222-49-91 или по электронной почте: <a href="mailto:info@3bear.ru">info@3bear.ru</a></p>
+</div>
