@@ -47,7 +47,7 @@ sub startup {
 	$r->get('/:url' => [format => ['html']])->to('generate#page');
 
 	#Routes for rentals dynamic pages
-	$r->get('/arenda/:url' => [url =>qr/\d\-\d\d/], [format => ['html']])->to('arenda#rentals');
+	$r->get('/arenda/:url' => [url =>qr/\d\-\d+/], [format => ['html']])->to('arenda#rentals');
 	
 }
 
