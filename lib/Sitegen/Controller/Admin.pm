@@ -229,10 +229,10 @@ sub edit {
 
 	 	)->fetch_hash;
 
-	my $prefix = $config->{downloads}.$url.'/';
-	my @files = glob ($prefix."*.*");
+	my $path = $config->{downloads}.$url;
+	my @files = glob ($path."/*.*");
 	foreach my $file (@files){
-		$file =~s /$prefix//;
+		$file =~s /$path//;
 	};
 
 	my $files = \@files;

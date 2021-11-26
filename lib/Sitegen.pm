@@ -46,8 +46,9 @@ sub startup {
 	$r->get('/sitemap' => [format => ['xml']])->to('generate#sitemap');
 	$r->get('/:url' => [format => ['html']])->to('generate#page');
 
-	#Routes to events pages
-	$r->get('/events/:url')->to('events#page');
+	#Routes for rentals dynamic pages
+	$r->get('/arenda/:url' => [url =>qr/\d\-\d\d/], [format => ['html']])->to('arenda#rentals');
+	
 }
 
 1;
