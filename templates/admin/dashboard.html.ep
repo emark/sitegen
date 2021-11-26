@@ -15,8 +15,6 @@
 
 % if($self->flash('alert')){
 
-% use Data::Dumper;
-
 <div class="alert alert-<%= flash('alert')->{'type'} %> alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 %= flash('alert')->{'text'};
@@ -100,7 +98,7 @@
 
 %= form_for '/admin/upload/' => (enctype => 'multipart/form-data', method => 'post') => begin
 
-	%= file_field 'source'
+	%= file_field 'source' => (multiple => 'multiple')
 <br/>
 	%= select_field url => $urls
 
@@ -131,7 +129,7 @@
 <div>
  <div class="row">
   <div class="col-md-12">
-   <p align="right">Sitegen v. <%= $version %></p>
+   <p align="right">Sitegen v. <%= $version %>, <%= link_to $gitrepo => $gitrepo %></p>
   </div>
  </div>
 </div>

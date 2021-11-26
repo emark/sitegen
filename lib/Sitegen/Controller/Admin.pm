@@ -6,7 +6,8 @@ has 'login' => sub{
 	return $self->session->{auth} ? 1 : $self->redirect_to('/admin/');
 };
 
-my $VERSION = '1.02';
+my $VERSION = '1.03';
+my $GIT = 'https://github.com/emark/sitegen';
 
 sub auth {
 	my $self = shift;
@@ -45,6 +46,7 @@ sub dashboard {
 		urls => $urls,
 		update => $update,
 		version => $VERSION,
+		gitrepo => $GIT,
 	);
 }
 
@@ -229,8 +231,8 @@ sub edit {
 
 	 	)->fetch_hash;
 
-	my $path = $config->{downloads}.$url;
-	my @files = glob ($path."/*.*");
+	my $path = $config->{downloads}.$url.'/';
+	my @files = glob ($path."*.*");
 	foreach my $file (@files){
 		$file =~s /$path//;
 	};
@@ -269,17 +271,18 @@ sub upload {
 
     my $config = $self->config;
 	my $downloads = $config->{downloads};
-    my $source = $self->param('source');
     my $url = $self->param('url');
-	my $filename = $source->{filename};
+	my $uploads = $self->param('source');
 	my $alert = {
 		type => 'success',
-		text => "File  $downloads$url/$filename was uploading"
+		text => 'File(s) sucessfully uploaded',
 	}; 
-	
-	if ($source->{filename}){
-		$source->move_to($downloads.$url.'/'.$filename);
 
+	if ($uploads->filename){
+		foreach my $upload (@{$self->req->every_upload('source')}){
+			$upload->move_to($downloads.$url.'/'.$upload->filename);
+
+		};
 	}else{
 		$alert = {
 			type => 'warning',
