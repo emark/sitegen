@@ -232,11 +232,11 @@ sub edit {
 	 	)->fetch_hash;
 
 	my $path = $config->{downloads}.$url.'/';
-	my @files = glob ($path."*.*");
+	my @files = glob ($path."*");
 	foreach my $file (@files){
 		$file =~s /$path//;
+		utf8::decode($file);
 	};
-
 	my $files = \@files;
 	
 	if($page){
@@ -254,7 +254,7 @@ sub edit {
 				files => $files,
 				saved => 0,
 				removed => 0,
-				template => 'admin/editor' 
+				template => 'admin/editor',
 			);
 		};
 	}else{
@@ -334,10 +334,11 @@ sub save {
 		
 	};
 
-	my $prefix = $config->{downloads}.$url.'/';
-	my @files = glob ($prefix."*.*");
+	my $path = $config->{downloads}.$url.'/';
+	my @files = glob ($path."*.*");
 	foreach my $file (@files){
-		$file =~s /$prefix//;
+		$file =~s /$path//;
+		utf8::decode($file);
 	};
 
 	my $files = \@files;
