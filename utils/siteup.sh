@@ -5,11 +5,12 @@ cd ~/projects/site/cgi-bin/sitegen/utils/
 SITE=~/projects/site/htdocs
 CRONFILE=tmp/cron.txt
 DB_CONNECT=$(cat db.conf)
+DB_DUMP=dump/dump.sql
 
 if [ -f "$CRONFILE" ]; then
 
 #Dump database
-mysqldump $DB_CONNECT --result-file=dump/dump.sql 
+mysqldump $DB_CONNECT --result-file=$DB_DUMP
 
 git pull
 
