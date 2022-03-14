@@ -79,8 +79,8 @@
 	<div class="panel panel-default" id="instagram">
 		<div class="panel-body text-center">
 			<p><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></p>
-			<p class="lead">Больше наших фотографий смотрите в инстаграме</p>
-			<p><a href="https://instagram.com/trimedvedya/" role="button" class="btn btn-default btn-lg" title="Открыть в новом окне" target="instagram">Смотреть фотографии</a></p>
+			<p class="lead">Больше наших фотографий</p>
+			<p><a href="/allphotos.html" role="button" class="btn btn-default btn-lg" title="Каталог фотографий">Смотреть фотографии</a></p>
 		</div>
 	</div>
 	
