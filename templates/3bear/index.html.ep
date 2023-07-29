@@ -34,7 +34,9 @@
 </div>
 
 <div id="video" class="embed-responsive embed-responsive-16by9 hidden-xs">
-	<iframe width="560" height="315" src="downloads/index/promo.mp4" frameborder="0" allowfullscreen></iframe>
+	<video width="560" height="315" controls="controls">
+	    <source src="downloads/index/promo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+	</video>
 
 </div>
 
