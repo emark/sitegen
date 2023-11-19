@@ -6,8 +6,6 @@
 </div>
 
 <div id="products">
-	<h2>Описание и цены</h2>
-
 	<div class="row">
 
 %	my $i = 0;
