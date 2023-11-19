@@ -16,7 +16,7 @@
 	%= hidden_field url => $page->{'url'}
 	</p>
 	<p><b>Template:</b> <a href="#1" onClick="AddTemplate('script')">script</a>, <a href="#1" onClick="AddTemplate('simple')">simple</a>, 
-	<a href="#1" onClick="AddTemplate('filestorage')">filestorage</a>, <a href="#1" onClick="AddTemplate('products')">products</a>, <a href="#1" onClick="AddTemplate('specoffers')">specoffers</a></p>
+	<a href="#1" onClick="AddTemplate('filestorage')">filestorage</a>, <a href="#1" onClick="AddTemplate('products')">products</a>, <a href="#1" onClick="AddTemplate('specoffers')">specoffers</a>, <a href="#1" onClick="AddTemplate('catalog')">catalog</a></p>
 	<p><b>Meta:</b></p>
 	%= text_area meta => $page->{meta}, cols => '100%', rows => '2'
 
@@ -62,6 +62,7 @@
 		templates['filestorage'] = "files:FILE CAPTION=FILENAME@"
 		templates['products'] = "prodrome:PRODUCTS CAPTION%products:PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>@PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>%photo:PHOTO CAPTION@PHOTO CAPTION"
 		templates['specoffers'] = "offers:OFFER CAPTION@OFFER CAPTION@OFFER CAPTION"
+		templates['catalog'] = "prodrome:PRODUCTS CAPTION%products:PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>@PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>%photo:PHOTO CAPTION@PHOTO CAPTION"
 		content.value = templates[template]
 	}
 	
