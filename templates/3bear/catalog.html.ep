@@ -31,7 +31,7 @@
 
 %	    if ($img){
 
-	      <a href="/downloads/<%= $page->{'url'} %>/<%= $i %>.jpg" data-lightbox="<%= $page->{url}.$i %>" data-title="<%= $page->{meta}{title} %> - <%= $ptitle %>"><img src="/downloads/<%= $page->{url} %>/<%= $i %>.jpg" class="img-responsive" title="<%= $page->{meta}{title} %> - <%= $ptitle %>" alt="<%= $page->{meta}{title} %> - <%= $ptitle %>"></a>
+	      <a href="/downloads/<%= $page->{'url'} %>/<%= $img %>.jpg" data-lightbox="<%= $page->{url}.$i %>" data-title="<%= $page->{meta}{title} %> - <%= $ptitle %>"><img src="/downloads/<%= $page->{url} %>/<%= $img %>.jpg" class="img-responsive" title="<%= $page->{meta}{title} %> - <%= $ptitle %>" alt="<%= $page->{meta}{title} %> - <%= $ptitle %>"></a>
 
 %	      }else{
 
