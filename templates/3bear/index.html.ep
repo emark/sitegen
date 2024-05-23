@@ -35,7 +35,7 @@
 
 <div id="video" class="embed-responsive embed-responsive-16by9 hidden-xs">
 	<video width="560" height="315" controls="controls">
-	    <source src="downloads/index/promo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+	    <source src="/downloads/index/promo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 	</video>
 
 </div>
