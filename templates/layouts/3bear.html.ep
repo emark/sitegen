@@ -1,8 +1,7 @@
 % my %url = (
-% 	nomera => '', 
-% 	banket => '', 
-% 	konference => '', 
-% 	kontakt => '',
+% 	rooms => '', 
+% 	halls => '', 
+% 	contacts => '',
 % 	prices => '',
 % 	booking => '',
 % );
@@ -67,13 +66,13 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-        		<li class="<%= $url{nomera} %>"><a href="/nomera.html">Гостиничные номера</a></li>
-           		<li class="<%= $url{konference} %>"><a href="/konference.html">Конференц-залы</a></li>
+        		<li class="<%= $url{rooms} %>"><a href="/rooms.html">Гостиничные номера</a></li>
+           		<li class="<%= $url{halls} %>"><a href="/halls.html">Конференц-залы</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="<%= $url{prices} %>"><a href="/prices.html">Цены <span class="sr-only">(current)</span></a></li>
            		<li class="<%= $url{booking} %>"><a href="/booking.html">Бронирование</a></li>
-           		<li class="<%= $url{kontakt} %>"><a href="/kontakt.html">Контакты</a></li>
+           		<li class="<%= $url{contacts} %>"><a href="/contacts.html">Контакты</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -97,8 +96,8 @@
 				<div class="col-sm-3">
 						<dl>
 							<dt><h4>Услуги</h4></dt>
-							<dd><a href="/nomera.html">Гостиничные номера</a></dd>
-							<dd><a href="/konference.html">Конференц-залы</a></dd>
+							<dd><a href="/rooms.html">Гостиничные номера</a></dd>
+							<dd><a href="/halls.html">Конференц-залы</a></dd>
 							<dd><a href="/arenda.html">Коммерческая аренда</a></dd>			
 						</dl>
 					</div>
@@ -109,7 +108,7 @@
 							<dd><a href="/prices.html">Цены</a></dd>
 							<dd><a href="/booking.html">Бронирование</a></dd>
 							<dd><a href="/payqr.html">Оплата по QR</a></dd>
-							<dd><a href="/kontakt.html">Контакты</a></dd>
+							<dd><a href="/contacts.html">Контакты</a></dd>
 						</dl>
 					</div>
 					
