@@ -3,7 +3,6 @@
 <div class="page-header">
 	<h1><%= $page->{meta}{title} %></h1>
 </div>
-<p>Для просмотра файлов вам понадобится программа Adobe Reader. Загрузить программу можно по ссылке <%= link_to 'Adobe Reader' => 'https://get.adobe.com/ru/reader/otherversions/', target => '_blank' %></p>
 
 <div id="content">
 		
