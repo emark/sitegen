@@ -107,7 +107,7 @@
 							<dt><h4>Информация</h4></dt>
 							<dd><a href="/prices.html">Цены</a></dd>
 							<dd><a href="/booking.html">Бронирование</a></dd>
-							<dd><a href="/payqr.html">Оплата по QR</a></dd>
+							<dd><a href="/sbpay.html">Оплата по СБП</a></dd>
 							<dd><a href="/contacts.html">Контакты</a></dd>
 						</dl>
 					</div>
