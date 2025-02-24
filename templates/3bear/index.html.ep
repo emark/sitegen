@@ -4,7 +4,7 @@
 
 <div class="page-header">
 	<h1 class="logotype"><img src="/media/images/site/<%= $site %>-logo.svg" class="img-responsive center-block" title="Гостиница Три медведя" alt="Гостиница Три медведя"></h1>
-	<p class="text-center lead">г. Красноярск, ул. Ленинградская, 11</p>
+	<p class="text-center lead">г. Красноярск, ул. Ленинградская, зд. 11</p>
 	<div class="row">
 		<div class="col-sm-12">
 		<p class="text-center lead">+7&nbsp;391&nbsp;222-49-91<br/>+7&nbsp;391&nbsp;243-36-13<br/><i class="fa fa-whatsapp fa-1x privilege" aria-hidden="true"></i>&nbsp;<a href="https://wa.me/message/5AJL332SUVDQO1" target=_blank title="Написать сообщение">WhatsApp</a></p>
