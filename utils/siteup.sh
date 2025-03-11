@@ -1,27 +1,31 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
-cd ~/projects/site/cgi-bin/sitegen/utils/
+date "+%D %T"
+echo -e "Run script siteup.sh\nExample: sudo -u www-data ./siteup.sh"
 
-SITE=~/projects/site/htdocs
-CRONFILE=tmp/cron.txt
-DB_CONNECT=$(cat db.conf)
-DB_DUMP=dump/dump.sql
+cd $PWD 
 
+source site.env
+
+echo "Attemp to open $CRONFILE"
 if [ -f "$CRONFILE" ]; then
 
-#Dump database
-mysqldump $DB_CONNECT --result-file=$DB_DUMP
+if [ $DB_DUMP == 1 ]; then
+	mysqldump $DB_CONNECT --result-file=$DB_DATA
+fi
 
-git pull
+if [ $GIT_PULL == 1 ]; then
+	git pull 
+fi
 
-rm $SITE/*.html
+rm $HTML/*.html
 
 cd tmp
+wget --no-check-certificate --input-file cron.txt --base=$SITE_URL
+cd ../
 
-wget --no-check-certificate --input-file cron.txt
-
-mv -vf *.html $SITE
-rm cron.txt
+mv -vf tmp/*.html $HTML
+rm $CRONFILE
 
 echo "Updated"
 fi

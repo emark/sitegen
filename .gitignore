@@ -6,3 +6,4 @@ log
 logrotate/*
 utils/tmp/*
 utils/dump/*
+*.env
