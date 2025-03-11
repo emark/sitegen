@@ -1,31 +1,39 @@
 #!/usr/bin/bash
 
 date "+%D %T"
-echo -e "Run script siteup.sh\nExample: sudo -u www-data ./siteup.sh"
+echo -e "Run script siteup.sh\nExample: sudo -u www-data ./siteup.sh [WORKDIR]"
 
-cd $PWD 
+
+if [ $1 ]; then
+	WORKDIR=$1
+	cd $WORKDIR
+fi
+
+
 
 source site.env
 
-echo "Attemp to open $CRONFILE"
+echo "Attemp to open file: $CRONFILE"
 if [ -f "$CRONFILE" ]; then
 
-if [ $DB_DUMP == 1 ]; then
-	mysqldump $DB_CONNECT --result-file=$DB_DATA
-fi
+	if [ $DB_DUMP == 1 ]; then
+		mysqldump $DB_CONNECT --result-file=$DB_DATA
+	fi
 
-if [ $GIT_PULL == 1 ]; then
-	git pull 
-fi
+	if [ $GIT_PULL == 1 ]; then
+		git pull 
+	fi
 
-rm $HTML/*.html
+	rm $HTML/*.html
 
-cd tmp
-wget --no-check-certificate --input-file cron.txt --base=$SITE_URL
-cd ../
+	cd tmp
+	wget --no-check-certificate --input-file cron.txt --base=$SITE_URL
+	cd ../
 
-mv -vf tmp/*.html $HTML
-rm $CRONFILE
+	mv -vf tmp/*.html $HTML
+	rm $CRONFILE
 
-echo "Updated"
+	echo "Updated"
+else
+	echo "File didn't exists!"
 fi
