@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use lib "/home/hosting_3bears/perl5/lib/perl5";
+#use local::lib;
 
 use FindBin;
 BEGIN { unshift @INC, "$FindBin::Bin/../lib" }

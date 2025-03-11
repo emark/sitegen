@@ -49,6 +49,14 @@ sub startup {
 	#Routes for rentals dynamic pages
 	$r->get('/arenda/:url' => [url =>qr/\d\-\d+/], [format => ['html']])->to('arenda#rentals');
 	
+	$self->hook(before_dispatch => sub {
+        my $self = shift;
+        $self->req->url->base(Mojo::URL->new($config->{url}));
+
+        }
+
+    ) if $self->mode eq 'production';
+
 }
 
 1;
