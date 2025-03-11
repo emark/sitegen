@@ -364,7 +364,7 @@ sub update {
 	
 	open (CRON, "> $config->{update}") || die "Can't open file: $config->{update}";
 	foreach my $url (@urls){
-		print CRON "http://www.".$config->{site}.".ru/".$url.".html\n";
+		print CRON $url.".html\n";
 	};
 	close (CRON);
 
