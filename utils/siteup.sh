@@ -17,10 +17,12 @@ echo "Attemp to open file: $CRONFILE"
 if [ -f "$CRONFILE" ]; then
 
 	if [ $DB_DUMP == 1 ]; then
+		echo "Start to dump database: $DB_DATA"
 		mysqldump $DB_CONNECT --result-file=$DB_DATA
 	fi
 
 	if [ $GIT_PULL == 1 ]; then
+		echo "Get updates from git repository"
 		git pull 
 	fi
 
