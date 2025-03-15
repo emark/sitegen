@@ -15,7 +15,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="<%= $page->{meta}{description} %>">
     <meta name="author" content="">
-    <link rel="icon" href="https://www.3bear.ru/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
     <title><%= title %> &mdash; Гостиница &laquo;Три медведя&raquo;</title>
 
