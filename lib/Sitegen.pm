@@ -11,7 +11,7 @@ has 'dbh' => sub {
 			dsn => $config->{dsn},
 			user => $config->{dbuser},
 			password => $config->{dbpassword},
-			option => {mysql_enable_utf8 => 1}
+			option => {sqlite_unicode => 1}
 	);
 
 	return $dbi;

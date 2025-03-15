@@ -1,4 +1,12 @@
 #!/usr/bin/bash
+# Default site.env
+# SITE_URL=""
+# HTML=""
+# CRONFILE=""
+# DB_CONNECT=""
+# DB_DATA=""
+# DB_DUMP=0
+# GIT_PULL=0
 
 date "+%D %T"
 echo -e "Run script siteup.sh\nExample: sudo -u www-data ./siteup.sh [WORKDIR]"
@@ -18,7 +26,7 @@ if [ -f "$CRONFILE" ]; then
 
 	if [ $DB_DUMP == 1 ]; then
 		echo "Start to dump database: $DB_DATA"
-		mysqldump $DB_CONNECT --result-file=$DB_DATA
+		sqlite3 $DB_CONNECT .dump > $DB_DATA
 	fi
 
 	if [ $GIT_PULL == 1 ]; then
@@ -39,3 +47,4 @@ if [ -f "$CRONFILE" ]; then
 else
 	echo "File didn't exists!"
 fi
+

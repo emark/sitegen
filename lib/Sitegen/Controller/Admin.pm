@@ -6,8 +6,8 @@ has 'login' => sub{
 	return $self->session->{auth} ? 1 : $self->redirect_to('/admin/');
 };
 
-my $VERSION = '1.05';
-my $GIT = 'https://github.com/emark/sitegen';
+my $VERSION = 'v.1.05';
+my $GIT = 'https://github.com/emark/sitegen/releases/tag/'.$VERSION;
 
 sub auth {
 	my $self = shift;

@@ -129,7 +129,7 @@
 <div>
  <div class="row">
   <div class="col-md-12">
-   <p align="right">Sitegen v. <%= $version %>, <%= link_to $gitrepo => $gitrepo %></p>
+   <p align="right">Sitegen <%= $version %>, <%= link_to 'Get release' => $gitrepo %></p>
   </div>
  </div>
 </div>
