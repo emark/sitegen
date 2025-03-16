@@ -1,0 +1,2 @@
+#Cron tasks for sitegen updates
+* * * * * bash /sitegen/utils/siteup.sh /sitegen/utils > /sitegen/utils/cron.log
