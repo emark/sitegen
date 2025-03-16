@@ -6,7 +6,7 @@ sub sitemap {
 	my $config = $self->config;
 	my $urls = $self->app->dbh->select(
 		column => ['url'],
-		table => $config->{prefix}.$config->{site}
+		table => $config->{prefix}.$config->{sitename}
 	)->fetch_all;
 
 	my @lastmod = localtime;
@@ -20,7 +20,7 @@ sub sitemap {
 		template => 'sitemap',
 		format => 'xml',
 		urls => $urls,
-		site => $config->{site},
+		site => $config->{sitename},
 		lastmod => $lastmod[0]
 	);
 
@@ -32,7 +32,7 @@ sub page {
 	my $url = $self->param('url');
 
  	my $page = $self->app->dbh->select(
- 			table =>$config->{prefix}.$config->{site},
+ 			table =>$config->{prefix}.$config->{sitename},
  			columns => ['meta','content'],
  			where => {url => $url},
  	
@@ -66,12 +66,12 @@ sub page {
 	$page = $page ? $page : {url => '404', status => 404, meta => { template => '404', title => 'Страница не найдена' }, content => "Страница <b>$url</b> отсутствует на сервере." };
 
 	$self->render( 
-		layout => $config->{site},
-		template => $config->{site}.'/'.$page->{meta}{template},
+		layout => $config->{sitename},
+		template => $config->{sitename}.'/'.$page->{meta}{template},
 		format => 'html',
 		status => $page->{status},
 		page => $page,
-		site => $config->{site}
+		site => $config->{sitename}
 	);
 }
 

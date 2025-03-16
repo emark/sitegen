@@ -8,7 +8,7 @@ sub album {
 	my %album = ();
 	my %photo = ();
  	my $pages = $self->app->dbh->select(
- 			table =>$config->{prefix}.$config->{site},
+ 			table =>$config->{prefix}.$config->{sitename},
  			columns => ['url','meta','content'],
  	
  	)->fetch_hash_all || 0;
@@ -40,12 +40,12 @@ sub album {
 	$page->{meta} = {title => 'Фотогалерея', description => 'Фотографии гостиницы'};
 
 	$self->render( 
-		layout => $config->{site},
-		template => $config->{site}.'/allphotos',
+		layout => $config->{sitename},
+		template => $config->{sitename}.'/allphotos',
 		album => \%album,
 		photo => \%photo,
 		page => $page,
-		site => $config->{site}
+		site => $config->{sitename}
 
 	);
 };

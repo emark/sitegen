@@ -17,11 +17,16 @@ fi
 }
 
 conf='site.env'
-var="SITE_URL=http://sitegen/\nHTML=\nCRONFILE=\nDB_CONNECT=\nDB_DATA=\nDB_DUMP=\nGIT_PULL="
+var="SITENAME=sitegen\nSITE_URL=http://sitegen/\nHTML=\nCRONFILE=\nDB_CONNECT=\nDB_DATA=\nDB_DUMP=\nGIT_PULL="
 setconf
 
 conf='../sitegen.conf'
-var="{\n\tdsn => ,\n\tdbuser => ,\n\tdbpassword => ,\n\tprefix => ,\n\tsite => ,\n\tmode => ,\n\tsecrets => ,\n\t\
+var="{\n\tdsn => ,\n\tdbuser => ,\n\tdbpassword => ,\n\tprefix => ,\n\tsitename => ,\n\tmode => ,\n\tsecrets => ,\n\t\
 login => ,\n\tpass => ,\n\tdownloads => ,\n\tupdate => ,\n\tgit => ,\n\tstatic => ,\n\tstatic_extension => ,\n\t\
 url => \n}"
+setconf
+
+source site.env
+conf='../db/schema.sql'
+var="CREATE TABLE site_$SITENAME (url text, meta text, content text);"
 setconf

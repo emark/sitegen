@@ -36,7 +36,7 @@ sub dashboard {
 	my $config = $self->config;
 
 	my $urls = $self->app->dbh->select(
-		table =>  $config->{prefix}.$config->{site},
+		table =>  $config->{prefix}.$config->{sitename},
 		column => 'url',
 	)->values;
 
@@ -77,14 +77,14 @@ sub add(){
 		$url=~s/[^a-z]+//g;
 		my $check_url = $self->app->dbh->select(
 			column => ['url'],
-	        table => $config->{prefix}.$config->{site},
+	        table => $config->{prefix}.$config->{sitename},
 			where => {'url' => $url},
 		)->value;
 		if(!$check_url){
 			if (mkdir $config->{downloads}.$url){
 			    $self->app->dbh->insert(
 					{url => $url},
-	    		    table => $config->{prefix}.$config->{site},
+	    		    table => $config->{prefix}.$config->{sitename},
 
 		    	);
 
@@ -141,7 +141,7 @@ sub delete(){
 
 		if($rmdir){
 			$self->app->dbh->delete(
-				table => $config->{prefix}.$config->{site},
+				table => $config->{prefix}.$config->{sitename},
 				where => {url => $url},
 			);
 			#Delete static html file
@@ -184,14 +184,14 @@ sub import {
 		if($page{url}){
 			my $check_url = $self->app->dbh->select(
 				column => ['url'],
-	    	    table => $config->{prefix}.$config->{site},
+	    	    table => $config->{prefix}.$config->{sitename},
 				where => {'url' => $page{url}},
 			)->value;
 
 			if(!$check_url){
 			    $self->app->dbh->insert(
 					{%page},
-	    	    	table => $config->{prefix}.$config->{site},
+	    	    	table => $config->{prefix}.$config->{sitename},
 
 		    	);
 				mkdir $config->{downloads}.$page{url};
@@ -200,7 +200,7 @@ sub import {
 				$self->app->dbh->update(
 					{%page},
 					where => {url => $page{url}},
-					table => $config->{prefix}.$config->{site},
+					table => $config->{prefix}.$config->{sitename},
 
 				);
 			};
@@ -226,7 +226,7 @@ sub edit {
 	my $export = $self->param('export');
 
  	my $page = $self->app->dbh->select(
- 		table => $config->{prefix}.$config->{site},
+ 		table => $config->{prefix}.$config->{sitename},
 		where => {url => $url}
 
 	 	)->fetch_hash;
@@ -322,7 +322,7 @@ sub save {
 	};
 	my $result = $self->app->dbh->update(
 		$page,
-		table => $config->{prefix}.$config->{site},
+		table => $config->{prefix}.$config->{sitename},
 		where => {url => $url}
 	);
 
@@ -358,7 +358,7 @@ sub update {
 
 	my $config = $self->config;
 	my @urls = $self->app->dbh->select(
-		table =>  $config->{prefix}.$config->{site},
+		table =>  $config->{prefix}.$config->{sitename},
 		column => ['url'],
 	)->flat;
 	
