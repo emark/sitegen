@@ -1,5 +1,5 @@
 package Sitegen;
-use Mojo::Base 'Mojolicious';
+use Mojo::Base 'Mojolicious', -base, -signatures;
 use DBIx::Custom;
 
 my $config = '';
@@ -28,7 +28,7 @@ sub startup {
 	
 	#Administrative
 	$r->any('/admin/')->to('admin#auth');
-	$r->any('/admin/logout/')->to('admin#logout');
+	$r->get('/admin/logout/')->to('admin#logout');
 	$r->get('/admin/dashboard/')->to('admin#dashboard');
 	$r->get('/admin/edit/')->to('admin#edit');
 	$r->get('/admin/edit/view/:url' => [format => ['html']])->to('generate#page');
