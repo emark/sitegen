@@ -18,7 +18,7 @@ if [ -f "$CRONFILE" ]; then
 
 	if [ $DB_DUMP == 1 ]; then
 		echo "Start to dump database: $DB_DATA"
-		sqlite3 $DB_CONNECT .dump > $DB_DATA
+		sqlite3 $DATABASE .dump > $DUMP_DATA
 	fi
 
 	if [ $GIT_PULL == 1 ]; then

@@ -7,3 +7,4 @@ utils/dump/*
 utils/*.log
 *.env
 db
+devcfg

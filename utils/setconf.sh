@@ -17,13 +17,13 @@ fi
 }
 
 conf='site.env'
-var="SITENAME=sitegen\nSITE_URL=http://sitegen/\nHTML=\nCRONFILE=\nDB_CONNECT=\nDB_DATA=\nDB_DUMP=\nGIT_PULL="
+var="SITENAME=sitegen\nSITE_URL=http://sitegen/\nHTML=\nCRONFILE=cron.txt\nDATABASE=../db/sitegen.sql\nDUMP_DATA=./dump/dump.sql\nDB_DUMP=0\nGIT_PULL=0"
 setconf
 
 conf='../sitegen.conf'
-var="{\n\tdsn => ,\n\tdbuser => ,\n\tdbpassword => ,\n\tprefix => ,\n\tsitename => ,\n\tmode => ,\n\tsecrets => ,\n\t\
-login => ,\n\tpass => ,\n\tdownloads => ,\n\tupdate => ,\n\tgit => ,\n\tstatic => ,\n\tstatic_extension => ,\n\t\
-url => \n}"
+var="{\n\tdsn => [dbi:SQLite:dbname=../db/sitegen.sql],\n\tdbuser => [dbuser],\n\tdbpassword => [dbuser],\n\tprefix => [site_],\n\tsitename => [sitegen],\n\tmode => [production],\n\tsecrets => [somesecretword],\n\t\
+login => [login],\n\tpass => [pass],\n\tdownloads => [../public/downloads/],\n\tupdate => [../utils/tmp/cron.txt],\n\tstatic => [../public/],\n\tstatic_extension => [.html],\n\t\
+url => [http://sitegen]\n}"
 setconf
 
 source site.env
