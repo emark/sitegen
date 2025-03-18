@@ -45,8 +45,6 @@ sub album {
 		album => \%album,
 		photo => \%photo,
 		page => $page,
-		site => $config->{sitename}
-
 	);
 };
 

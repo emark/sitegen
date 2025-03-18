@@ -36,4 +36,14 @@ $t->get_ok('/admin/logout/')
 # 13
 	->status_is(302);
 
+# 14
+$t->get_ok('/allphotos.html')
+# 15
+	->status_is(200);
+
+# 16
+$t->get_ok('/arenda/0-0.html')
+# 17
+	->status_is(200);
+
 done_testing();

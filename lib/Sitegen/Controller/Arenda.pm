@@ -15,8 +15,8 @@ sub rentals(){
 	my $media = \@files;
 
 	$self->render(
-		layout => $config->{'site'},
-		template => $config->{'site'}.'/rentals',
+		layout => $config->{'sitename'},
+		template => $config->{'sitename'}.'/rentals',
 		format => 'html',
 		url => $url,
 		page => {'url' => $url},
