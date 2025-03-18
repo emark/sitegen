@@ -1,12 +1,4 @@
 #!/usr/bin/bash
-# Default site.env
-# SITE_URL=""
-# HTML=""
-# CRONFILE=""
-# DB_CONNECT=""
-# DB_DATA=""
-# DB_DUMP=0
-# GIT_PULL=0
 
 date "+%D %T"
 echo -e "Run script siteup.sh\nExample: sudo -u www-data ./siteup.sh [WORKDIR]"

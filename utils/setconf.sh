@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 TITLE='Configuration setup'
-VERSION=0.01
+VERSION=0.02
 DESCRIPTION='Create defaults configuration files'
 
 echo -e $TITLE"\n"$DESCRIPTION "v"$VERSION
@@ -30,3 +30,8 @@ source site.env
 conf='../db/schema.sql'
 var="CREATE TABLE site_$SITENAME (url text, meta text, content text);"
 setconf
+
+conf='../.crontab'
+var="#$TITLE\n#$DESCRIPTION\n% bash $PWD/siteup.sh $PWD > $PWD/cron.log"
+setconf
+sed -i "s/%/* * * * */g" $conf
