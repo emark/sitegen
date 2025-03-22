@@ -4,8 +4,7 @@ public/*
 utils/tmp/*
 utils/dump/*
 utils/*.log
-script/*
-script/sitegen
+script/
 *
 ~*.*
 *.conf
