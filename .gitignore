@@ -1,6 +1,6 @@
 db/
 devcfg/
-script/*
+script
 public/*
 utils/tmp/*
 utils/dump/*
