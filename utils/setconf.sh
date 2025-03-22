@@ -17,7 +17,7 @@ fi
 }
 
 conf='site.env'
-var="SITENAME=sitegen\nSITE_URL=http://sitegen/\nHTML=\nCRONFILE=cron.txt\nDATABASE=../db/sitegen.sql\nDUMP_DATA=./dump/dump.sql\nDB_DUMP=0\nGIT_PULL=0"
+var="SITENAME=sitegen\nSITE_URL=http://sitegen/\nHTML=../public/\nCRONFILE=cron.txt\nDATABASE=../db/sitegen.sql\nDUMP_DATA=./dump/dump.sql\nDB_DUMP=0\nGIT_PULL=0"
 setconf
 
 conf='../sitegen.conf'
