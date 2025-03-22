@@ -1,3 +1,0 @@
-#Configuration setup
-#Create defaults configuration files
-* * * * * bash /home/maxim/develop/www/sitegen/cgi-bin/sitegen/utils/siteup.sh /home/maxim/develop/www/sitegen/cgi-bin/sitegen/utils > /home/maxim/develop/www/sitegen/cgi-bin/sitegen/utils/cron.log
