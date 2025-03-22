@@ -5,6 +5,7 @@ COPY cpanfile .
 RUN apt-get update && \
 apt-get install -y sqlite3 && \
 apt-get install -y cpanminus && \
+apt-get install -y gcc && \
 apt-get install -y libdbd-sqlite3-perl && \
 cpanm --installdeps .
 

@@ -1,9 +1,10 @@
-db/
-devcfg/
-public/*
+db
+devcfg
+public
 utils/tmp/*
 utils/dump/*
 utils/*.log
+script
 ~*.*
 *.conf
 *.swp
