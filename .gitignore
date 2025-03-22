@@ -4,9 +4,8 @@ public/*
 utils/tmp/*
 utils/dump/*
 utils/*.log
-*
 ~*.*
 *.conf
 *.swp
-.env
+*.env
 .crontab
