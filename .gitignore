@@ -8,3 +8,4 @@ utils/*.log
 *.env
 db
 devcfg
+script/

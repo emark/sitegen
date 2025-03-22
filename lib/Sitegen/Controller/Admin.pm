@@ -7,7 +7,7 @@ has 'login' => sub{
 };
 
 my $VERSION = 'v1.09';
-my $GIT = 'https://github.com/emark/sitegen/releases/tag/'.$VERSION;
+my $GIT = 'https://github.com/emark/sitegen/releases/latest/';
 
 sub auth {
 	my $self = shift;
