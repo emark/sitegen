@@ -32,6 +32,6 @@ var="CREATE TABLE site_$SITENAME (url text, meta text, content text);"
 setconf
 
 conf='../.crontab'
-var="#$TITLE\n#$DESCRIPTION\n% bash $PWD/siteup.sh $PWD > $PWD/cron.log"
+var="#$TITLE\n#$DESCRIPTION\n% bash $PWD/siteup.sh $PWD > $PWD/cron.log\n"
 setconf
 sed -i "s/%/* * * * */g" $conf
