@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use local::lib;
+#use local::lib;
 
 use FindBin;
 BEGIN { unshift @INC, "$FindBin::Bin/../lib" }
