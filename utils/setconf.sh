@@ -2,7 +2,7 @@
 
 TITLE='Configuration setup'
 VERSION=0.02
-DESCRIPTION='Create defaults configuration files'
+DESCRIPTION='Creatng defaults configuration files'
 
 echo -e $TITLE"\n"$DESCRIPTION "v"$VERSION
 
@@ -17,7 +17,7 @@ fi
 }
 
 conf='site.env'
-var="SITENAME=sitegen\nSITE_URL=http://sitegen/\nHTML=../public/\nCRONFILE=cron.txt\nDATABASE=../db/sitegen.sql\nDUMP_DATA=./dump/dump.sql\nDB_DUMP=0\nGIT_PULL=0"
+var="SITE_NAME=sitegen\nSITE_URL=http://sitegen/\nHTML_STATIC=../public/\nCRONFILE=cron.txt\nDATABASE=../db/sitegen.sql\nDB_DATA=./dump/dump.sql\nDB_DUMP=0\nGIT_PULL=0"
 setconf
 
 conf='../sitegen.conf'
@@ -28,7 +28,7 @@ setconf
 
 source site.env
 conf='../db/schema.sql'
-var="CREATE TABLE site_$SITENAME (url text, meta text, content text);"
+var="CREATE TABLE site_$SITE_NAME (url text, meta text, content text);"
 setconf
 
 conf='../.crontab'
