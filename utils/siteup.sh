@@ -27,7 +27,7 @@ if [ -f "$CRONFILE" ]; then
 		git pull 
 	fi
 
-	rm $HTML/*.html
+	rm $HTML_STATIC/*.html
 
 	cd tmp
 	wget --no-check-certificate --input-file cron.txt --base=$SITE_URL
