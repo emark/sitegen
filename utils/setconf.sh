@@ -23,7 +23,7 @@ setconf
 conf='../sitegen.conf'
 var="{\n\tdsn => [dbi:SQLite:dbname=../db/sitegen.sql],\n\tdbuser => [dbuser],\n\tdbpassword => [dbuser],\n\tprefix => [site_],\n\tsitename => [sitegen],\n\tmode => [production],\n\tsecrets => [somesecretword],\n\t\
 login => [login],\n\tpass => [pass],\n\tdownloads => [../public/downloads/],\n\tupdate => [../utils/tmp/cron.txt],\n\tstatic => [../public/],\n\tstatic_extension => [.html],\n\t\
-url => [http://sitegen]\n}"
+url => [http://sitegen]\n\tlog_upd => [../utils/cron.log]\n}"
 setconf
 
 source site.env

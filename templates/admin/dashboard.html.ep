@@ -122,7 +122,14 @@
 	%= submit_button 'Update'
 
 % end
-<p><pre>Log: <%= $log_upd %></pre></p>
+ </div>
+</div>
+
+<div>
+ <div class="row">
+  <div class="col-md-6">
+   <p><pre>Log: <%= $log_upd %></pre></p>
+  </div>
  </div>
 </div>
 
