@@ -1,5 +1,7 @@
 FROM debian:stable-slim
 
+WORKDIR /sitegen
+
 COPY cpanfile .
 
 RUN apt-get update && \
@@ -11,14 +13,12 @@ cpanm --installdeps . && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
-COPY . /sitegen
-
-WORKDIR /sitegen/script
+COPY . .
 
 EXPOSE 3000
 
 CMD ["/usr/local/bin/morbo", "/sitegen/script/sitegen"]
 
 # Run container
-# docker run -itd -p 80:3000 --mount type=bind,src=${PWD}/devcfg/app.sitegen.conf,dst=/sitegen/sitegen.conf --mount type=bind,src=${PWD}/public/downloads,dst=/sitegen/public/downloads --mount type=bind,src=${PWD}/db,dst=/sitegen/db --mount type=bind,src=${PWD}/utils/site.env,dst=/sitegen/utils/site.env sitegen
+# docker run -itd -p 80:3000 --mount type=bind,src=${PWD}/sitegen.conf,dst=/sitegen/sitegen.conf --mount type=bind,src=${PWD}/public/downloads,dst=/sitegen/public/downloads --mount type=bind,src=${PWD}/db,dst=/sitegen/db --mount type=bind,src=${PWD}/utils/site.env,dst=/sitegen/utils/site.env sitegen
 
