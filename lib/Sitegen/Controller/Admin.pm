@@ -40,13 +40,21 @@ sub dashboard {
 		column => 'url',
 	)->values;
 
+	# Get information about site updates
 	my $update = (-e -f -r $config->{update}) ? "Running" : "Complete";
+	my $log_upd;
+	open (LOG, "<", $config->{log_upd}) || die "Can't open logfile: $config->{update}";
+		while(<LOG>){
+			$log_upd.= $_;
+		};
+	close LOG;
 
 	$self->render(
 		urls => $urls,
 		update => $update,
 		version => $VERSION,
 		gitrepo => $GIT,
+		log_upd => $log_upd,
 	);
 }
 
@@ -58,6 +66,7 @@ sub view {
 	my $url = $self->param('url');
 
 	$self->redirect_to("/$url.html");
+
 
 }
 
