@@ -8,7 +8,7 @@ sub show(){
 	my $room = $self->param('url');
 	my $path = $config->{'downloads'}.'rentals/';
 
-	my @files = glob ($path."$url-*.*");
+	my @files = glob ($path."$room-*.*");
 	foreach my $file (@files){
         $file =~s /$path//;
     };
