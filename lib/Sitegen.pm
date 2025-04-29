@@ -48,7 +48,7 @@ sub startup {
 	$r->get('/:url' => [format => ['html']])->to('generate#page');
 
 	#Routes for rentals dynamic pages
-	$r->get('/arenda/:url' => [url =>qr/\d\-\d+/], [format => ['html']])->to('arenda#rentals');
+	$r->get('/rentals/:url' => [url =>qr/\d\-\d+/], [format => ['html']])->to('rentals#show');
 	
 	$self->hook(before_dispatch => sub {
         my $self = shift;

@@ -42,7 +42,7 @@ $t->get_ok('/allphotos.html')
 	->status_is(200);
 
 # 16
-$t->get_ok('/arenda/0-0.html')
+$t->get_ok('/rentals/0-0.html')
 # 17
 	->status_is(200);
 

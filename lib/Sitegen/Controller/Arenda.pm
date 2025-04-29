@@ -1,11 +1,12 @@
-package Sitegen::Controller::Arenda;
+package Sitegen::Controller::Rentals;
 use Mojo::Base 'Mojolicious::Controller';
 
-sub rentals(){
+sub show(){
 	my $self = shift;
 	my $config = $self->config;
-	my $url = $self->param('url'); 
-	my $path = $config->{'downloads'}.'arenda/';
+	my $url = 'rentals/'.$self->param('url');
+	my $room = $self->param('url');
+	my $path = $config->{'downloads'}.'rentals/';
 
 	my @files = glob ($path."$url-*.*");
 	foreach my $file (@files){
@@ -19,6 +20,7 @@ sub rentals(){
 		template => $config->{'sitename'}.'/rentals',
 		format => 'html',
 		url => $url,
+		room => $room,
 		page => {'url' => $url},
 		media => $media,
 	);

@@ -8,7 +8,7 @@
 
 	<div id="gallery">
 
-	<h2>Помещение <%= $url %></h2>
+	<h2>Помещение <%= $room %></h2>
 
 	<div class="row">
 
@@ -45,6 +45,6 @@
 
 </div><!-- /gallery -->
 
-<p>Основная информация о помещении размещена на странице <a href="https://www.3bear.ru/arenda.html">https://www.3bear.ru/arenda.html</a></p>
+<p>Основная информация о помещении размещена на странице <a href="https://www.3bear.ru/rentals.html">https://www.3bear.ru/rentals.html</a></p>
 <p>По вопросам аренды коммерческой недвижимости обращайтесь по телефону: +7&nbsp;391&nbsp;243-36-13, 222-49-91 или по электронной почте: <a href="mailto:info@3bear.ru">info@3bear.ru</a></p>
 </div>
