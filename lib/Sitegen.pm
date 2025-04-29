@@ -30,8 +30,8 @@ sub startup {
 	$r->any('/admin/')->to('admin#auth');
 	$r->get('/admin/logout/')->to('admin#logout');
 	$r->get('/admin/dashboard/')->to('admin#dashboard');
-	$r->get('/admin/edit/')->to('admin#edit');
-	$r->get('/admin/edit/view/:url' => [format => ['html']])->to('generate#page');
+	$r->get('/admin/editor/')->to('admin#editor');
+	$r->get('/admin/editor/preview/:url' => [format => ['html']])->to('generate#page');
 	$r->post('/admin/upload/')->to('admin#upload');
 	$r->post('/admin/import/')->to('admin#import');
 	$r->post('/admin/update/')->to('admin#update');

@@ -81,7 +81,7 @@
  <div class="col-md-4">
   <h3>Edit source</h3>
 
-%= form_for '/admin/edit/' => (method => 'get', target => '_blank') => begin
+%= form_for '/admin/editor/' => (method => 'get', target => '_blank') => begin
 
 	%= select_field url => $urls
 	%= check_box 'export' => 1

@@ -226,7 +226,7 @@ sub import {
 	$self->redirect_to('/admin/dashboard/');
 }
 
-sub edit {
+sub editor {
 	my $self = shift;
 	$self->login;
 
