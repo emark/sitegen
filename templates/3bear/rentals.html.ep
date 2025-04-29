@@ -29,7 +29,7 @@
 %		};
 
 			<div class="col-sm-3">
-				<a href="/downloads/arenda/<%= $photo %>" class="thumbnail" data-lightbox="rentals" data-title="Фотоизображение - <%= $photo %>"><img src="/downloads/arenda/<%= $photo %>" class="img-responsive" alt="Фотоизображение - <%= $photo %>" title="Фотоизображение - <%= $photo %>"></a>
+				<a href="/downloads/rentals/<%= $photo %>" class="thumbnail" data-lightbox="rentals" data-title="Фотоизображение - <%= $photo %>"><img src="/downloads/rentals/<%= $photo %>" class="img-responsive" alt="Фотоизображение - <%= $photo %>" title="Фотоизображение - <%= $photo %>"></a>
 			</div>
 
 %   };
