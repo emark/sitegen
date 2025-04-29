@@ -6,7 +6,7 @@ use Test::Mojo;
 my $t = Test::Mojo->new('Sitegen');
 
 # 1
-$t->post_ok('/admin/' => form => {login => 'test', pass => 'test'})
+$t->post_ok('/admin/' => form => {login => 'dev', pass => 'dev'})
 # 2
 	->status_is(302)
 # 3

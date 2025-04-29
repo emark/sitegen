@@ -16,7 +16,7 @@
     <meta name="description" content="<%= $page->{meta}{description} %>">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
+    <link rel="canonical" href="https://3bear.ru/<%= $page->{url} %><%= config->{static_extension} %>"/>
     <title><%= title %> &mdash; Гостиница &laquo;Три медведя&raquo;</title>
 
     <!-- Bootstrap core CSS -->
