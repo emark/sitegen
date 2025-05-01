@@ -10,3 +10,4 @@ script
 *.swp
 *.env
 .crontab
+slim.report.json
