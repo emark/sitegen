@@ -1,7 +1,7 @@
 package Sitegen::Controller::Photo;
 use Mojo::Base 'Mojolicious::Controller';
 
-sub album {
+sub gallery {
 	my $self = shift;
 	my $config = $self->config;
 
@@ -36,12 +36,12 @@ sub album {
 	
 	};
 
-	my $page->{url} = 'allphotos';
+	my $page->{url} = 'gallery';
 	$page->{meta} = {title => 'Фотогалерея', description => 'Фотографии гостиницы'};
 
 	$self->render( 
 		layout => $config->{sitename},
-		template => $config->{sitename}.'/allphotos',
+		template => $config->{sitename}.'/gallery',
 		album => \%album,
 		photo => \%photo,
 		page => $page,

@@ -26,7 +26,7 @@ sub startup {
 
 	my $r = $self->routes;
 	
-	#Administrative
+	# Administrative
 	$r->any('/admin/')->to('admin#auth');
 	$r->get('/admin/logout/')->to('admin#logout');
 	$r->get('/admin/dashboard/')->to('admin#dashboard');
@@ -41,7 +41,7 @@ sub startup {
 	$r->post('/admin/p/save/')->to('admin#save');
 	
 	# Routes to dynamic pages
-	$r->get('/allphotos' => [format => ['html']])->to('photo#album');
+	$r->get('/gallery' => [format => ['html']])->to('photo#gallery');
 
 	# Routes to static pages
 	$r->get('/sitemap' => [format => ['xml']])->to('generate#sitemap');

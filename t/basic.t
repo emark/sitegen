@@ -37,7 +37,7 @@ $t->get_ok('/admin/logout/')
 	->status_is(302);
 
 # 14
-$t->get_ok('/allphotos.html')
+$t->get_ok('/gallery.html')
 # 15
 	->status_is(200);
 
