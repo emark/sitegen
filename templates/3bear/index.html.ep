@@ -1,21 +1,45 @@
 % title $page->{meta}{title};
 
 <div id="content">
+<!-- Modal window -->
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="WhatsAppQR" style="display: none;">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="WhatsAppQR">Уведомление</h4>
+        </div>
+        <div class="modal-body">
+        <center><img src="/downloads/index/whatsapp.svg" class="img-responsive center-block" title="Open WhatsApp messenger" alt="Переход в чат" width="120px" height="120px"></center></br>
+        <p>Просканируйте этот код, чтобы начать общаться в чате WhatsApp. Для перехода в веб-версию чата, <a href="https://wa.me/message/5AJL332SUVDQO1" target="_blank" title="Написать сообщение">нажмите здесь</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- .modal -->
 
 <div class="page-header">
 	<h1 class="logotype"><img src="/media/images/site/3bear-logo.svg" class="img-responsive center-block" title="Гостиница Три медведя" alt="Гостиница Три медведя"></h1>
 	<p class="text-center lead">г. Красноярск, ул. Ленинградская, зд. 11</p>
 	<div class="row">
-		<div class="col-sm-12">
-		<p class="text-center lead">+7&nbsp;391&nbsp;222-49-91<br/>+7&nbsp;391&nbsp;243-36-13<br/><i class="fa fa-whatsapp fa-1x privilege" aria-hidden="true"></i>&nbsp;<a href="https://wa.me/message/5AJL332SUVDQO1" target=_blank title="Написать сообщение">WhatsApp</a></p>
+		<div class="col-sm-12 hidden-xs">
+		<p class="text-center lead">+7&nbsp;391&nbsp;222-49-91<br/>+7&nbsp;391&nbsp;243-36-13<br/>
+		  <span class="hidden-xs"><i class="fa fa-whatsapp fa-1x privilege" aria-hidden="true"></i>&nbsp;<a href="#" class="" data-toggle="modal" data-target=".bs-example-modal-sm" title="Открыть чат WhatsApp">WhatsApp</a></span>
+    </p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12 visible-xs">
-		<p class="text-center lead"><a href="tel:+73912224991" title="Позвонить" class="btn btn-primary btn-lg"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Позвонить</a></p>
+		<div class="col-xs-12 visible-xs text-center">
+		
+		  <div class="btn-group-vertical " role="group" aria-label="PhoneButtonsBlock">
+        <a href="tel://+73912224991" class="btn btn-default btn-lg">+7 391 222 4991</a>
+        <a href="tel://+73912433613" class="btn btn-default btn-lg">+7 391 243 3613</a>
+        <a href="https://wa.me/message/5AJL332SUVDQO1" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-1x" aria-hidden="true"></i>&nbsp;WhatsApp</a></br>
+      </div>
+      
 		</div>
 	</div>
-</div>
+</div><!-- .page-header -->
+
 <div class="row">
 	<div class="col-sm-6">
 		<h2 class="lead text-center"><a href="/rooms.html">Гостиничные номера</a></h2>
@@ -29,8 +53,7 @@
 		<p class="text-justify"><img src="/downloads/halls/1.jpg" class="img-responsive center-block img-rounded" alt="Конференц-залы" title="Конференц-залы"><br/>Обучение, презентации, семинары&nbsp;&mdash; головная боль каждого организатора. Мы&nbsp;обладаем достаточными знаниями и&nbsp;компетенциями в&nbsp;этой сфере. Вместимость наших <nobr>конференц-залов</nobr> от&nbsp;30 до&nbsp;130 посадочных мест. Залы оснащены необходимым проекционным и&nbsp;звуковым оборудованием. Обязательно поможем с&nbsp;выбором <nobr>кофе-пауз</nobr> для участников мероприятия. Наверное нет ничего проще, чем провести мероприятие у&nbsp;нас.</p>
         
   </div>
-  
-</div>
+</div><!-- row -->
 
 <div id="video" class="embed-responsive embed-responsive-16by9 hidden-xs">
 	<video width="560" height="315" controls="controls">
