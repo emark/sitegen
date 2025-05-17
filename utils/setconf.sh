@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 TITLE='Sitegen configuration setup'
-VERSION=0.02
+VERSION=0.03
 DESCRIPTION='Create default configuration files'
 
 echo -e $TITLE"\n"$DESCRIPTION "v"$VERSION

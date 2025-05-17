@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 TITLE='Site Update tools'
-VERSION=0.03
+VERSION=0.04
 
 date "+%D %T"
 echo -e "$TITLE, v$VERSION\nExample: sudo -u www-data ./siteup.sh [WORKDIR]"
