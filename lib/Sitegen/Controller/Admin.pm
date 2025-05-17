@@ -6,7 +6,7 @@ has 'login' => sub{
 	return $self->session->{auth} ? 1 : $self->redirect_to('/admin/');
 };
 
-my $VERSION = 'v1.09';
+my $VERSION = 'v1.10';
 my $GIT = 'https://github.com/emark/sitegen/releases/latest/';
 
 sub auth {
@@ -92,14 +92,17 @@ sub add(){
 		if(!$check_url){
 			if (mkdir $config->{downloads}.$url){
 			    $self->app->dbh->insert(
-					{url => $url},
+					{
+						url => $url,
+						meta => 'template:simple%title:TITLE%description:DESCRIPTION%keywords:KEYWORDS',
+						content => 'text:TEXT',
+					},
 	    		    table => $config->{prefix}.$config->{sitename},
-
 		    	);
 
 				$alert = {
 					type => 'success',
-					text => "Page $url was successfully create.\nDirectory for uploading was created"
+					text => "Page $url was successfully created.\nDirectory for uploading was created"
 				};
 			}else{
 				$alert = {

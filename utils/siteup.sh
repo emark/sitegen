@@ -30,7 +30,7 @@ if [ -f "$CRONFILE" ]; then
 	rm $HTML_STATIC/*.html
 
 	cd tmp
-	wget --no-check-certificate --input-file cron.txt --base=$SITE_URL
+	wget --quiet --no-check-certificate --input-file cron.txt --base=$SITE_URL:$SITE_PORT
 	cd ../
 
 	mv -vf tmp/*.html $HTML_STATIC

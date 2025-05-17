@@ -1,0 +1,54 @@
+% title $page->{meta}{title};
+
+<div class="page-header">
+	<h1><%= $page->{meta}{title} %></h1>
+	<p class="lead text-justify"><%= $page->{content}{prodrome} %></p>
+</div>
+
+<div id="products">
+	<div class="row">
+
+%	my $i = 0;
+%	my $cell = 0;
+
+%	my @products = split(/\@/, $page->{content}{products});	
+
+%   foreach my $product (@products){
+
+%		my ($ptitle, $pcontent, $img) = split(/=/,$product);
+%		$i++;
+%		$cell++;
+%		if ($cell == 4){
+<!--<%= $cell %>-->
+	</div><!-- row -->
+	<div class="row">
+
+%			$cell = 1;
+%		};
+
+	  <div class="col-md-4"><!-- <%= $cell %> -->
+	    <div class="thumbnail">
+
+%	    if ($img){
+
+	      <a href="/downloads/<%= $page->{'url'} %>/<%= $img %>.jpg" data-lightbox="<%= $page->{url}.$i %>" data-title="<%= $page->{meta}{title} %> - <%= $ptitle %>"><img src="/downloads/<%= $page->{url} %>/<%= $img %>.jpg" class="img-responsive" title="<%= $page->{meta}{title} %> - <%= $ptitle %>" alt="<%= $page->{meta}{title} %> - <%= $ptitle %>"></a>
+
+%	      }else{
+
+          <img src="/downloads/<%= $page->{url} %>/noimage.jpg" class="img-responsive" title="<%= $page->{meta}{title} %> - <%= $ptitle %>" alt="<%= $page->{meta}{title} %> - <%= $ptitle %>">
+
+%         }
+	      
+	      <div class="caption">
+	        <h3><%== $ptitle %></h3>
+	        <h4>Цена:&nbsp;<%= $pcontent %>&nbsp;руб.</h4>
+		    <p>Для приобретения обратитесь на стойку администратора</p>
+	      </div>
+	    </div><!-- /thumbnail -->
+	  </div><!-- col-md -->
+	
+%	}
+
+	</div><!-- /row -->
+
+</div><!-- /products -->

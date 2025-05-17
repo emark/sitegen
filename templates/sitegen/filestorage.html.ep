@@ -1,0 +1,18 @@
+% title $page->{meta}{title};
+
+<div class="page-header">
+	<h1><%= $page->{meta}{title} %></h1>
+</div>
+
+<div id="content">
+		
+%	my @files = split(/\@/, $page->{content}{files});	
+% foreach my $file (@files){
+
+%		my ($fname, $flink) = split(/=/,$file);	
+			<h2><%= $fname %></h2>
+			<a href="/downloads/<%= $page->{url} %>/<%= $flink %>" class="btn btn-default" target="_blank">Открыть файл</a>
+
+% };
+
+</div>
