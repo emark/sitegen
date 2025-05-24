@@ -3,3 +3,4 @@
 # sitegen
 Static files site generator
 
+cp -sf devcfg/dev.sitegen.conf sitegen.conf
