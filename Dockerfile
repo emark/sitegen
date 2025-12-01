@@ -5,11 +5,11 @@ WORKDIR /sitegen
 COPY cpanfile .
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-sqlite3=3.40.1-2+deb12u1 \
-gcc=4:12.2.0-3 \
-libdbd-sqlite3-perl=1.72-1 \
-cpanminus=1.7046-1 \
-make=4.3-4.1 && \
+sqlite3 \
+gcc \
+libdbd-sqlite3-perl \
+cpanminus \
+make && \
 cpanm --installdeps . && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
