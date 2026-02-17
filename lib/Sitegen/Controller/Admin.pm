@@ -66,8 +66,6 @@ sub view {
 	my $url = $self->param('url');
 
 	$self->redirect_to("/$url.html");
-
-
 }
 
 sub add(){
@@ -129,7 +127,6 @@ sub add(){
 		alert => $alert,
 	);
 	$self->redirect_to('/admin/dashboard/');
-
 }
 
 sub delete(){
@@ -306,7 +303,6 @@ sub upload {
 		alert => $alert
 	);
 	$self->redirect_to('/admin/dashboard/');
-
 }
 
 sub save {

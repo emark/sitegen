@@ -53,11 +53,7 @@ sub startup {
 	$self->hook(before_dispatch => sub {
         my $self = shift;
         $self->req->url->base(Mojo::URL->new($config->{url}));
-
-        }
-
-    ) if $self->mode eq 'production';
-
+    }) if $self->mode eq 'production';
 }
 
 1;
