@@ -1,0 +1,47 @@
+% title $page->{meta}{title};
+
+<div class="page-header">
+	<h1><%= $page->{meta}{title} %></h1>
+</div>
+
+<div id="content">
+
+	<div id="gallery">
+
+% foreach my $product (keys %{$album}){
+
+	<h2><%= $album->{$product} %></h2>
+
+	<div class="row">
+
+% my	$i = 0;
+% my $cell = 0;
+
+% my @photo = ();
+% @photo = split(/\@/, $photo->{$product});	
+
+%	foreach my $photo (@photo){
+
+%		$i++;
+%		$cell++;
+%		if ($cell == 5){
+
+	</div>
+	<div class="row">
+
+%			$cell = 0;
+%		};
+
+			<div class="col-sm-3">
+				<a href="/downloads/<%= $product %>/g_<%= $i %>.jpg" class="thumbnail" data-lightbox="<%= $product %>" data-title="<%= $album->{$product} %> - <%= $photo %>"><img src="/downloads/<%= $product %>/g_<%= $i %>.jpg" class="img-responsive" alt="<%= $album->{$product} %> - <%= $photo %>" title="<%= $album->{$product} %> - <%= $photo %>"></a>
+			</div>
+
+% };
+
+	</div>
+
+% };
+
+</div><!-- /gallery -->
+
+</div>

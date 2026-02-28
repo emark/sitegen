@@ -1,0 +1,9 @@
+% title $page->{meta}{title};
+
+<h1><%= $page->{meta}{title} %></h1>
+
+<div>
+	
+<%= $page->{content}{text} %>
+
+</div>
