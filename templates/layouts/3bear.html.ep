@@ -74,8 +74,16 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-					
-			<%= content %>
+			  
+      <div id="cookie-banner" class="cookie-banner">
+        <p>Мы используем файлы cookie для улучшения работы сайта. <a href="/cookies.html">Подробнее</a>.</p>
+        <div class="banner-buttons">
+          <button id="accept-cookies" class="btn accept">Принять все</button>&nbsp;
+          <a href="https://ya.ru/?q=Cookie acceptation" role="button" id="reject-cookies" class="btn reject">Отклонить</a>
+        </div>
+      </div>
+        
+      <%= content %>
 
 			<div id="footer" class="well">
 				<div class="row">
@@ -123,8 +131,11 @@
 				</div><!-- /row -->
 			</div><!-- /footer -->
 
-			<h5><small>Данный сайт носит информационный характер и не является офертой в понимании ч.2 ст. 437 ГК РФ<br>При использовании материалов сайта ссылка на источник обязательна.</small></h5>
+			<h5><small>Данный сайт носит информационный характер и не является офертой в понимании ч.2 ст. 437 ГК РФ<br>Права на информационный ресурс и размещаемые материалы принадлежат ООО "3 М", ОГРН 1022402125107<br>При использовании материалов сайта ссылка на источник обязательна.</small></h5>
     </div> <!-- /container -->
+
+    <!-- User-defined scripts-->
+    <script src="/assets/js/cookie-accept.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
