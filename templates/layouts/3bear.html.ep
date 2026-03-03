@@ -76,10 +76,11 @@
       </nav>
 			  
       <div id="cookie-banner" class="cookie-banner">
-        <p>Мы используем файлы cookie для улучшения работы сайта. <a href="/cookies.html">Подробнее</a>.</p>
-        <div class="banner-buttons">
-          <button id="accept-cookies" class="btn btn-primary">Принять все</button>&nbsp;
-          <a href="https://ya.ru/?q=Cookie acceptation" role="button" id="reject-cookies" class="btn btn-default">Отклонить</a>
+        <div>
+        <p>Для повышения удобства работы с сайтом мы используем технологию Cookies. Продолжая работу с нашим сайтом, вы принимаете условия <a href="/cookies.html">Соглашения об использовании Cookie-файлов</a>. Если вы не хотите, чтобы пользовательские данные обрабатывались, отключите Cookies в настройках браузера.</p>
+        
+          <p><button id="accept-cookies" class="btn btn-primary">Принять все</button>&nbsp;
+          <a href="https://ya.ru/?q=Cookie acceptation" role="button" id="reject-cookies" class="btn btn-default">Отклонить</a></p>
         </div>
       </div>
         
