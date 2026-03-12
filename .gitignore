@@ -3,6 +3,7 @@ devcfg
 public
 utils/tmp/*
 utils/dump/*
+utils/extends/*
 utils/*.log
 script
 ~*.*

@@ -1,0 +1,37 @@
+% title $page->{meta}{title};
+% my %option_of_living = ('1500' => 'По два человека в комнате - 1500р./место', '2500' => 'По одному человеку в комнате - 2500р./комната', '3900' => 'Дети до 16 лет (по 3 места) - 3900р./комната');
+
+<div class="page-header">
+	<h1><%= $page->{meta}{title} %></h1>
+</div>
+
+<div id="content">
+% if ($self->flash('output')){
+%= flash('sql')
+  <p>Благодарим, Вас <%= flash('output')->{'customer_name'} %>, за обращение.</p>
+
+  <p>По Вашей заявке требуется разместить гостей в количестве <b><%= flash('output')->{'guests_num'} %> чел.</b> в период c <b><%= flash('output')->{'from_time'} %></b> часов <b><%= flash('output')->{'from_date'} %></b> по <b><%= flash('output')->{'till_time'} %></b> часов <b><%= flash('output')->{'till_date'} %></b>.</p>
+
+%   if(flash('output')->{'option_of_living'}){
+  <p>Категория размещения гостей: <b><%= $option_of_living{flash('output')->{'option_of_living'}} %></b>.</p>
+%   };
+
+%   if(flash('output')->{'service'}){
+  <p>Дополнительные услуги: <b>Конференц-зал</b>.</p>
+%   };
+
+%   if(flash('output')->{'booking_comment'}){
+  <p>Комментарий: <%= flash('output')->{'booking_comment'} %></p>
+%   };
+
+  <p>Мы свяжемся с Вами по телефону: <b><%= flash('output')->{'customer_phone'} %></b> 
+%   if(flash('output')->{'customer_email'}){
+    и электронной почте: <b><%= flash('output')->{'customer_email'} %></b>
+%   };
+  в течение дня.<br> Время обработки заявок 9&mdash;18 часов по Красноярскому времени в рабочие дни.</p>
+
+% }else{
+  <p>Благодарим за обращение. Оформить бронирование вы можете на странице <a href="https://www.3bear.ru/booking.html">https://www.3bear.ru/booking.html</a></p>
+  
+% };
+</div>

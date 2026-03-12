@@ -23,9 +23,22 @@ morbo script/sitegen
 # Run all tests
 prove -Ilib t/
 
-# Run a single test file
+# Run a single test file (two equivalent ways)
 perl -Ilib t/basic.t
 prove -Ilib t/basic.t
+
+# Run specific test with verbose output
+prove -Ilib -v t/basic.t
+```
+
+### Linting & Syntax Checking
+```bash
+# Syntax check all Perl files
+perl -c lib/Sitegen.pm
+perl -c lib/Sitegen/Controller/*.pm
+
+# Check for undefined variables
+perl -Ilib -w -c script/sitegen
 ```
 
 ### Docker
@@ -49,6 +62,7 @@ use Mojo::Base 'Mojolicious::Controller';
 # Database
 use DBIx::Custom;
 
+# Features
 use feature qw(say state);
 use utf8;
 ```
@@ -58,12 +72,21 @@ use utf8;
 - Opening brace on same line
 - Max line length: 120 characters (soft)
 - Use blank lines between logical sections
+- Chain method calls with indentation:
+```perl
+my $pages = $self->app->dbh->select(
+    table => $config->{prefix} . $config->{sitename},
+    column => ['url'],
+    where => {url => $url},
+)->fetch_hash;
+```
 
 ### Naming Conventions
 - **Packages**: Capitalize each word (`Sitegen::Controller::Admin`)
 - **Methods**: snake_case (`sub login`, `sub dashboard`)
 - **Variables**: snake_case (`$config`, `$downloads`)
 - **Constants**: SCREAMING_SNAKE_CASE (`my $VERSION = 'v1.10'`)
+- **File names**: Lowercase with underscores (`admin.pm`, `generate.pm`)
 
 ### Package Structure
 ```perl
@@ -71,6 +94,7 @@ package Sitegen::Controller::Admin;
 use Mojo::Base 'Mojolicious::Controller';
 
 my $VERSION = 'v1.10';
+my $GIT = 'https://github.com/emark/sitegen/releases/latest/';
 
 has 'login' => sub {
     my $self = shift;
@@ -83,40 +107,37 @@ sub dashboard { ... }
 1;
 ```
 
-### Error Handling
+### Common Patterns
+
+#### Route Definitions
 ```perl
-# Fatal errors
-open my $fh, "<", $file or die "Can't open $file: $!";
-
-# Non-fatal warnings
-unlink $file or warn "Couldn't delete file: $!";
-
-# Structured results
-my $alert = { type => 'success', text => "Page created" };
+sub startup {
+    my $self = shift;
+    my $r = $self->routes;
+    
+    # Static route
+    $r->any('/admin/')->to('admin#auth');
+    
+    # With format constraint
+    $r->get('/gallery' => [format => ['html']])->to('photo#gallery');
+    
+    # With URL regex constraint
+    $r->get('/rentals/:url' => [url => qr/\d\-\d+/], [format => ['html']])->to('rentals#show');
+}
 ```
 
-### Controller Patterns
+#### Authentication Pattern
 ```perl
-# Route to controller#action
-$r->any('/admin/')->to('admin#auth');
-$r->post('/admin/p/add/')->to('admin#add');
-
-# Authentication
 sub dashboard {
     my $self = shift;
-    $self->login;
-    # ... proceed
+    $self->login;  # Redirects if not authenticated
+    
+    my $config = $self->config;
+    # ... proceed with action
 }
-
-# Database access
-my $pages = $self->app->dbh->select(
-    table => $config->{prefix} . $config->{sitename},
-    column => ['url'],
-    where => {url => $url},
-)->fetch_hash;
 ```
 
-### Database Config
+#### Database Access
 ```perl
 has 'dbh' => sub {
     my $self = shift;
@@ -128,6 +149,43 @@ has 'dbh' => sub {
         option => {sqlite_unicode => 1}
     );
 };
+
+# Usage in controllers
+my $urls = $self->app->dbh->select(
+    table => $config->{prefix} . $config->{sitename},
+    column => 'url',
+)->values;
+```
+
+### Error Handling
+```perl
+# Fatal errors - die with message
+open my $fh, "<", $file or die "Can't open $file: $!";
+
+# File operations with checks
+my $update = (-e -f -r $config->{update}) ? "Running" : "Complete";
+
+# Non-fatal warnings
+unlink $file or warn "Couldn't delete file: $!";
+
+# Structured results for templates
+my $alert = { type => 'success', text => "Page created" };
+```
+
+### Controller Patterns
+```perl
+# Route to controller#action
+$r->any('/admin/')->to('admin#auth');
+$r->post('/admin/p/add/')->to('admin#add');
+
+# Rendering with multiple variables
+$self->render(
+    urls => $urls,
+    update => $update,
+    version => $VERSION,
+    gitrepo => $GIT,
+    log_upd => $log_upd,
+);
 ```
 
 ---
@@ -148,11 +206,37 @@ sitegen/
 ---
 
 ## Testing Guidelines
-Use Test::Mojo for controller/route testing:
+
+### Basic Test Structure
 ```perl
+use Mojo::Base -strict;
+use Test::More;
+use Test::Mojo;
+
 my $t = Test::Mojo->new('Sitegen');
 
+# Test authentication
+$t->post_ok('/admin/' => form => {login => 'dev', pass => 'dev'})
+  ->status_is(302)
+  ->header_is(location => '/admin/dashboard/');
+
+# Test protected route
+$t->get_ok('/admin/dashboard/')
+  ->status_is(200);
+
+# Test form submission
 $t->post_ok('/admin/p/add/' => form => {url => 'test'})
   ->status_is(302)
   ->header_is(location => '/admin/dashboard/');
+
+done_testing();
+```
+
+### Test Assertions
+```perl
+$t->status_is(302);           # Check HTTP status
+$t->header_is(location => '/admin/');  # Check redirect location
+$t->text_is('#title' => 'Hello');      # Check element content
+$t->get_ok('/page.html');    # GET request succeeds
+$t->post_ok('/submit' => form => {...}); # POST with form data
 ```

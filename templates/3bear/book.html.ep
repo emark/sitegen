@@ -1,0 +1,168 @@
+% title $page->{meta}{title};
+% my %field_name = ( guests_num => 'Количество мест', from_date => 'Дата заселения', till_date => 'Дата выезда', customer_name => 'Вас зовут', customer_phone => 'Мобильный номер', customer_email => 'Электронная почта', persdata_agreement => 'Соглашение на обработку персональных данных', notify_agreement => 'Согласие на получение уведомлений', booking_comment => 'Комментарий', from_time => 'Час заселения', till_time => 'Час выезда');
+% my %class_has_error; 
+
+<div class="page-header">
+	<h1><%= $page->{meta}{title} %></h1>
+</div>
+
+<div id="content">
+
+% if ($failed) {
+<div class="alert alert-danger" role="alert">Обнаружены ошибки в следующих полях формы: 
+  <ul>
+ % foreach my $key (@$failed) {
+ % $class_has_error{$key} = "has-error";
+  <li><%= $field_name{$key} %></li>
+ % };
+  </ul>
+</div>
+% }
+
+%= form_for book => action => 'book.html', method => 'post', class => 'form-horizontal' => begin
+  <div class="form-group form-group-lg <%= $class_has_error{'guests_num'} %>">
+  %= label_for guests_num => 'Количество мест', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= number_field guests_num => 0, id => 'guests_num', class => 'form-control'
+    </div>
+  </div>
+  
+  <!--div class="form-group form-group-lg">
+  %= label_for count_female => 'В том числе женщины', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= number_field count_female => 0, id => 'count_female', class => 'form-control'
+    </div>
+  </div>
+  
+  <div class="form-group form-group-lg">
+  %= label_for count_child => 'В том числе дети (до 16 лет)', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= number_field count_child => 0, id => 'count_child', class => 'form-control'
+    </div>
+  </div-->
+  
+  <div class="form-group form-group-lg <%= $class_has_error{'from_date'} %>">
+  %= label_for from_date => 'Дата заселения', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= date_field from_date => id => 'from_date', class => 'form-control'
+    <!--span id="helpBlock" class="help-block">Расчётный час 12:00 местного времени</span-->
+    </div>
+  </div>
+
+  <div class="form-group form-group-lg <%= $class_has_error{'from_time'} %>">
+  %= label_for from_time => 'Час заселения', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= number_field from_time => 12, id => 'from_time', class => 'form-control', maxlength => 2
+    </div>
+  </div>
+  
+  <!--div class="form-group form-group-lg">
+  %= label_for from_time => 'Время заселения', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= select_field from_time => [['в расчетный час 12:00', '12'], ['c 00 часов до 06 утра','6']], id => 'from_time', class => 'form-control'
+    </div>
+  </div-->
+  
+  <div class="form-group form-group-lg <%= $class_has_error{'till_date'} %>">
+  %= label_for till_date => 'Дата выезда', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= date_field till_date => id => 'till_date', class => 'form-control'
+    <!--span id="helpBlock" class="help-block">Расчётный час 12:00 местного времени</span-->
+    </div>
+  </div>
+
+  <div class="form-group form-group-lg <%= $class_has_error{'till_time'} %>">
+  %= label_for till_time => 'Час выезда', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= number_field till_time => 12, id => 'till_time', class => 'form-control', maxlength => 2
+    </div>
+  </div>
+
+  <!--div class="form-group form-group-lg">
+  %= label_for till_time => 'Поздний выезд', class => 'col-sm-3 control-label'
+    <div class="col-sm-3">
+  %= select_field till_time => [['в расчетный час 12:00', '12'], ['задержка до 6 часов','6'], ['задержка более 6 часов','23']], id => 'till_time', class => 'form-control'
+    </div>
+  </div-->
+  
+  <div class="form-group form-group-lg">
+  %= label_for option_of_living => 'Вариант размещения', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+  %= select_field option_of_living => [['По два человека в комнате - 1500р./место', '1500'], ['По одному человеку в комнате - 2500р./комната', '2500'], ['Дети до 16 лет (по 3 места) - 3900р./комната', '3900'], ['Укажу далее в комментарии', '0']], id => 'option_of_living', class => 'form-control'
+    </div>
+  </div>
+    
+  <div class="form-group form-group-lg">
+  %= label_for service => 'Дополнительные услуги', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+      <div class="checkbox">
+      <label class="control-label">
+  %= check_box service => 'conf_1', id => 'service'
+    Конференц-зал №1 (100 мест) от 1500р. час
+      </label>
+      </div><div class="checkbox">
+      <label class="control-label">
+  %= check_box service => 'conf_2'
+    Конференц-зал №2 (30 мест) от 700р. час
+      </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group form-group-lg <%= $class_has_error{'customer_name'} %>">
+  %= label_for customer_name => 'Вас зовут', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+  %= text_field customer_name => id => 'customer_name', class => 'form-control'
+    </div>
+  </div>
+  
+  <div class="form-group form-group-lg <%= $class_has_error{'customer_phone'} %>">
+  %= label_for customer_phone => 'Мобильный номер', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+  %= tel_field customer_phone => '+7', id => 'customer_phone', class => 'form-control', maxlength => 12
+    </div>
+  </div>
+  
+  <div class="form-group form-group-lg <%= $class_has_error{'customer_email'} %>">
+  %= label_for customer_email => 'Электронная почта', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+  %= email_field customer_email => placeholder => 'email@mail.ru', id => 'customer_email', class => 'form-control'
+    </div>
+  </div>
+  
+  <div class="form-group form-group-lg <%= $class_has_error{'booking_comment'} %>">
+  %= label_for booking_comment => 'Комментарий', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+  %= text_area booking_comment => id => 'booking_comment', class => 'form-control'
+    </div>
+  </div>
+ 
+  <div class="form-group form-group-lg">
+  %= label_for persdata_agreement => '', class => 'col-sm-3 control-label'
+    <div class="col-sm-5">
+    <p>Согласие на обработку персональных данных. Текст Соглашения опубликован по адресу <a href="https://www.3bear.ru/agreement.html" target=_blank title="Открыть текст в новом окне">https://www.3bear.ru/agreement.html&nbsp;<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></p>
+      <div class="checkbox">
+      <label class="control-label">
+  %= check_box persdata_agreement => 'true', id => 'persdata_agreement'
+    Я принимаю условия Соглашения
+      </label>
+      </div><div class="checkbox">
+      <label class="control-label">
+  %= check_box notify_agreement => 'true', id => 'notify_agreement'
+    Я даю согласие на получение уведомлений
+      </label>
+      <span id="helpBlock" class="help-block">Уведомления направляются только в отношении текущего бронирования и не являются рекламными. Уведомления могут быть направлены любым доступным способом.</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group form-group-lg">
+    <div class="control-label col-sm-3">
+    </div><div class=" col-sm-5 align-center">
+    <button type="submit" class="btn btn-lg btn-primary form-control">Отправить</button>
+    </div>
+  </div>
+  %= csrf_field
+% end
+
+</div>

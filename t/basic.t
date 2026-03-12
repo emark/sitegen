@@ -46,4 +46,9 @@ $t->get_ok('/rentals/0-0.html')
 # 17
 	->status_is(200);
 
+# 18
+$t->get_ok('/book.html')
+# 19
+	->status_is(200);
+
 done_testing();

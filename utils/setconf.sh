@@ -22,12 +22,12 @@ var="SITE_NAME=sitegen\nSITE_URL=http://localhost\nSITE_PORT=3000\nHTML_STATIC=.
 setconf
 
 conf='../sitegen.conf'
-var="{\n\tdsn => \"dbi:SQLite:dbname=../db/sitegen.sql\",\n\tdbuser => \"dbuser\",\n\tdbpassword => \"dbpass\",\n\tprefix => \"site_\",\n\tsitename => \"sitegen\",\n\tmode => \"development\",\n\tsecrets => \"somesecretword\",\n\tlogin => \"admin\",\n\tpass => \"sitegen\",\n\tdownloads => \"../public/downloads/\",\n\tupdate => \"../utils/tmp/cron.txt\",\n\tstatic => \"../public/\",\n\tstatic_extension => \".html\",\n\turl => \"http://localhost\",\n\tlog_upd => \"../utils/cron.log\"\n}"
+var="{\n\tdsn => \"dbi:SQLite:dbname=../db/sitegen.sql\",\n\tdbuser => \"dbuser\",\n\tdbpassword => \"dbpass\",\n\tprefix => \"site_\",\n\tsitename => \"sitegen\",\n\tmode => \"development\",\n\tsecrets => \"somesecretword\",\n\tlogin => \"admin\",\n\tpass => \"sitegen\",\n\tdownloads => \"../public/downloads/\",\n\tupdate => \"../utils/tmp/cron.txt\",\n\tstatic => \"../public/\",\n\tstatic_extension => \".html\",\n\turl => \"http://localhost\",\n\tlog_upd => \"../utils/cron.log\"\n\tapiuser => \"apiuser\"\n\tapipass => \"apipass\"\n}"
 setconf
 
 source site.env
 conf='../db/schema.sql'
-var="CREATE TABLE site_$SITE_NAME (url text, meta text, content text);"
+var="CREATE TABLE site_$SITE_NAME (url text, meta text, content text);\nCREATE TABLE site_$SITE_NAME_book (id integer primary key autoincrement, call text, cdate datetime, status integer);"
 setconf
 
 conf='../.crontab'
