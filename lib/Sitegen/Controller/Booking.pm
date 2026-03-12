@@ -2,6 +2,7 @@ package Sitegen::Controller::Booking;
 use Mojo::Base 'Mojolicious::Controller';
 use Mojo::JSON qw(to_json from_json);
 use Mojo::Util qw(secure_compare);
+use Data::Dumper;
 
 sub filling_form(){
 	my $self = shift;
@@ -93,8 +94,11 @@ sub api_get{
 
 	my $bytes = to_json($calls);
 
-	if ( $self->req->url->to_abs->userinfo ){
-		if ( secure_compare $self->req->url->to_abs->userinfo, "$config->{'apiuser'}:$config->{'apipass'}" ){
+	my $auth_header = $self->req->env->{'REDIRECT_HTTP_AUTHORIZATION'};
+
+	if (defined $auth_header && $auth_header =~ /^Bearer\s+(.+)$/){
+		my $token = $1;
+		if ($token eq $config->{'api_token'}){
 			my @call_id;
 			foreach my $key( @{$calls} ){
 				push (@call_id, $key->[0]);
@@ -109,7 +113,6 @@ sub api_get{
 		};
 	};
 
-	$self->res->headers->www_authenticate('Basic');
 	$self->render(
 		text => 'Authorization required!',
 		status => 401
