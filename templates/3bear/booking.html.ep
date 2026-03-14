@@ -19,7 +19,7 @@
 </div>
 % }
 
-%= form_for booking => method => 'post', class => 'form-horizontal' => begin
+%= form_for booking => action => 'booking.html', method => 'post', class => 'form-horizontal' => begin
   <div class="form-group form-group-lg <%= $class_has_error{'guests_num'} %>">
   %= label_for guests_num => 'Количество мест', class => 'col-sm-3 control-label'
     <div class="col-sm-3">

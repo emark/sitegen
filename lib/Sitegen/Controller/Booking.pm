@@ -62,7 +62,7 @@ sub checking_data(){
 
 	$self->render(
 		layout => $config->{'sitename'},
-		template => $config->{'sitename'}.'/book',
+		template => $config->{'sitename'}.'/booking',
 		format => 'html',
 		page => $page,
 		failed => $v->failed
