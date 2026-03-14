@@ -43,8 +43,8 @@ sub startup {
 	# Routes to dynamic pages
 	$r->get('/gallery' => [format => ['html']])->to('photo#gallery');
 
-	$r->get('/book' => [format => ['html']])->to('booking#filling_form');
-	$r->post('/book' => [format => ['html']])->to('booking#checking_data');
+	$r->get('/booking' => [format => ['html']])->to('booking#filling_form');
+	$r->post('/booking' => [format => ['html']])->to('booking#checking_data');
 	$r->get('/booking/success' => [format => ['html']])->to('booking#success');
 	$r->get('/booking/api' => [format => ['json']])->to('booking#api_get');
 
