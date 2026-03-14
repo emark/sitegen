@@ -8,7 +8,7 @@
 <div id="content">
 % if ($self->flash('output')){
 %= flash('sql')
-  <p>Благодарим, Вас <%= flash('output')->{'customer_name'} %>, за обращение.</p>
+  <p>Благодарим Вас, <%= flash('output')->{'customer_name'} %>, за обращение.</p>
 
   <p>По Вашей заявке требуется разместить гостей в количестве <b><%= flash('output')->{'guests_num'} %> чел.</b> в период c <b><%= flash('output')->{'from_time'} %></b> часов <b><%= flash('output')->{'from_date'} %></b> по <b><%= flash('output')->{'till_time'} %></b> часов <b><%= flash('output')->{'till_date'} %></b>.</p>
 
