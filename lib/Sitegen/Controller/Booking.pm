@@ -13,7 +13,7 @@ sub filling_form(){
 
 	$self->render(
 		layout => $config->{'sitename'},
-		template => $config->{'sitename'}.'/book',
+		template => $config->{'sitename'}.'/booking',
 		format => 'html',
 		page => $page,
 		failed => 0
