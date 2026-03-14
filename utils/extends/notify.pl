@@ -5,6 +5,7 @@
 use strict;
 use warnings;
 use utf8;
+use local::lib;
 use DBIx::Custom;
 use Mojo::UserAgent;
 use Mojo::JSON qw(from_json);
