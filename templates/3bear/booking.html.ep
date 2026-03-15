@@ -27,21 +27,7 @@
     </div>
   </div>
   
-  <!--div class="form-group form-group-lg">
-  %= label_for count_female => 'В том числе женщины', class => 'col-sm-3 control-label'
-    <div class="col-sm-3">
-  %= number_field count_female => 0, id => 'count_female', class => 'form-control'
-    </div>
-  </div>
-  
-  <div class="form-group form-group-lg">
-  %= label_for count_child => 'В том числе дети (до 16 лет)', class => 'col-sm-3 control-label'
-    <div class="col-sm-3">
-  %= number_field count_child => 0, id => 'count_child', class => 'form-control'
-    </div>
-  </div-->
-  
-  <div class="form-group form-group-lg <%= $class_has_error{'from_date'} %>">
+   <div class="form-group form-group-lg <%= $class_has_error{'from_date'} %>">
   %= label_for from_date => 'Дата заселения', class => 'col-sm-3 control-label'
     <div class="col-sm-3">
   %= date_field from_date => id => 'from_date', class => 'form-control'
@@ -55,13 +41,6 @@
   %= number_field from_time => 12, id => 'from_time', class => 'form-control', maxlength => 2
     </div>
   </div>
-  
-  <!--div class="form-group form-group-lg">
-  %= label_for from_time => 'Время заселения', class => 'col-sm-3 control-label'
-    <div class="col-sm-3">
-  %= select_field from_time => [['в расчетный час 12:00', '12'], ['c 00 часов до 06 утра','6']], id => 'from_time', class => 'form-control'
-    </div>
-  </div-->
   
   <div class="form-group form-group-lg <%= $class_has_error{'till_date'} %>">
   %= label_for till_date => 'Дата выезда', class => 'col-sm-3 control-label'
@@ -77,14 +56,7 @@
   %= number_field till_time => 12, id => 'till_time', class => 'form-control', maxlength => 2
     </div>
   </div>
-
-  <!--div class="form-group form-group-lg">
-  %= label_for till_time => 'Поздний выезд', class => 'col-sm-3 control-label'
-    <div class="col-sm-3">
-  %= select_field till_time => [['в расчетный час 12:00', '12'], ['задержка до 6 часов','6'], ['задержка более 6 часов','23']], id => 'till_time', class => 'form-control'
-    </div>
-  </div-->
-  
+ 
   <div class="form-group form-group-lg">
   %= label_for option_of_living => 'Вариант размещения', class => 'col-sm-3 control-label'
     <div class="col-sm-5">
