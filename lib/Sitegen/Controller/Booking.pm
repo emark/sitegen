@@ -8,7 +8,7 @@ sub filling_form(){
 	my $self = shift;
 	my $config = $self->config;
 
-	my $page->{url} = 'book';
+	my $page->{url} = 'booking';
     $page->{meta} = {title => 'Бронирование', description => 'Бронирование гостиничных услуг'};
 
 	$self->render(
@@ -24,7 +24,7 @@ sub checking_data(){
 	my $self = shift;
 	my $config = $self->config;
 	my $hash = $self->req->params->to_hash;
-	my $page->{url} = 'book';
+	my $page->{url} = 'booking';
     $page->{meta} = {title => 'Бронирование', description => 'Бронирование гостиничных услуг'};
 
 	my $v = $self->validation;
