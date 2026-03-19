@@ -12,3 +12,4 @@ script
 .crontab
 slim.report.json
 debug.log
+*.log
