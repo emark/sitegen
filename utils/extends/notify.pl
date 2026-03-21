@@ -19,6 +19,7 @@ open (CONF, "<", $cfile) || die "Can't load config from file: $cfile";
 	while(<CONF>){
 		chop $_;
 		(my $key, my $val) = split('#', $_);
+		utf8::decode($val);
 		$config{$key} = $val;
 	};
 	print "ok\n";
@@ -61,14 +62,17 @@ sub GetCalls{
 sub SendNotification{
 	my $calls = $_[0];
 	my @call_id;
-	my $text = "Hello,\nGet ".@$calls." new call(s)\n";
+	my $text = "Здравствуйте,\nполучено ".@$calls." новых бронирований\n";
 
-	foreach my $key ( @{$calls} ){
+	foreach my $key (@{$calls}){
+
 		push (@call_id, $key->[0]);
 		my $c = from_json($key->[1]);
-		$text = $text."\n---\nName: $c->{'customer_name'}\nContacts: $c->{'customer_phone'}, $c->{'customer_email'}\nGuests: $c->{'guests_num'} Date From: $c->{'from_date'} $c->{'from_time'} Date Till: $c->{'till_date'} $c->{'till_time'}\nComment: $c->{'booking_comment'}\n";
+
+		$text = $text."\n---\nЗаказчик: $c->{'customer_name'}\nКонтакты: $c->{'customer_phone'}, $c->{'customer_email'}\nКоличество гостей: $c->{'guests_num'}\nКатегория номера: $c->{'option_of_living'}\nЗаезд: $c->{'from_date'} Время: $c->{'from_time'}\tВыезд: $c->{'till_date'} Время: $c->{'till_time'}\nКомментарий: $c->{'booking_comment'}\n";
+
 		if ($c->{'service'}){
-			$text = $text."AdSvc: ";
+			$text = $text."Дополнительные услуги: ";
 			if(ref($c->{'service'}) eq 'ARRAY'){
 				$text = $text."@{$c->{'service'}}\n";
 			}else{
@@ -104,7 +108,7 @@ sub SendNotification{
 						text => $text,
 						}
 			)->result;
-
+		
 			$result = $tx->message;
 			print $result."\n";
 		};

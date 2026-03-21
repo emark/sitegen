@@ -1,5 +1,6 @@
 % title $page->{meta}{title};
 % my %option_of_living = ('1500' => 'По два человека в комнате - 1500р./место', '2500' => 'По одному человеку в комнате - 2500р./комната', '3900' => 'Дети до 16 лет (по 3 места) - 3900р./комната');
+% my %services = ('conf_1' => "Конференц-зал 1", 'conf_2' => "Конференц-зал 2", 'food_service' => "Питание");
 
 <div class="page-header">
 	<h1><%= $page->{meta}{title} %></h1>
@@ -17,7 +18,16 @@
 %   };
 
 %   if(flash('output')->{'service'}){
-  <p>Дополнительные услуги: <b>Конференц-зал</b>.</p>
+%     my $service = '';
+%     if(ref flash('output')->{'service'} eq 'ARRAY'){
+%			  foreach my $key (@{flash('output')->{'service'}}){
+%			  	$service = $service.$services{$key}.", ";
+%				};
+%			}else{
+%			  $service = $services{flash('output')->{'service'}}.", ";
+%			};
+%     chop $service; chop $service;
+  <p>Дополнительные услуги: <b><%= $service %></b>.</p>
 %   };
 
 %   if(flash('output')->{'booking_comment'}){

@@ -69,6 +69,11 @@
     <div class="col-sm-5">
       <div class="checkbox">
       <label class="control-label">
+  %= check_box service => 'food_service', id => 'service'
+    Организация питания в гостинице
+      </label>
+      </div><div class="checkbox">
+      <label class="control-label">
   %= check_box service => 'conf_1', id => 'service'
     Конференц-зал №1 (100 мест) от 1500р. час
       </label>
