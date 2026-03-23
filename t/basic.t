@@ -47,7 +47,7 @@ $t->get_ok('/rentals/0-0.html')
 	->status_is(200);
 
 # 18
-$t->get_ok('/book.html')
+$t->get_ok('/booking.html')
 # 19
 	->status_is(200);
 
