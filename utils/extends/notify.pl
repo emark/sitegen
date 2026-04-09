@@ -28,15 +28,24 @@ close CONF;
 &GetCalls;
 
 sub GetCalls{
-	print "Connect to database...";
+	print "Connecting to database...";
 	my $dbi = DBIx::Custom->connect( 
             dsn => $config{dsn}, 
             user => $config{dbuser}, 
             password => $config{dbpassword}, 
             option => {sqlite_unicode => 1} 
     );
-	print "ok\nChecking for new calls...";
 
+	print "ok\nDeleting recieved calls...";
+	$dbi->delete(
+		table => $config{'table'},
+		where => { 
+			read => 1,
+			notify => 1,
+		},
+	);
+
+	print "ok\nChecking for new calls...";
 	my $calls = $dbi->select(
 		table => $config{'table'},
 		where => { 
@@ -49,7 +58,7 @@ sub GetCalls{
 	my @call_id = &SendNotification($calls) if @$calls;
 	
 	if (@call_id){
-		print "Update notify flag...";
+		print "Updating notify flag...";
 		$dbi->update(
         	{notify => 1},
             table => $config{'table'},
