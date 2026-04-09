@@ -104,7 +104,10 @@ sub api_get{
 				push (@call_id, $key->[0]);
 			};
 			$self->app->dbh->update(
-				{read => 1},
+				{
+					read => 1,
+					notify => 1
+				},
 				table => $config->{prefix}.$config->{sitename}.'_book',
 				where => {id => \@call_id}
 			);
