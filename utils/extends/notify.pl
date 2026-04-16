@@ -54,7 +54,7 @@ sub GetCalls{
 		},
 	)->fetch_all;
 
-	print "ok\nGet ".@$calls." new calls\n";
+	print "ok\nGot ".@$calls." new calls\n";
 	my @call_id = &SendNotification($calls) if @$calls;
 	
 	if (@call_id){
