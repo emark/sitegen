@@ -62,7 +62,7 @@
 		templates['filestorage'] = "files:FILE CAPTION=FILENAME@"
 		templates['products'] = "prodrome:PRODUCTS CAPTION%products:PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>@PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>%photo:PHOTO CAPTION@PHOTO CAPTION"
 		templates['specoffers'] = "offers:OFFER CAPTION@OFFER CAPTION@OFFER CAPTION"
-		templates['catalog'] = "prodrome:PRODUCTS CAPTION%products:PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>@PRODUCT NAME=<p>PRODUCT DESCRIPTION</p>%photo:PHOTO CAPTION@PHOTO CAPTION"
+		templates['catalog'] = "prodrome:PRODUCTS_CAPTION%products:PRODUCT_NAME=PRODUCT_COST=PRODUCT_IMAGE@PRODUCT_NAME=PRODUCT_COST=PRODUCT_IMAGE"
 		content.value = templates[template]
 	}
 	
