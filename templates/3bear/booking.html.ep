@@ -58,7 +58,7 @@
   <div class="form-group form-group-lg">
   %= label_for option_of_living => 'Вариант размещения', class => 'col-sm-3 control-label'
     <div class="col-sm-5">
-  %= select_field option_of_living => [['По два человека в комнате - 1500р./место', '1500'], ['По одному человеку в комнате - 2500р./комната', '2500'], ['Дети до 16 лет (по 3 места) - 3900р./комната', '1300'], ['Укажу далее в комментарии', '0']], id => 'option_of_living', class => 'form-control'
+  %= select_field option_of_living => [['По одному человеку в комнате - 2500р./комната', '2500'], ['По два человека в комнате - 1500р./место', '1500'], ['Дети до 16 лет (по 3 места) - 3900р./комната', '1300'], ['Укажу далее в комментарии', '0']], id => 'option_of_living', class => 'form-control'
     </div>
   </div>
     
