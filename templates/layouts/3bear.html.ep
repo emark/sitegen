@@ -4,6 +4,7 @@
 % 	contacts => '',
 % 	prices => '',
 % 	booking => '',
+% 	cafe => '',
 % );
 % $url{$page->{url}} = 'active';
 <!DOCTYPE html>
