@@ -22,7 +22,7 @@
 	<p class="text-center lead">г. Красноярск, ул. Ленинградская, 11</p>
 	<div class="row">
 		<div class="col-sm-12 hidden-xs">
-		<p class="text-center lead">+7&nbsp;908&nbsp;201-49-91<br/>+7&nbsp;391&nbsp;243-36-13<br/><a href="mailto:welcome@3bear.ru" title="Пишите нам">welcome@3bear.ru</a><br/><i class="fa fa-vk fa-1x privilege" aria-hidden="true"></i>&nbsp;<a href="https://vk.ru/3bear.hotel" target=_blank title="Страница Вконтакте">3bear.hotel</a>
+		<p class="text-center lead">+7&nbsp;908&nbsp;201-49-91<br/>+7&nbsp;391&nbsp;243-36-13<br/><a href="mailto:welcome@3bear.ru" title="Пишите нам">welcome@3bear.ru</a>
 		  <!--span class="hidden-xs"><i class="fa fa-whatsapp fa-1x privilege" aria-hidden="true"></i>&nbsp;<a href="#" class="" data-toggle="modal" data-target=".bs-example-modal-sm" title="Открыть чат WhatsApp">WhatsApp</a></span-->
     </p>
 		</div>
