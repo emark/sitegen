@@ -35,7 +35,8 @@
 	      <div class="caption">
 	        <h3><%== $ptitle %></h3>
 	        <%== $pcontent %>
-		<p>Оплата наличным и безналичным способами.</p>
+		      <p>Оплата наличным и безналичным способами.</p>
+		      <a href="/booking.html" class="btn btn-primary">Забронировать</a> <a href="/prices.html" class="btn btn-default">Смотреть цены</a>
 	      </div>
 	    </div>
 	  </div>
