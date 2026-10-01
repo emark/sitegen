@@ -41,7 +41,7 @@
   в течение дня.<br> Время обработки заявок 9&mdash;18 часов по Красноярскому времени в рабочие дни.</p>
 
 % }else{
-  <p>Благодарим за обращение. Оформить бронирование вы можете на странице <a href="https://www.3bear.ru/booking.html">https://www.3bear.ru/booking.html</a></p>
+  <p>Оформить бронирование вы можете на странице <a href="https://www.3bear.ru/booking.html">https://www.3bear.ru/booking.html</a></p>
   
 % };
 </div>
