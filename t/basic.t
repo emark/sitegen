@@ -51,4 +51,9 @@ $t->get_ok('/booking.html')
 # 19
 	->status_is(200);
 
+# 20
+$t->get_ok('/booking/success.html')
+# 21
+	->status_is(200);
+
 done_testing();
