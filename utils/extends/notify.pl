@@ -78,7 +78,8 @@ sub SendNotification{
 		push (@call_id, $key->[0]);
 		my $c = from_json($key->[1]);
 
-		$text = $text."\n---\nЗаказчик: $c->{'customer_name'}\nКонтакты: $c->{'customer_phone'}, $c->{'customer_email'}\nКоличество гостей: $c->{'guests_num'}\nКатегория номера: $c->{'option_of_living'}\nЗаезд: $c->{'from_date'} Время: $c->{'from_time'}\nВыезд: $c->{'till_date'} Время: $c->{'till_time'}\nКомментарий: $c->{'booking_comment'}\n";
+		#$text = $text."\n---\nЗаказчик: $c->{'customer_name'}\nКонтакты: $c->{'customer_phone'}, $c->{'customer_email'}\nКоличество гостей: $c->{'guests_num'}\nКатегория номера: $c->{'option_of_living'}\nЗаезд: $c->{'from_date'} Время: $c->{'from_time'}\nВыезд: $c->{'till_date'} Время: $c->{'till_time'}\nКомментарий: $c->{'booking_comment'}\n";
+		$text = $text."\n---\nКоличество мест: $c->{'guests_num'}\nКатегория номера: $c->{'option_of_living'}\nЗаезд: $c->{'from_date'} Время: $c->{'from_time'}\nВыезд: $c->{'till_date'} Время: $c->{'till_time'}\nКомментарий: $c->{'booking_comment'}\n";
 
 		if ($c->{'service'}){
 			$text = $text."Дополнительные услуги: ";
