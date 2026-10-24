@@ -53,7 +53,8 @@ sub checking_data(){
 				notify => 0, # Flag for notification function
         	},
         	table => $config->{prefix}.$config->{sitename}.'_book',
-      	);
+      	) if $config->{'mode'} eq 'production'; # Insert data to database in production mode only
+
 			$self->flash(
 				output => $hash,
 			);
