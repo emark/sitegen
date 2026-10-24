@@ -47,13 +47,11 @@ $t->get_ok('/rentals/0-0.html')
 	->status_is(200);
 
 # 18
-$t->get_ok('/booking.html')
+my $token = $t->ua->get('/booking.html')->res->dom->at('[name=csrf_token]')->val;
+$t->post_ok('/booking.html' => form => {guests_num => 1, from_date => "01-01-1900", from_time => 12, till_date => "02-01-1900", till_time => 12, option_of_living => 1300, customer_name => "Bob", customer_phone => "+79876543210", persdata_agreement => 1, notify_agreement => 1, csrf_token => $token})
 # 19
-	->status_is(200);
-
+	->status_is(302)
 # 20
-$t->get_ok('/booking/success.html')
-# 21
-	->status_is(200);
+	->header_is(location => '/booking/success.html');
 
 done_testing();

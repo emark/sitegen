@@ -1,6 +1,6 @@
 % title $page->{meta}{title};
 % my %field_name = ( guests_num => 'Количество мест', from_date => 'Дата заселения', till_date => 'Дата выезда', customer_name => 'Вас зовут', customer_phone => 'Мобильный номер', customer_email => 'Электронная почта', persdata_agreement => 'Соглашение на обработку персональных данных', notify_agreement => 'Согласие на получение уведомлений', booking_comment => 'Комментарий', from_time => 'Час заселения', till_time => 'Час выезда');
-% my %class_has_error; 
+% my %class_has_error;
 
 <div class="page-header">
 	<h1><%= $page->{meta}{title} %></h1>
